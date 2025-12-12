@@ -99,11 +99,12 @@ export async function generateImageFromAnalysis(
 
   if (request.saveToLibrary !== false) {
     try {
+      const { imageModel } = await import('../config/env').then((m) => m.getEnv())
       const saved = await saveGeneratedAsset({
         imageDataUrl,
         mimeType,
         usedPrompt,
-        model: 'black-forest-labs/flux.2-pro',
+        model: imageModel,
         projectId: request.projectId,
         originalAnalysis: request.originalAnalysis || request.analysis,
         workingAnalysis: request.analysis,

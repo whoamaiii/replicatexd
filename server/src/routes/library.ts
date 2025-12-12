@@ -12,6 +12,7 @@ import {
   deleteProject,
 } from '../services/libraryService'
 import type { LibraryListResponse, SaveProjectRequest } from '../../../shared/types/library'
+import { validateId, sanitizeFilename } from '../utils/validation'
 
 export const libraryRouter = Router()
 
@@ -35,7 +36,7 @@ libraryRouter.get('/projects', async (_req, res) => {
 
 libraryRouter.get('/projects/:projectId', async (req, res) => {
   try {
-    const { projectId } = req.params
+    const projectId = validateId(req.params.projectId, 'projectId')
     const project = getProject(projectId)
 
     if (!project) {
@@ -45,6 +46,10 @@ libraryRouter.get('/projects/:projectId', async (req, res) => {
 
     res.json(project)
   } catch (error) {
+    if (error instanceof Error && error.message.includes('Invalid')) {
+      res.status(400).json({ message: error.message })
+      return
+    }
     console.error('[Library] Error getting project:', error)
     res.status(500).json({ message: 'Failed to get project' })
   }
@@ -52,7 +57,7 @@ libraryRouter.get('/projects/:projectId', async (req, res) => {
 
 libraryRouter.post('/projects/:projectId/save', async (req, res) => {
   try {
-    const { projectId } = req.params
+    const projectId = validateId(req.params.projectId, 'projectId')
     const parsed = SaveProjectRequestSchema.safeParse(req.body)
 
     if (!parsed.success) {
@@ -73,6 +78,10 @@ libraryRouter.post('/projects/:projectId/save', async (req, res) => {
 
     res.json(project)
   } catch (error) {
+    if (error instanceof Error && error.message.includes('Invalid')) {
+      res.status(400).json({ message: error.message })
+      return
+    }
     console.error('[Library] Error saving project:', error)
     res.status(500).json({ message: 'Failed to save project' })
   }
@@ -80,7 +89,7 @@ libraryRouter.post('/projects/:projectId/save', async (req, res) => {
 
 libraryRouter.delete('/projects/:projectId', async (req, res) => {
   try {
-    const { projectId } = req.params
+    const projectId = validateId(req.params.projectId, 'projectId')
     const deleted = deleteProject(projectId)
 
     if (!deleted) {
@@ -90,6 +99,10 @@ libraryRouter.delete('/projects/:projectId', async (req, res) => {
 
     res.json({ deleted: true })
   } catch (error) {
+    if (error instanceof Error && error.message.includes('Invalid')) {
+      res.status(400).json({ message: error.message })
+      return
+    }
     console.error('[Library] Error deleting project:', error)
     res.status(500).json({ message: 'Failed to delete project' })
   }
@@ -97,7 +110,8 @@ libraryRouter.delete('/projects/:projectId', async (req, res) => {
 
 libraryRouter.get('/file/:projectId/:generationId', async (req, res) => {
   try {
-    const { projectId, generationId } = req.params
+    const projectId = validateId(req.params.projectId, 'projectId')
+    const generationId = validateId(req.params.generationId, 'generationId')
     const imagePath = getGenerationImagePath(projectId, generationId)
 
     if (!imagePath) {
@@ -106,12 +120,17 @@ libraryRouter.get('/file/:projectId/:generationId', async (req, res) => {
     }
 
     const mimeType = getGenerationMimeType(projectId, generationId) || 'image/png'
-    const filename = `psyvis_${generationId}.${mimeType.split('/')[1] || 'png'}`
+    const fileExt = mimeType.split('/')[1] || 'png'
+    const filename = sanitizeFilename(`psyvis_${generationId}.${fileExt}`)
 
     res.setHeader('Content-Type', mimeType)
     res.setHeader('Content-Disposition', `attachment; filename="${filename}"`)
     res.sendFile(imagePath)
   } catch (error) {
+    if (error instanceof Error && error.message.includes('Invalid')) {
+      res.status(400).json({ message: error.message })
+      return
+    }
     console.error('[Library] Error serving file:', error)
     res.status(500).json({ message: 'Failed to serve file' })
   }
@@ -119,7 +138,8 @@ libraryRouter.get('/file/:projectId/:generationId', async (req, res) => {
 
 libraryRouter.get('/bundle/:projectId/:generationId', async (req, res) => {
   try {
-    const { projectId, generationId } = req.params
+    const projectId = validateId(req.params.projectId, 'projectId')
+    const generationId = validateId(req.params.generationId, 'generationId')
     const bundle = await createGenerationBundle(projectId, generationId)
 
     if (!bundle) {
@@ -127,11 +147,15 @@ libraryRouter.get('/bundle/:projectId/:generationId', async (req, res) => {
       return
     }
 
-    const filename = `psyvis_${generationId}.zip`
+    const filename = sanitizeFilename(`psyvis_${generationId}.zip`)
     res.setHeader('Content-Type', 'application/zip')
     res.setHeader('Content-Disposition', `attachment; filename="${filename}"`)
     res.send(bundle)
   } catch (error) {
+    if (error instanceof Error && error.message.includes('Invalid')) {
+      res.status(400).json({ message: error.message })
+      return
+    }
     console.error('[Library] Error creating bundle:', error)
     res.status(500).json({ message: 'Failed to create bundle' })
   }

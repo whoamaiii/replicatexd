@@ -5,7 +5,10 @@ const EnvSchema = z.object({
   OPENROUTER_BASE_URL: z.string().optional(),
   OPENAI_API_KEY: z.string().optional(),
   OPENAI_MODEL: z.string().optional(),
+  OPENAI_VISION_MODEL: z.string().optional(),
+  OPENAI_IMAGE_MODEL: z.string().optional(),
   PORT: z.string().optional(),
+  CORS_ORIGINS: z.string().optional(),
   LIBRARY_OUTPUT_DIR: z.string().optional(),
   LIBRARY_RETENTION_DAYS: z.string().optional(),
   LIBRARY_TRASH_ENABLED: z.string().optional(),
@@ -16,7 +19,10 @@ type Env = {
   openrouterApiKey: string
   openrouterBaseUrl: string
   openaiModel: string
+  visionModel: string
+  imageModel: string
   port: number
+  corsOrigins: string[]
   libraryOutputDir: string
   libraryRetentionDays: number
   libraryTrashEnabled: boolean
@@ -63,6 +69,18 @@ export function getEnv(): Env {
     throw new Error('PORT must be a number')
   }
 
+  const visionModel =
+    parsed.data.OPENAI_VISION_MODEL?.trim() ||
+    normalizeModelId(parsed.data.OPENAI_MODEL) ||
+    'openai/gpt-5.2'
+
+  const imageModel =
+    parsed.data.OPENAI_IMAGE_MODEL?.trim() || 'black-forest-labs/flux.2-pro'
+
+  const corsOrigins = parsed.data.CORS_ORIGINS
+    ? parsed.data.CORS_ORIGINS.split(',').map((o) => o.trim())
+    : ['http://localhost:5173', 'http://localhost:5174']
+
   const libraryOutputDir = parsed.data.LIBRARY_OUTPUT_DIR?.trim() || 'psyvis_lab_output'
   const libraryRetentionDays = parsed.data.LIBRARY_RETENTION_DAYS
     ? Number(parsed.data.LIBRARY_RETENTION_DAYS)
@@ -76,7 +94,10 @@ export function getEnv(): Env {
     openrouterApiKey,
     openrouterBaseUrl,
     openaiModel: normalizeModelId(parsed.data.OPENAI_MODEL),
+    visionModel,
+    imageModel,
     port,
+    corsOrigins,
     libraryOutputDir,
     libraryRetentionDays,
     libraryTrashEnabled,

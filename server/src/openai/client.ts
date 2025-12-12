@@ -118,7 +118,7 @@ export async function callVisionAnalysis(input: {
   const url = `${baseUrl}/responses`
 
   const body = {
-    model: 'openai/gpt-5.2',
+    model: env.visionModel,
     input: [
       {
         type: 'message',
@@ -191,7 +191,7 @@ export async function callImageGeneration(input: { prompt: string; imageDataUrl?
     : [{ role: 'user', content: input.prompt }]
 
   const body = {
-    model: 'black-forest-labs/flux.2-pro',
+    model: env.imageModel,
     messages,
     modalities: ['image', 'text'],
     image_config: {
