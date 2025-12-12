@@ -1,0 +1,35 @@
+Close up surreal spiral of many human hands interlocked in a vortex around a central eye like circle, dark background. Apply LSD common dose visuals with sharp neon leaning clarity: increase saturation and contrast, add subtle glowing edges on fingertips, amplify skin pore detail, and overlay intricate turquoise geometric filigree that is embedded in the skin and follows the hand contours and perspective. Add gentle breathing and slow drifting of the spiral, faint motion trails on finger edges, and nested mandala rings and spiral form constants that remain surface bound and lighting consistent. Cinematic macro lighting, crisp focus, high detail, coherent anatomy, no scene replacement.
+
+Constraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.
+Constraint: Avoid floating geometry overlays, wireframe nets, and separate decals.
+
+Base scene: A close view shows many human hands arranged in a tight spiral pattern around a central circular eye like shape. The hands are layered and interlocked, with teal ornamental markings across the skin on a dark background. The composition already reads like a mandala or vortex.
+Substance id: lsd
+Dose: 0.45
+
+Critical constraints:
+1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.
+2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.
+3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.
+4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.
+5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.
+6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.
+
+
+
+Effect Routing:
+- Apply all effects as surface-embedded textures and materials (60% adherence). Do not create floating geometry or overlay planes.
+- Emphasize geometric patterns (fractals, tilings, form constants).
+- Emphasize hallucinatory content (entities, transformations).
+
+Emphasize these effects:
+1. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase saturation with gentle hue protection, then add selective vibrance in mid tones. Couple small color pulses to audio or motion for a living feel.
+2. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use local contrast or unsharp masking with restraint to avoid crunchy artifacts. Modulate contrast more in mid tones than extremes for a natural but heightened look.
+3. Texture salience. effectId texture_salience. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro contrast and gently amplify periodic components of textures. Use time coherent noise modulation so the texture feels alive without becoming unstable.
+4. Geometric patterning. effectId geometric_patterning. group geometry. intensity 0.96. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate patterns procedurally and lock them to surfaces with tracking. Increase complexity, symmetry, and depth cues as intensity rises.
+5. Visual acuity enhancement. effectId visual_acuity_enhancement. group enhancements. intensity 0.70. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Add edge aware sharpening and micro contrast, then stabilize over time to avoid shimmer. Pair with mild chroma smoothing to keep the look clean.
+6. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 0.70. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use feature amplification on texture maps and add a low strength semantic overlay from segmentation or edge maps. Keep it subtle at low intensity so it reads as emergence rather than sticker art.
+7. Visual drifting. effectId visual_drifting. group distortions. intensity 0.60. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical flow aligned warping or a material locked UV advection. Increase drift speed and curl noise over time as intensity rises, but preserve temporal coherence.
+8. Mandala forms. effectId mandala_forms. group geometry. intensity 0.80. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate radial symmetry with multiple rings and petal like motifs. Add slow breathing in scale and subtle depth shading to suggest layered structure.
+
+Output a single image only.

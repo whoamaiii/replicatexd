@@ -2,386 +2,1291 @@
   {
     "id": "color_enhancement",
     "group": "enhancements",
+    "family": "amplification",
     "displayName": "Color enhancement",
-    "shortDescription": "Colors appear more vivid, saturated, and emotionally salient than baseline.",
-    "longDescription": "This effect increases perceived saturation and separation between hues, making scenes feel more vibrant and alive. It often co occurs with enhanced contrast and a sense that certain colors glow or carry meaning.",
-    "typicalIntensityRange": [0.1, 0.8],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": [
-      "lsd",
-      "psilocybin",
-      "mescaline",
-      "dmt",
-      "ayahuasca",
-      "two_c_b",
-      "two_c_e",
-      "mdma",
-      "mda"
+    "shortDescription": "Colors appear unusually vivid, saturated, and emotionally prominent.",
+    "simulationHints": [
+      "Boost saturation and vibrance with hue protection",
+      "Increase local contrast in midtones without crushing blacks",
+      "Add subtle bloom on bright, colorful highlights",
+      "Optionally add slow chroma pulses for a living feel"
     ],
-    "notesOnSimulation": "Increase saturation with gentle hue protection, then add selective vibrance in mid tones. Couple small color pulses to audio or motion for a living feel."
+    "typicalIntensityRange": { "min": 0.1, "max": 0.8 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Color enhancement", "url": "https://psychonautwiki.org/wiki/Color_enhancement" },
+      { "label": "PsychonautWiki — Visual amplifications", "url": "https://psychonautwiki.org/wiki/Visual_amplifications" }
+    ]
   },
   {
     "id": "contrast_enhancement",
     "group": "enhancements",
+    "family": "amplification",
     "displayName": "Contrast enhancement",
-    "shortDescription": "Edges, shadows, and highlights separate more strongly, giving a crisp and high definition look.",
-    "longDescription": "Local contrast increases can make textures pop and can amplify perceived depth. At higher intensity it can make scenes feel unreal or hyper real, as if clarity is turned beyond natural optics.",
-    "typicalIntensityRange": [0.1, 0.7],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline", "two_c_e"],
-    "notesOnSimulation": "Use local contrast or unsharp masking with restraint to avoid crunchy artifacts. Modulate contrast more in mid tones than extremes for a natural but heightened look."
+    "shortDescription": "Tonal separation feels heightened, giving edges and textures a hyper-crisp look.",
+    "simulationHints": [
+      "Increase local contrast (clarity) more than global contrast",
+      "Use edge-aware sharpening to avoid halos and ringing",
+      "Stabilize micro-contrast over time to prevent shimmer",
+      "Protect smooth gradients (skin, skies) from banding"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.7 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Visual effects", "url": "https://psychonautwiki.org/wiki/Visual_effects" }
+    ]
   },
   {
     "id": "visual_acuity_enhancement",
     "group": "enhancements",
+    "family": "amplification",
     "displayName": "Visual acuity enhancement",
-    "shortDescription": "Fine detail seems unusually clear, as if focus and resolution have increased.",
-    "longDescription": "Perceived sharpness increases, especially at edges and along repeating texture boundaries. Many people describe an ultra clear or ultra crisp feeling that can shift into over sharpened unreality at higher intensity.",
-    "typicalIntensityRange": [0.05, 0.6],
-    "primaryScales": ["meso", "micro"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline"],
-    "notesOnSimulation": "Add edge aware sharpening and micro contrast, then stabilize over time to avoid shimmer. Pair with mild chroma smoothing to keep the look clean."
+    "shortDescription": "Fine detail feels hyper-clear, like focus and resolution were turned up.",
+    "simulationHints": [
+      "Add edge-aware sharpening plus micro-contrast",
+      "Reduce chroma noise while keeping luminance detail",
+      "Boost texture detail selectively (foliage, fabric, bark)",
+      "Keep sharpening temporally stable to avoid sparkle"
+    ],
+    "typicalIntensityRange": { "min": 0.05, "max": 0.6 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Visual acuity enhancement",
+        "url": "https://psychonautwiki.org/wiki/Visual_acuity_enhancement"
+      },
+      { "label": "PsychonautWiki — Visual amplifications", "url": "https://psychonautwiki.org/wiki/Visual_amplifications" }
+    ]
   },
   {
     "id": "pattern_recognition_enhancement",
     "group": "enhancements",
+    "family": "amplification",
     "displayName": "Pattern recognition enhancement",
-    "shortDescription": "Hidden structure and meaningful forms seem to emerge from ambiguous textures.",
-    "longDescription": "The visual system over interprets weak cues, so noise and texture begin to suggest faces, symbols, and repeating motifs. This effect can seed more elaborate geometry and pareidolia when intensity rises.",
-    "typicalIntensityRange": [0.1, 0.7],
-    "primaryScales": ["meso", "micro"],
-    "commonSubstances": ["lsd", "psilocybin", "dmt", "ayahuasca"],
-    "notesOnSimulation": "Use feature amplification on texture maps and add a low strength semantic overlay from segmentation or edge maps. Keep it subtle at low intensity so it reads as emergence rather than sticker art."
+    "shortDescription": "Ambiguous textures seem to resolve into meaningful patterns, faces, and symbols.",
+    "simulationHints": [
+      "Increase mid-frequency feature salience (edges, corners, repeats)",
+      "Blend extremely low-strength semantic priors without hard overlays",
+      "Bias emergence to peripheral and low-attention regions",
+      "Let patterns flicker in and out instead of staying fixed"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.7 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Pattern recognition enhancement",
+        "url": "https://psychonautwiki.org/wiki/Pattern_recognition_enhancement"
+      },
+      { "label": "PsychonautWiki — Visual amplifications", "url": "https://psychonautwiki.org/wiki/Visual_amplifications" }
+    ]
+  },
+  {
+    "id": "magnification",
+    "group": "enhancements",
+    "family": "amplification",
+    "displayName": "Magnification",
+    "shortDescription": "Distant details seem zoomed-in and closer than they should be.",
+    "simulationHints": [
+      "Apply localized zoom centered on a gaze or subject anchor",
+      "Use depth-aware scaling to bring far layers forward subtly",
+      "Add slight acuity enhancement to emphasize distant detail",
+      "Keep perspective consistent and avoid fisheye warping"
+    ],
+    "typicalIntensityRange": { "min": 0.05, "max": 0.75 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Magnification", "url": "https://psychonautwiki.org/wiki/Magnification" },
+      { "label": "PsychonautWiki — Visual amplifications", "url": "https://psychonautwiki.org/wiki/Visual_amplifications" }
+    ]
+  },
+  {
+    "id": "visual_processing_acceleration",
+    "group": "enhancements",
+    "family": "amplification",
+    "displayName": "Visual processing acceleration",
+    "shortDescription": "Motion feels slowed down because visual events feel easier to track and parse.",
+    "simulationHints": [
+      "Reduce motion blur and increase clarity on fast-moving edges",
+      "Add mild motion sharpening without strobing",
+      "Increase micro-detail visibility during motion (temporal supersampling feel)",
+      "Keep motion continuous; avoid hard frame holds"
+    ],
+    "typicalIntensityRange": { "min": 0.05, "max": 0.65 },
+    "doseResponse": { "curve": "easeOut", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Visual processing acceleration",
+        "url": "https://psychonautwiki.org/wiki/Visual_processing_acceleration"
+      },
+      { "label": "PsychonautWiki — Visual amplifications", "url": "https://psychonautwiki.org/wiki/Visual_amplifications" }
+    ]
   },
   {
     "id": "glow_and_haloes",
     "group": "enhancements",
+    "family": "amplification",
     "displayName": "Glow and haloes",
-    "shortDescription": "Bright areas bloom and can form soft haloes or auras around objects.",
-    "longDescription": "Luminance spreads beyond its physical boundary, giving lights a radiant presence and edges a gentle aura. This can contribute to a dreamy, warm, or sacred feeling depending on palette and context.",
-    "typicalIntensityRange": [0.1, 0.8],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["mdma", "mda", "lsd", "psilocybin", "mescaline"],
-    "notesOnSimulation": "Use bloom with a soft knee and a wide radius. Add a second subtle edge glow pass that follows high contrast boundaries to suggest an aura."
+    "shortDescription": "Bright regions bloom into soft auras and haloes around edges.",
+    "simulationHints": [
+      "Add bloom with a soft knee and wide radius",
+      "Use luminance-based glow rather than uniform blur",
+      "Let glow pick up local light color for plausibility",
+      "Avoid thick edge halos that read as posterization"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.8 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Visual effects", "url": "https://psychonautwiki.org/wiki/Visual_effects" }
+    ]
   },
   {
     "id": "texture_salience",
     "group": "enhancements",
+    "family": "amplification",
     "displayName": "Texture salience",
-    "shortDescription": "Surface textures become unusually attention grabbing and rich.",
-    "longDescription": "Materials like wood grain, fabric weave, foliage, and stone appear deeper and more structured than usual. This often precedes drifting and geometry because the visual system locks onto repeating micro features.",
-    "typicalIntensityRange": [0.1, 0.7],
-    "primaryScales": ["micro"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline", "two_c_b", "two_c_e"],
-    "notesOnSimulation": "Boost micro contrast and gently amplify periodic components of textures. Use time coherent noise modulation so the texture feels alive without becoming unstable."
+    "shortDescription": "Surface textures feel unusually rich and attention-grabbing.",
+    "simulationHints": [
+      "Boost micro-contrast in textured regions",
+      "Enhance repeating detail with subtle frequency amplification",
+      "Keep motion coherent so textures feel alive, not noisy",
+      "Avoid crunchy HDR artifacts and edge ringing"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.7 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Visual effects", "url": "https://psychonautwiki.org/wiki/Visual_effects" }
+    ]
   },
+
+  {
+    "id": "color_depression",
+    "group": "perceptual",
+    "family": "suppression",
+    "displayName": "Color depression",
+    "shortDescription": "Colors lose saturation and distinction, drifting toward muted or grayscale.",
+    "simulationHints": [
+      "Reduce saturation and vibrance, especially in midtones",
+      "Compress hue separation (lower chroma contrast)",
+      "Bias desaturation to shadows and periphery for a dim feel",
+      "Optionally approach monochrome at extreme intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Color depression", "url": "https://psychonautwiki.org/wiki/Color_depression" },
+      { "label": "PsychonautWiki — Visual suppressions", "url": "https://psychonautwiki.org/wiki/Visual_suppressions" }
+    ]
+  },
+  {
+    "id": "double_vision",
+    "group": "perceptual",
+    "family": "suppression",
+    "displayName": "Double vision",
+    "shortDescription": "Objects appear doubled or misaligned, as if binocular images will not fuse.",
+    "simulationHints": [
+      "Render a faint displaced duplicate with a horizontal offset",
+      "Increase separation with intensity while keeping it temporally stable",
+      "Slightly blur or dim the secondary image to reduce readability",
+      "Avoid kaleidoscope-like splitting; keep it a simple diplopia"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Double vision", "url": "https://psychonautwiki.org/wiki/Double_vision" },
+      { "label": "PsychonautWiki — Visual suppressions", "url": "https://psychonautwiki.org/wiki/Visual_suppressions" }
+    ]
+  },
+  {
+    "id": "pattern_recognition_suppression",
+    "group": "perceptual",
+    "family": "suppression",
+    "displayName": "Pattern recognition suppression",
+    "shortDescription": "Visual information feels harder to interpret even when it is clear and sharp.",
+    "simulationHints": [
+      "Lower mid-level feature integration without heavy blur",
+      "Soften object boundaries and reduce distinguishing cues slightly",
+      "Increase ambiguous textures and reduce semantic clarity",
+      "Keep large shapes readable to avoid turning it into acuity suppression"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Pattern recognition suppression",
+        "url": "https://psychonautwiki.org/wiki/Pattern_recognition_suppression"
+      },
+      { "label": "PsychonautWiki — Visual suppressions", "url": "https://psychonautwiki.org/wiki/Visual_suppressions" }
+    ]
+  },
+  {
+    "id": "peripheral_information_misinterpretation",
+    "group": "perceptual",
+    "family": "suppression",
+    "displayName": "Peripheral information misinterpretation",
+    "shortDescription": "Peripheral details briefly look like something else until directly inspected.",
+    "simulationHints": [
+      "Add transient peripheral pareidolia: brief hints of people, objects, or motion",
+      "Keep misinterpretations fleeting and self-correcting when looked at",
+      "Bias artifacts to edges of frame and low-attention regions",
+      "Avoid stable inserts; aim for momentary misreads"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 0.9 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Peripheral information misinterpretation",
+        "url": "https://psychonautwiki.org/wiki/Peripheral_information_misinterpretation"
+      },
+      { "label": "PsychonautWiki — Visual suppressions", "url": "https://psychonautwiki.org/wiki/Visual_suppressions" }
+    ]
+  },
+  {
+    "id": "visual_acuity_suppression",
+    "group": "perceptual",
+    "family": "suppression",
+    "displayName": "Visual acuity suppression",
+    "shortDescription": "Vision becomes blurred and indistinct, like an out-of-focus lens.",
+    "simulationHints": [
+      "Apply soft edge diffusion and small-radius blur",
+      "Prefer lens-like defocus over uniform Gaussian mush",
+      "Reduce fine texture contrast while preserving broad shapes",
+      "Optionally add slight directional blur (astigmatism-like)"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Visual acuity suppression",
+        "url": "https://psychonautwiki.org/wiki/Visual_acuity_suppression"
+      },
+      { "label": "PsychonautWiki — Visual suppressions", "url": "https://psychonautwiki.org/wiki/Visual_suppressions" }
+    ]
+  },
+  {
+    "id": "visual_processing_deceleration",
+    "group": "perceptual",
+    "family": "suppression",
+    "displayName": "Visual processing deceleration",
+    "shortDescription": "Visual updates feel choppy or laggy, like a buffering or strobing frame rate drop.",
+    "simulationHints": [
+      "Add temporal quantization: hold frames briefly, then jump",
+      "Use subtle step motion rather than smooth blur",
+      "Increase motion ghosting and persistence at higher intensity",
+      "Avoid harsh flicker that reads as a video artifact"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Visual processing deceleration",
+        "url": "https://psychonautwiki.org/wiki/Visual_processing_deceleration"
+      },
+      { "label": "PsychonautWiki — Visual suppressions", "url": "https://psychonautwiki.org/wiki/Visual_suppressions" }
+    ]
+  },
+
   {
     "id": "breathing_surfaces",
     "group": "distortions",
-    "displayName": "Breathing surfaces",
-    "shortDescription": "Flat surfaces appear to expand and contract rhythmically.",
-    "longDescription": "Walls, floors, and natural scenes can look like they inhale and exhale. The motion is usually slow, smooth, and spatially coherent, sometimes syncing with breath, music, or heartbeat.",
-    "typicalIntensityRange": [0.2, 0.8],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline"],
-    "notesOnSimulation": "Apply a low frequency displacement field with subtle depth dependent scaling. Drive the phase with a slow oscillator and keep edges anchored so the effect reads as breathing, not camera shake."
+    "family": "distortion",
+    "displayName": "Breathing",
+    "shortDescription": "Surfaces subtly expand and contract in a slow rhythmic pulse.",
+    "simulationHints": [
+      "Apply low-frequency displacement locked to surfaces (UV or optical-flow)",
+      "Drive expansion and contraction with smooth oscillation (sine or noise)",
+      "Keep edges anchored to avoid camera-like wobble",
+      "Scale motion with depth so flat planes breathe more than silhouettes"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Drifting", "url": "https://psychonautwiki.org/wiki/Drifting" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "visual_drifting",
     "group": "distortions",
-    "displayName": "Visual drifting",
-    "shortDescription": "Textures and boundaries gently slide, swirl, or creep in place.",
-    "longDescription": "Drifting is a continuous transformation of perceived structure, often strongest on repeating textures. It can feel organic and fluid or geometric and tiled depending on substance and context.",
-    "typicalIntensityRange": [0.2, 0.9],
-    "primaryScales": ["meso", "micro"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline", "two_c_b", "two_c_e"],
-    "notesOnSimulation": "Use optical flow aligned warping or a material locked UV advection. Increase drift speed and curl noise over time as intensity rises, but preserve temporal coherence."
+    "family": "distortion",
+    "displayName": "Drifting",
+    "shortDescription": "Textures and shapes slowly warp and slide as if the scene is melting in place.",
+    "simulationHints": [
+      "Use optical-flow aligned warping for temporal coherence",
+      "Add curl-noise displacement that grows with stare-time",
+      "Keep motion slow and spatially coherent (no global camera shake)",
+      "Optionally ease back to baseline to mimic a 'double-take' reset"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Drifting", "url": "https://psychonautwiki.org/wiki/Drifting" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "flowing_textures",
     "group": "distortions",
-    "displayName": "Flowing textures",
-    "shortDescription": "Surface detail behaves like a fluid, streaming along invisible currents.",
-    "longDescription": "Fine texture features can appear to move as if carried by a gentle current, sometimes looping in stable cycles. This often appears in foliage, clouds, carpet, or patterned fabric.",
-    "typicalIntensityRange": [0.3, 0.9],
-    "primaryScales": ["micro"],
-    "commonSubstances": ["lsd", "psilocybin"],
-    "notesOnSimulation": "Run a low velocity vector field over texture space and advect texture coordinates. Add a small divergence free curl component for an organic flow."
+    "family": "distortion",
+    "displayName": "Flowing",
+    "shortDescription": "Fine textures stream like a liquid current, often in looping patterns.",
+    "simulationHints": [
+      "Advect texture coordinates along a low-velocity vector field",
+      "Add divergence-free curl for organic flow",
+      "Confine flow to high-detail surfaces (foliage, fur, grain)",
+      "Keep motion loopable and temporally stable"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Drifting", "url": "https://psychonautwiki.org/wiki/Drifting" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "melting_deformation",
     "group": "distortions",
-    "displayName": "Melting deformation",
-    "shortDescription": "Objects and edges sag, drip, or lose rigidity as if softened.",
-    "longDescription": "Hard boundaries can appear to liquefy, with gravity like sagging or viscous motion. It often mixes with breathing and drifting, but has a distinct sense of structure losing stiffness.",
-    "typicalIntensityRange": [0.3, 0.9],
-    "primaryScales": ["meso"],
-    "commonSubstances": ["lsd", "psilocybin"],
-    "notesOnSimulation": "Use anisotropic displacement biased downward plus edge softening. Increase viscosity and slow the motion to avoid turning it into simple blur."
+    "family": "distortion",
+    "displayName": "Melting",
+    "shortDescription": "Edges sag, drip, or liquefy as if structures lose rigidity.",
+    "simulationHints": [
+      "Apply anisotropic downward displacement with viscosity-like smoothing",
+      "Soften hard edges and increase edge diffusion",
+      "Bias deformation to high-salience shapes and contours",
+      "Avoid turning it into simple blur; keep recognizable forms"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Drifting", "url": "https://psychonautwiki.org/wiki/Drifting" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "morphing_objects",
     "group": "distortions",
-    "displayName": "Morphing objects",
-    "shortDescription": "Recognizable forms subtly change shape or identity while remaining partly anchored.",
-    "longDescription": "Faces, hands, and objects can shift in proportion, expression, or texture, sometimes oscillating between interpretations. This is often reported as unsettling or fascinating depending on context.",
-    "typicalIntensityRange": [0.2, 0.8],
-    "primaryScales": ["meso"],
-    "commonSubstances": ["lsd", "psilocybin", "two_c_e"],
-    "notesOnSimulation": "Use segmentation guided deformation so object boundaries can warp without destroying the whole scene. Blend between multiple plausible shapes with slow noise driven interpolation."
+    "family": "distortion",
+    "displayName": "Morphing",
+    "shortDescription": "Objects subtly change shape or identity while remaining partially anchored.",
+    "simulationHints": [
+      "Use segmentation-guided warps to preserve object boundaries",
+      "Interpolate between plausible shape variants over time",
+      "Add mild texture substitution rather than full replacement",
+      "Keep transformations slow, continuous, and reversible"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Drifting", "url": "https://psychonautwiki.org/wiki/Drifting" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "tracers_motion_trails",
     "group": "distortions",
-    "displayName": "Tracers and motion trails",
-    "shortDescription": "Moving objects leave persistent trails or multiple ghosted copies.",
-    "longDescription": "Motion can appear to smear across time, as if the visual system retains prior frames. Trails are often strongest around bright objects and fast movement.",
-    "typicalIntensityRange": [0.1, 0.8],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["lsd", "psilocybin", "two_c_b", "mdma", "mda"],
-    "notesOnSimulation": "Accumulate prior frames using motion vectors and an exponential decay. Allow trail length to scale with intensity and with scene luminance."
+    "family": "distortion",
+    "displayName": "Tracers",
+    "shortDescription": "Moving objects leave lingering trails, like long-exposure streaks.",
+    "simulationHints": [
+      "Accumulate prior frames with exponential decay",
+      "Use motion vectors or optical flow to align trails",
+      "Make trails stronger on bright and high-contrast edges",
+      "Clamp trail length to avoid full-frame smear at low intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Tracers", "url": "https://psychonautwiki.org/wiki/Tracers" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "afterimage_persistence",
     "group": "distortions",
-    "displayName": "Afterimage persistence",
-    "shortDescription": "Recent visual impressions linger as faint silhouettes or color stains.",
-    "longDescription": "Afterimages can appear as negative or positive remnants, and may persist longer than usual. In some cases the afterimage can drift slightly, creating a ghostly overlay.",
-    "typicalIntensityRange": [0.1, 0.7],
-    "primaryScales": ["meso"],
-    "commonSubstances": ["lsd", "psilocybin", "dmt"],
-    "notesOnSimulation": "Blend a faint delayed version of the frame with local edge emphasis. Use a separate decay rate for chroma and luminance to mimic colored persistence."
+    "family": "distortion",
+    "displayName": "After images",
+    "shortDescription": "Visual impressions linger as ghosted silhouettes after the stimulus moves or disappears.",
+    "simulationHints": [
+      "Blend a delayed frame buffer with separate luminance and chroma decay",
+      "Add negative or positive afterimage variants at higher intensity",
+      "Keep afterimages semi-transparent and slowly fading",
+      "Let afterimages drift slightly for a subtle ghost effect"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.7 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — After images", "url": "https://psychonautwiki.org/wiki/After_images" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "brightness_alteration",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Brightness alteration",
+    "shortDescription": "Overall brightness shifts darker or lighter than baseline in a noticeable way.",
+    "simulationHints": [
+      "Apply global exposure shift with gentle highlight rolloff",
+      "Add slow brightness drift that responds to scene luminance",
+      "Keep highlights from clipping and preserve shadow detail",
+      "Optionally pair with bloom changes for a pupil-dilation feel"
+    ],
+    "typicalIntensityRange": { "min": 0.15, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Brightness alteration", "url": "https://psychonautwiki.org/wiki/Brightness_alteration" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "color_replacement",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Color replacement",
+    "shortDescription": "Specific areas or the whole scene adopt a different stable color than expected.",
+    "simulationHints": [
+      "Replace selected hue bands with alternate hues using masks",
+      "Keep the replacement mostly stable (not cycling)",
+      "Preserve luminance and texture while swapping chroma",
+      "Avoid posterization; keep smooth gradients"
+    ],
+    "typicalIntensityRange": { "min": 0.15, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Color replacement", "url": "https://psychonautwiki.org/wiki/Color_replacement" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "color_shifting",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Color shifting",
+    "shortDescription": "Colors continuously cycle through hues in smooth waves across surfaces.",
+    "simulationHints": [
+      "Animate hue rotation with low-frequency spatial phase",
+      "Bias cycling to colorful and high-salience regions",
+      "Keep motion smooth and loopable; avoid strobing",
+      "Preserve shading by applying shifts in HSV/HSL space"
+    ],
+    "typicalIntensityRange": { "min": 0.15, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Color shifting", "url": "https://psychonautwiki.org/wiki/Color_shifting" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "color_tinting",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Color tinting",
+    "shortDescription": "The entire visual field takes on a translucent color wash, like a filter overlay.",
+    "simulationHints": [
+      "Apply a global color overlay with low opacity",
+      "Tint shadows slightly more than highlights",
+      "Keep tint stable to distinguish from color shifting",
+      "Add subtle vignetting to increase immersion"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.8 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Color tinting", "url": "https://psychonautwiki.org/wiki/Color_tinting" }
+    ]
+  },
+  {
+    "id": "depth_perception_distortions",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Depth perception distortions",
+    "shortDescription": "Depth layers feel rearranged, exaggerated, flattened, or swapped in order.",
+    "simulationHints": [
+      "Use depth maps to warp scale and parallax nonlinearly",
+      "Swap or compress depth layers via subtle compositing",
+      "Add contradictory focus cues (blur vs distance) at higher intensity",
+      "Keep occlusion consistent to avoid obvious cutouts"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Depth perception distortions",
+        "url": "https://psychonautwiki.org/wiki/Depth_perception_distortions"
+      },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "diffraction",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Diffraction",
+    "shortDescription": "Bright areas show rainbow fringes and spectral splitting, like prismatic glare.",
+    "simulationHints": [
+      "Add chromatic aberration around highlights and specular edges",
+      "Use spectral bloom that spreads into subtle rainbow bands",
+      "Increase effect at high-luminance edges and light sources",
+      "Keep it localized; avoid global RGB separation"
+    ],
+    "typicalIntensityRange": { "min": 0.05, "max": 0.6 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Diffraction", "url": "https://psychonautwiki.org/wiki/Diffraction" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "perspective_warp",
     "group": "distortions",
-    "displayName": "Perspective warp",
-    "shortDescription": "Depth, angles, and camera like perspective appear subtly distorted.",
-    "longDescription": "Rooms can feel stretched, corners can bend, and depth cues can become exaggerated. The distortion can be smooth and lens like or elastic and dreamlike depending on intensity.",
-    "typicalIntensityRange": [0.2, 0.8],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["lsd", "psilocybin", "salvia"],
-    "notesOnSimulation": "Use a smoothly varying field of view modulation plus non linear barrel and pincushion warps. Add slow oscillation and keep the horizon stable unless simulating disorientation."
+    "family": "distortion",
+    "displayName": "Perspective distortion",
+    "shortDescription": "Scale and distance cues shift, making the world feel stretched, closer, or far away.",
+    "simulationHints": [
+      "Modulate field-of-view and lens distortion over time",
+      "Use depth-aware scaling to create near and far exaggeration",
+      "Keep horizon and verticals mostly stable to avoid camera shake",
+      "Reserve extreme fisheye warps for high intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Perspective distortion", "url": "https://psychonautwiki.org/wiki/Perspective_distortion" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
     "id": "field_of_view_stretching",
     "group": "distortions",
-    "displayName": "Field of view stretching",
-    "shortDescription": "The visual field stretches or compresses as if vision is pulled into a band or funnel.",
-    "longDescription": "This effect can feel like tunnelling or like the scene is being stretched sideways or vertically. It is often reported in sudden onset hallucinogens and can be very disorienting.",
-    "typicalIntensityRange": [0.4, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["dmt", "salvia"],
-    "notesOnSimulation": "Apply a time varying non uniform scale around the center of gaze, combined with vignetting. Increase speed and amplitude sharply at high intensity for breakthrough style transitions."
+    "family": "distortion",
+    "displayName": "Visual stretching",
+    "shortDescription": "The visual field stretches horizontally or vertically, sometimes into an elongated strip.",
+    "simulationHints": [
+      "Apply non-uniform scaling anchored at center or gaze point",
+      "Add vignetting or void margins at extreme stretch",
+      "Keep stretch smooth over time; avoid jitter",
+      "Optionally reveal subtle geometry in side space at high intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Visual stretching", "url": "https://psychonautwiki.org/wiki/Visual_stretching" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
   },
   {
-    "id": "visual_snow",
+    "id": "environmental_cubism",
     "group": "distortions",
-    "displayName": "Visual snow",
-    "shortDescription": "A fine static like grain overlays the scene, especially in low light.",
-    "longDescription": "The field can contain shimmering speckle, crawling noise, or faint pointillism. It can be subtle and atmospheric or intense enough to interfere with clarity.",
-    "typicalIntensityRange": [0.05, 0.6],
-    "primaryScales": ["macro", "micro"],
-    "commonSubstances": ["lsd", "psilocybin", "dmt"],
-    "notesOnSimulation": "Add low amplitude luminance noise that is temporally correlated rather than pure random. Make it stronger in shadows and periphery to mimic reported salience."
+    "family": "distortion",
+    "displayName": "Environmental cubism",
+    "shortDescription": "The scene segments into square or cubic tiles that drift apart, revealing gaps.",
+    "simulationHints": [
+      "Quantize the image into blocky segments (grid or adaptive tiles)",
+      "Animate tiles drifting away from their original position",
+      "Fill gaps with dark void or tightly-bound geometry",
+      "Keep edges clean and planar for a cubist feel"
+    ],
+    "typicalIntensityRange": { "min": 0.35, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Environmental cubism", "url": "https://psychonautwiki.org/wiki/Environmental_cubism" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "environmental_patterning",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Environmental patterning",
+    "shortDescription": "Textures evolve into symmetrical geometric patterns while still made from the original material.",
+    "simulationHints": [
+      "Apply symmetry transforms to repeating textures (mirror or kaleidoscope)",
+      "Seed patterns from existing texture features (edges and repeats)",
+      "Increase complexity with intensity: lattices, fractals, and form constants",
+      "Keep patterning surface-embedded and perspective-aligned"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 1.0 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Environmental patterning",
+        "url": "https://psychonautwiki.org/wiki/Environmental_patterning"
+      },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "environmental_orbism",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Environmental orbism",
+    "shortDescription": "The environment breaks into circular or orb-like segments that drift and leave gaps.",
+    "simulationHints": [
+      "Segment the scene into circular cells (Voronoi or bubble partition)",
+      "Animate orbs drifting and resizing over time",
+      "Reveal dark or geometry-filled gaps between orbs",
+      "Keep segmentation coherent; avoid random noise circles"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Environmental orbism", "url": "https://psychonautwiki.org/wiki/Environmental_orbism" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "object_alteration",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Object alteration",
+    "shortDescription": "Objects appear to warp and animate in 3D space in unpredictable but plausible ways.",
+    "simulationHints": [
+      "Use depth and segmentation to warp object volumes without tearing backgrounds",
+      "Add slow bend, tilt, and elongation rather than violent mesh breakup",
+      "Preserve texture identity while altering 3D form",
+      "Optionally reset when gaze shifts to mimic a 'double-take' correction"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Object alteration", "url": "https://psychonautwiki.org/wiki/Object_alteration" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "recursion",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Recursion",
+    "shortDescription": "Parts of the scene repeat within themselves, creating Droste-like self-similar loops.",
+    "simulationHints": [
+      "Apply iterative scale-and-inset feedback (Droste) on a stable region",
+      "Blend recursion softly to avoid hard borders and seams",
+      "Keep it brief and intermittent rather than constant",
+      "Center recursion on salient shapes like horizons or windows"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Recursion", "url": "https://psychonautwiki.org/wiki/Recursion" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "scenery_slicing",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Scenery slicing",
+    "shortDescription": "The view splits into clean slices that drift away and then snap back.",
+    "simulationHints": [
+      "Cut the scene into stripes or geometric slices with sharp boundaries",
+      "Animate slices drifting and slightly rotating before resetting",
+      "Keep the effect brief and spontaneous rather than constant",
+      "Coordinate with cubism or orbism styles at higher intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Scenery slicing", "url": "https://psychonautwiki.org/wiki/Scenery_slicing" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "symmetrical_texture_repetition",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Symmetrical texture repetition",
+    "shortDescription": "Textures mirror and tessellate into intricate repeating symmetry, often strongest in the periphery.",
+    "simulationHints": [
+      "Mirror textures across multiple axes to create symmetry",
+      "Prefer rough detail textures (grass, carpet, bark) as inputs",
+      "Increase tessellation density and symmetry order with intensity",
+      "Keep detail level consistent when zooming in"
+    ],
+    "typicalIntensityRange": { "min": 0.15, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Symmetrical texture repetition",
+        "url": "https://psychonautwiki.org/wiki/Symmetrical_texture_repetition"
+      },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "texture_liquidation",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Texture liquidation",
+    "shortDescription": "Textures simplify and smear into a painterly, cartoon-like stylization.",
+    "simulationHints": [
+      "Reduce high-frequency detail while preserving edges",
+      "Use bilateral filtering and subtle posterization for a painted look",
+      "Add gentle brush-stroke flow aligned with surface direction",
+      "Avoid turning it into plain blur; keep stylized structure"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Texture liquidation", "url": "https://psychonautwiki.org/wiki/Texture_liquidation" }
+    ]
+  },
+  {
+    "id": "visual_flipping",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Visual flipping",
+    "shortDescription": "The scene abruptly appears rotated, mirrored, or flipped into a different orientation.",
+    "simulationHints": [
+      "Apply discrete 90° or 180° rotations or mirroring as quick events",
+      "Use easing and brief duration to avoid nausea",
+      "Combine with slight stretching and double vision at higher intensity",
+      "Keep the flip global rather than per-object"
+    ],
+    "typicalIntensityRange": { "min": 0.35, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Visual flipping", "url": "https://psychonautwiki.org/wiki/Visual_flipping" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+  {
+    "id": "visual_haze",
+    "group": "distortions",
+    "family": "distortion",
+    "displayName": "Visual haze",
+    "shortDescription": "The air looks shrouded in foggy haze, reducing clarity and contrast.",
+    "simulationHints": [
+      "Add depth-dependent fog with low-frequency variation",
+      "Reduce contrast and sharpness slightly, especially at distance",
+      "Add subtle volumetric bloom around light sources",
+      "Keep haze stable and not like video noise"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Visual haze", "url": "https://psychonautwiki.org/wiki/Visual_haze" },
+      { "label": "PsychonautWiki — Visual distortions", "url": "https://psychonautwiki.org/wiki/Visual_distortions" }
+    ]
+  },
+
+  {
+    "id": "visual_snow",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "Visual noise",
+    "shortDescription": "A fine static-like noise overlays vision, similar to visual snow or eigengrau.",
+    "simulationHints": [
+      "Add low-amplitude grain with temporal correlation (not pure random)",
+      "Bias noise to shadows and dark fields for a closed-eye feel",
+      "Keep speckle fine and uniform, not blocky compression",
+      "Optionally add faint colored speckle at higher intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.05, "max": 0.6 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" },
+      { "label": "PsychonautWiki — Visual snow", "url": "https://psychonautwiki.org/wiki/Visual_snow" }
+    ]
+  },
+  {
+    "id": "motion_and_color",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "Motion and color",
+    "shortDescription": "Unstructured flashes and clouds of color appear, like phosphene-like fields.",
+    "simulationHints": [
+      "Add soft color clouds with low-frequency motion",
+      "Use additive blending on a dark background for a closed-eye feel",
+      "Animate with gentle turbulence rather than rigid patterns",
+      "Avoid hard edges; keep it amorphous and smooth"
+    ],
+    "typicalIntensityRange": { "min": 0.05, "max": 0.7 },
+    "doseResponse": { "curve": "easeOut", "anchor": "micro" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "partially_defined_geometry",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "Partially defined geometry",
+    "shortDescription": "Vague 2D geometric patterns emerge as a fine veil, often dark and limited in palette.",
+    "simulationHints": [
+      "Overlay faint 2D line and shape fields with small scale detail",
+      "Use a restricted dark palette (deep reds, purples, blacks)",
+      "Increase structure gradually from noise into recognizable motifs",
+      "Prefer low light and closed-eye style presentation"
+    ],
+    "typicalIntensityRange": { "min": 0.1, "max": 0.8 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "fully_defined_geometry",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "Fully defined geometry",
+    "shortDescription": "Intricate 2D geometry becomes crisp and highly structured across a veil in front of vision.",
+    "simulationHints": [
+      "Generate dense tessellations and repeating motifs",
+      "Expand palette and contrast versus partially defined geometry",
+      "Animate patterns smoothly (rotation, phase shifts, breathing)",
+      "Keep it layered but still planar (a 2D veil)"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "three_dimensional_geometry",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "3 dimensional geometry",
+    "shortDescription": "Geometry becomes 3D and appears attached to surfaces and objects in the environment.",
+    "simulationHints": [
+      "Project patterns onto surfaces using depth and normal cues",
+      "Add parallax and shading to sell 3D structure",
+      "Keep geometry surface-embedded and perspective-aligned",
+      "Increase symmetry and complexity with intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "partially_overriding_visual_perception",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "Partially overriding visual perception",
+    "shortDescription": "Geometry becomes intense enough to partially block out the external scene.",
+    "simulationHints": [
+      "Increase geometry opacity and brightness in layered passes",
+      "Let objects transform into geometry while preserving silhouettes",
+      "Use glow and bloom to make geometry feel luminous",
+      "Keep some landmarks visible to maintain partial override"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "fully_overriding_visual_perception",
+    "group": "geometry",
+    "family": "geometry",
+    "displayName": "Fully overriding visual perception",
+    "shortDescription": "Geometry fully replaces normal sight, creating a breakthrough-like alternate visual world.",
+    "simulationHints": [
+      "Transition from surface-embedded patterns into full-frame geometry takeover",
+      "Use deep layered parallax and non-euclidean perspective cues",
+      "Maintain coherent motion and avoid noisy randomness",
+      "Reserve full replacement for the highest intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.6, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "geometry_8a_semantic_concept_network",
+    "group": "geometry",
+    "family": "cognitive",
+    "displayName": "8A Perceived exposure to semantic concept network",
+    "shortDescription": "Geometry feels like a vast, readable network representing concepts, memories, and associations.",
+    "simulationHints": [
+      "Render branching node-and-link lattices with semantic glyph-like hints",
+      "Increase density and interconnectedness toward the center",
+      "Use spider-diagram and mind-map motifs without literal text",
+      "Make complexity feel infinite via recursion and layered depth"
+    ],
+    "typicalIntensityRange": { "min": 0.8, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — 8A Geometry",
+        "url": "https://psychonautwiki.org/wiki/8A_Geometry_-_Perceived_exposure_to_semantic_concept_network"
+      },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
+  },
+  {
+    "id": "geometry_8b_inner_mechanics_of_consciousness",
+    "group": "geometry",
+    "family": "cognitive",
+    "displayName": "8B Perceived exposure to inner mechanics of consciousness",
+    "shortDescription": "Geometry seems to reveal the underlying machinery of thought and consciousness as readable structure.",
+    "simulationHints": [
+      "Use circuit-like, neural-network, and feedback-loop motifs",
+      "Emphasize architecture: gates, layers, recursion, and flow",
+      "Add high-dimensional parallax and non-euclidean cues",
+      "Keep it abstract; avoid pseudo-scientific labels"
+    ],
+    "typicalIntensityRange": { "min": 0.8, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — 8B Geometry",
+        "url": "https://psychonautwiki.org/wiki/8B_Geometry_-_Perceived_exposure_to_inner_mechanics_of_consciousness"
+      },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "geometric_patterning",
     "group": "geometry",
+    "family": "geometry",
     "displayName": "Geometric patterning",
-    "shortDescription": "Structured repeating patterns appear as overlays or as the primary visual content.",
-    "longDescription": "Geometry can range from simple grids and tessellations to intricate fractal ornamentation. It can appear with eyes closed, on surfaces with eyes open, or as an immersive replacement of the scene.",
-    "typicalIntensityRange": [0.2, 1.0],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline", "dmt", "ayahuasca", "two_c_e"],
-    "notesOnSimulation": "Generate patterns procedurally and lock them to surfaces with tracking. Increase complexity, symmetry, and depth cues as intensity rises."
+    "shortDescription": "Repeating geometric motifs appear on surfaces, often symmetry-driven and texture-bound.",
+    "simulationHints": [
+      "Generate procedural tilings and motifs with controllable symmetry",
+      "Lock patterns to surface texture flow using depth and segmentation",
+      "Modulate symmetry order over time (e.g., 4 → 6 → 8)",
+      "Keep patterns embedded in materials, not floating overlays"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 1.0 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "form_constant_tunnel",
     "group": "geometry",
-    "displayName": "Form constant tunnel",
-    "shortDescription": "A funnel or tunnel structure appears to extend into depth, often with motion through it.",
-    "longDescription": "The tunnel may be made of repeating motifs, rings, or lattices and can feel like movement toward a center point. It is commonly reported across classic psychedelics and also in some non drug altered states.",
-    "typicalIntensityRange": [0.4, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["mescaline", "dmt", "lsd"],
-    "notesOnSimulation": "Use log polar mapping or radial coordinates to generate a stable funnel. Animate by zooming the phase and rotating layers, with depth shading to sell immersion."
+    "family": "geometry",
+    "displayName": "Form constant: tunnel",
+    "shortDescription": "A tunnel-like form constant appears, with repeating rings and depth pull toward a center.",
+    "simulationHints": [
+      "Use log-polar mapping to create stable tunnel geometry",
+      "Animate slow zoom and rotation in layered passes",
+      "Add depth shading and vignetting to sell immersion",
+      "Keep motifs surface-embedded when eyes-open geometry is desired"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Form constants", "url": "https://psychonautwiki.org/wiki/Form_constants" },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "form_constant_spiral",
     "group": "geometry",
-    "displayName": "Form constant spiral",
-    "shortDescription": "Spiral vortices appear as rotating or unfolding structures in the visual field.",
-    "longDescription": "Spirals can be single vortex forms or nested spirals that rotate and expand. They often blend into tunnel imagery when rotation and depth cues combine.",
-    "typicalIntensityRange": [0.4, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["mescaline", "lsd", "dmt"],
-    "notesOnSimulation": "Build spiral fields in polar coordinates and modulate thickness with noise. Keep rotation smooth and add nested harmonics for the classic multi spiral look."
+    "family": "geometry",
+    "displayName": "Form constant: spiral",
+    "shortDescription": "Spiraling forms rotate and expand, often nested or layered.",
+    "simulationHints": [
+      "Generate spiral fields in polar coordinates",
+      "Layer multiple harmonic spirals with different radii",
+      "Animate rotation smoothly with subtle phase drift",
+      "Add glow and depth cues for a 3D feel"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Form constants", "url": "https://psychonautwiki.org/wiki/Form_constants" },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "form_constant_lattice",
     "group": "geometry",
-    "displayName": "Form constant lattice",
-    "shortDescription": "Regular grids, honeycombs, or checkerboard like meshes overlay vision.",
-    "longDescription": "Lattice imagery can appear as transparent structure on surfaces or as a full field pattern. Intersections may carry small highlights, eyes, or ornaments through pareidolia and feature amplification.",
-    "typicalIntensityRange": [0.3, 1.0],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["mescaline", "lsd", "psilocybin"],
-    "notesOnSimulation": "Use tiling primitives and enforce symmetry. Add subtle parallax and depth modulation so the lattice reads as spatial rather than flat wallpaper."
+    "family": "geometry",
+    "displayName": "Form constant: lattice",
+    "shortDescription": "Lattices and grids tessellate across the field, forming repeating nets or honeycombs.",
+    "simulationHints": [
+      "Create tiling patterns with enforced symmetry and repetition",
+      "Project lattice onto surfaces using depth maps",
+      "Add subtle parallax and shading at intersections",
+      "Avoid wireframe overlays floating in space"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Form constants", "url": "https://psychonautwiki.org/wiki/Form_constants" },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "form_constant_cobweb",
     "group": "geometry",
-    "displayName": "Form constant cobweb",
-    "shortDescription": "Web like filigree and radial mesh patterns appear, often delicate and detailed.",
-    "longDescription": "Cobweb imagery can look like fine netting, lace, or radial spokes connected by thin arcs. It often appears as luminous line work over a darker background.",
-    "typicalIntensityRange": [0.3, 1.0],
-    "primaryScales": ["macro", "micro"],
-    "commonSubstances": ["mescaline", "lsd"],
-    "notesOnSimulation": "Generate thin line networks with radial symmetry and varying strand thickness. Use glow and slight motion to keep the filigree alive."
+    "family": "geometry",
+    "displayName": "Form constant: cobweb",
+    "shortDescription": "Fine cobweb-like filigree and netting appears, often luminous and radial.",
+    "simulationHints": [
+      "Generate thin line networks with radial spokes and arcs",
+      "Vary strand thickness and add faint glow",
+      "Keep motion subtle (slow drift) to avoid jitter",
+      "Blend with a darker background for contrast"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Form constants", "url": "https://psychonautwiki.org/wiki/Form_constants" },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "fractal_recursion",
     "group": "geometry",
+    "family": "geometry",
     "displayName": "Fractal recursion",
-    "shortDescription": "Patterns repeat across scales, with self similarity and infinite zoom impressions.",
-    "longDescription": "Fractal imagery often feels endless, as if zooming reveals the same motif again and again. It can be seen as ornamentation on objects or as fully immersive space filling structure.",
-    "typicalIntensityRange": [0.4, 1.0],
-    "primaryScales": ["macro", "micro"],
-    "commonSubstances": ["dmt", "lsd", "mescaline", "psilocybin"],
-    "notesOnSimulation": "Use iterative fractal functions or feedback zoom shaders. Animate zoom and rotation smoothly and keep color cycling controlled to avoid visual noise."
+    "shortDescription": "Fractal patterns repeat within themselves, creating infinite zoom-like complexity.",
+    "simulationHints": [
+      "Use iterative feedback and zoom shaders with controlled rotation",
+      "Constrain fractal detail to avoid full-frame noise",
+      "Cycle colors slowly with a coherent palette",
+      "Layer fractals on surfaces rather than as separate objects"
+    ],
+    "typicalIntensityRange": { "min": 0.4, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" },
+      { "label": "PsychonautWiki — Fractal", "url": "https://psychonautwiki.org/wiki/Fractal" }
+    ]
   },
   {
     "id": "mandala_forms",
     "group": "geometry",
+    "family": "geometry",
     "displayName": "Mandala forms",
-    "shortDescription": "Radially symmetric, centered patterns appear like ornate circular designs.",
-    "longDescription": "Mandala forms often emerge behind closed eyes or in low light, and can feel emotionally charged or sacred. They commonly combine symmetry, repetition, and layered depth.",
-    "typicalIntensityRange": [0.3, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["psilocybin", "mescaline", "dmt", "ayahuasca"],
-    "notesOnSimulation": "Generate radial symmetry with multiple rings and petal like motifs. Add slow breathing in scale and subtle depth shading to suggest layered structure."
+    "shortDescription": "Radial symmetric mandala-like structures emerge, often layered and ornate.",
+    "simulationHints": [
+      "Generate radial symmetry with rings and petal-like motifs",
+      "Add layered depth shading and subtle breathing scale changes",
+      "Use fine ornamentation without harsh edges",
+      "Keep the center stable to avoid nausea"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 1.0 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "kaleidoscopic_tiling",
     "group": "geometry",
+    "family": "geometry",
     "displayName": "Kaleidoscopic tiling",
-    "shortDescription": "The scene repeats through mirrored symmetry, like looking through a kaleidoscope.",
-    "longDescription": "Tiling can affect only textures, or it can replicate whole objects and regions of the scene. The result is strong symmetry and repeated motifs that can rotate or slide.",
-    "typicalIntensityRange": [0.3, 1.0],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["mescaline", "lsd", "dmt", "two_c_e"],
-    "notesOnSimulation": "Apply mirror based symmetry transforms around a chosen center. Blend between multiple symmetry orders over time for dynamic kaleidoscope transitions."
+    "shortDescription": "The scene or textures mirror into repeating symmetrical tiles like a kaleidoscope.",
+    "simulationHints": [
+      "Apply mirror symmetry transforms around a chosen center",
+      "Blend between different symmetry orders over time",
+      "Keep tiling texture-bound and perspective-aware",
+      "Feather seams to avoid obvious copy-paste edges"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 1.0 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" },
+      {
+        "label": "PsychonautWiki — Environmental patterning",
+        "url": "https://psychonautwiki.org/wiki/Environmental_patterning"
+      }
+    ]
   },
+
   {
     "id": "closed_eye_visuals",
     "group": "hallucinations",
-    "displayName": "Closed eye visuals",
-    "shortDescription": "With eyes closed, imagery appears ranging from abstract patterns to complex scenes.",
-    "longDescription": "Closed eye visuals often begin as color fields and geometry, then can develop into representational scenes at higher intensity. They are typically more vivid in darkness and can feel more immersive than open eye distortions.",
-    "typicalIntensityRange": [0.2, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["lsd", "psilocybin", "mescaline", "dmt", "ayahuasca", "mda"],
-    "notesOnSimulation": "Treat this as a full frame generative layer rather than a surface overlay. Use coherent motion and evolving motifs, and ramp complexity with intensity."
+    "family": "cognitive",
+    "displayName": "Closed-eye visuals",
+    "shortDescription": "With eyes closed or in darkness, vivid patterns and imagery arise behind the eyelids.",
+    "simulationHints": [
+      "Render a full-frame generative layer separate from scene surfaces",
+      "Use evolving geometry and color fields that grow in complexity",
+      "Keep motion smooth and cohesive rather than noisy",
+      "Increase saturation and symmetry at high intensity"
+    ],
+    "typicalIntensityRange": { "min": 0.5, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Internal hallucination", "url": "https://psychonautwiki.org/wiki/Internal_hallucination" },
+      { "label": "PsychonautWiki — Geometry", "url": "https://psychonautwiki.org/wiki/Geometry" }
+    ]
   },
   {
     "id": "internal_scene_hallucinations",
     "group": "hallucinations",
+    "family": "cognitive",
     "displayName": "Internal scene hallucinations",
-    "shortDescription": "Imagery becomes scene like, with places, characters, and narrative flow.",
-    "longDescription": "This includes dreamlike sequences, memories, symbolic stories, and novel environments. Scenes can be richly detailed and may feel meaningful or guided.",
-    "typicalIntensityRange": [0.5, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["ayahuasca", "dmt", "psilocybin", "mescaline"],
-    "notesOnSimulation": "Use a scene graph approach with motif persistence across cuts. Blend geometric scaffolding into representational imagery via gradual morphs rather than abrupt swaps."
+    "shortDescription": "Dreamlike internal scenes or narratives appear as immersive imagery.",
+    "simulationHints": [
+      "Transition from abstract geometry into representational scenes",
+      "Maintain motif persistence across changes (scene graph feel)",
+      "Use soft morphs and crossfades rather than hard cuts",
+      "Keep lighting coherent and emotionally toned"
+    ],
+    "typicalIntensityRange": { "min": 0.6, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Internal hallucination", "url": "https://psychonautwiki.org/wiki/Internal_hallucination" }
+    ]
   },
   {
     "id": "entity_encounters",
     "group": "hallucinations",
+    "family": "cognitive",
     "displayName": "Entity encounters",
-    "shortDescription": "Autonomous beings are perceived as present and can appear to interact.",
-    "longDescription": "Entities may be humanoid, animal like, or abstract, and are often described as having agency. This can co occur with immersive environments and intense geometric structure.",
-    "typicalIntensityRange": [0.6, 1.0],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["dmt", "ayahuasca"],
-    "notesOnSimulation": "Let agents emerge from structure using face and body priors plus symmetry. Keep them partially ambiguous at moderate intensity and more coherent only at strong intensity."
+    "shortDescription": "Autonomous beings seem present within the experience, with apparent agency.",
+    "simulationHints": [
+      "Let forms emerge from geometry and symmetry first",
+      "Keep entities partially ambiguous at moderate intensity",
+      "Integrate via occlusion, lighting, and perspective cues",
+      "Avoid horror tropes unless explicitly desired"
+    ],
+    "typicalIntensityRange": { "min": 0.7, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Autonomous entity", "url": "https://psychonautwiki.org/wiki/Autonomous_entity" },
+      { "label": "PsychonautWiki — External hallucination", "url": "https://psychonautwiki.org/wiki/External_hallucination" }
+    ]
   },
   {
     "id": "scene_replacement",
     "group": "hallucinations",
+    "family": "cognitive",
     "displayName": "Scene replacement",
-    "shortDescription": "Normal perception is replaced by a different environment or reality.",
-    "longDescription": "Instead of seeing the current room or landscape, perception shifts into an alternate scene that can feel fully real. This is more common in sudden onset substances and at very high intensity.",
-    "typicalIntensityRange": [0.7, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["dmt", "salvia"],
-    "notesOnSimulation": "Implement a transition that rapidly increases geometry, then cross fades into a generated world. Preserve motion continuity so the swap feels like passage rather than a hard cut."
+    "shortDescription": "Perception shifts into an entirely different environment, replacing the original scene.",
+    "simulationHints": [
+      "Ramp geometry intensity, then crossfade into a new coherent scene",
+      "Preserve camera motion continuity across the transition",
+      "Keep thematic anchors (palette, lighting) to make the swap feel plausible",
+      "Avoid hard cuts; make it feel like passage"
+    ],
+    "typicalIntensityRange": { "min": 0.7, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — External hallucination", "url": "https://psychonautwiki.org/wiki/External_hallucination" },
+      { "label": "PsychonautWiki — Visual effects", "url": "https://psychonautwiki.org/wiki/Visual_effects" }
+    ]
   },
   {
     "id": "external_object_hallucinations",
     "group": "hallucinations",
+    "family": "cognitive",
     "displayName": "External object hallucinations",
-    "shortDescription": "Distinct objects or beings appear in the environment as if truly present.",
-    "longDescription": "Unlike overlays and distortions, this adds novel objects with apparent solidity and stable placement in the scene. It is uncommon for many psychedelics at typical intensity but becomes more plausible at very high intensity or in deliriant states.",
-    "typicalIntensityRange": [0.8, 1.0],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["deliriant", "salvia"],
-    "notesOnSimulation": "Insert objects with correct occlusion, lighting, and shadow so they read as real. Keep behavior mundane and scene consistent to mimic realism."
+    "shortDescription": "Novel objects appear in the environment with apparent solidity and stable placement.",
+    "simulationHints": [
+      "Insert objects with correct occlusion, shadows, and lighting",
+      "Keep behavior mundane and physically plausible",
+      "Prefer background or periphery to reduce uncanny artifacts",
+      "Avoid duplicating faces or limbs unless explicitly required"
+    ],
+    "typicalIntensityRange": { "min": 0.8, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — External hallucination", "url": "https://psychonautwiki.org/wiki/External_hallucination" }
+    ]
   },
+
   {
     "id": "pareidolia",
     "group": "perceptual",
+    "family": "cognitive",
     "displayName": "Pareidolia",
-    "shortDescription": "Meaningful forms such as faces or symbols are seen in ambiguous patterns.",
-    "longDescription": "This effect turns noise and texture into interpretable shapes. It often acts as a bridge between simple patterning and more elaborate hallucinated content.",
-    "typicalIntensityRange": [0.2, 0.9],
-    "primaryScales": ["meso", "micro"],
-    "commonSubstances": ["lsd", "psilocybin", "ayahuasca", "dmt"],
-    "notesOnSimulation": "Use weak semantic priors: lightly blend in face like templates, symbol atlases, or segmentation driven texture substitutions. Keep confidence low so forms flicker in and out."
+    "shortDescription": "Faces and meaningful forms appear in ambiguous textures and noise.",
+    "simulationHints": [
+      "Blend low-confidence face and symbol templates into textures",
+      "Bias to peripheral vision and low-detail areas",
+      "Let forms flicker in and out rather than staying fixed",
+      "Keep it subtle to avoid becoming full external hallucinations"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "easeOut", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Pattern recognition enhancement",
+        "url": "https://psychonautwiki.org/wiki/Pattern_recognition_enhancement"
+      },
+      { "label": "PsychonautWiki — Subjective effect index", "url": "https://psychonautwiki.org/wiki/Subjective_effect_index" }
+    ]
   },
   {
     "id": "audio_visual_synesthesia",
     "group": "perceptual",
-    "displayName": "Audio visual synesthesia",
-    "shortDescription": "Sounds influence visual motion, color, or structure as if the senses are coupled.",
-    "longDescription": "Music can appear to drive the timing and shape of patterns, and visual intensity can rise with rhythmic or harmonic events. The coupling can be subtle or strongly deterministic.",
-    "typicalIntensityRange": [0.2, 0.9],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["lsd", "psilocybin", "mdma", "mda"],
-    "notesOnSimulation": "Map audio features to visual parameters: beat to motion amplitude, spectral centroid to hue, and loudness to bloom and contrast. Smooth the control signals to keep motion coherent."
+    "family": "cognitive",
+    "displayName": "Audio-visual synesthesia",
+    "shortDescription": "Sounds influence visual motion, color, or structure as if senses are coupled.",
+    "simulationHints": [
+      "Map beat to motion amplitude and rhythm to phase resets",
+      "Map spectral centroid to hue and saturation",
+      "Map loudness to bloom and contrast changes",
+      "Smooth control signals to keep motion coherent"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Synaesthesia", "url": "https://psychonautwiki.org/wiki/Synaesthesia" }
+    ]
   },
   {
     "id": "depth_and_scale_shift",
     "group": "perceptual",
+    "family": "cognitive",
     "displayName": "Depth and scale shift",
     "shortDescription": "Distances and sizes feel unstable, with objects seeming closer, farther, larger, or smaller.",
-    "longDescription": "Depth cues can become exaggerated or inconsistent, producing dollhouse or vastness impressions. This can also manifest as sudden zoom like changes without camera motion.",
-    "typicalIntensityRange": [0.2, 0.9],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["lsd", "psilocybin", "dmt", "salvia"],
-    "notesOnSimulation": "Use depth maps to modulate scale and blur in a time varying way. Combine subtle focal length drift with selective object scaling for the most convincing effect."
+    "simulationHints": [
+      "Use depth maps to modulate scale and blur in a time-varying way",
+      "Combine subtle focal-length drift with selective object scaling",
+      "Preserve occlusion and edges to avoid cutout artifacts",
+      "Avoid extreme fisheye unless intensity is high"
+    ],
+    "typicalIntensityRange": { "min": 0.2, "max": 0.9 },
+    "doseResponse": { "curve": "linear", "anchor": "common" },
+    "sources": [
+      { "label": "PsychonautWiki — Perspective distortion", "url": "https://psychonautwiki.org/wiki/Perspective_distortion" },
+      {
+        "label": "PsychonautWiki — Depth perception distortions",
+        "url": "https://psychonautwiki.org/wiki/Depth_perception_distortions"
+      }
+    ]
   },
   {
     "id": "time_slicing",
     "group": "perceptual",
+    "family": "cognitive",
     "displayName": "Time slicing",
     "shortDescription": "Motion is perceived in discrete slices, as if time is segmented into frames.",
-    "longDescription": "Movement can look like a flipbook, with separated snapshots rather than smooth continuity. This can co occur with tracers, but the key signature is discrete temporal segmentation.",
-    "typicalIntensityRange": [0.3, 0.9],
-    "primaryScales": ["macro", "meso"],
-    "commonSubstances": ["lsd", "psilocybin", "dmt", "salvia"],
-    "notesOnSimulation": "Use multi exposure compositing with gated frame holds, then soften with a small blur. Modulate the gating with audio rhythm for a synesthetic feel."
+    "simulationHints": [
+      "Use multi-exposure compositing with gated frame holds",
+      "Add slight ghosting between slices instead of hard cuts",
+      "Modulate gating irregularly for an unstable temporal feel",
+      "Avoid high-frequency strobe that reads as camera flicker"
+    ],
+    "typicalIntensityRange": { "min": 0.3, "max": 0.9 },
+    "doseResponse": { "curve": "easeIn", "anchor": "common" },
+    "sources": [
+      {
+        "label": "PsychonautWiki — Visual processing deceleration",
+        "url": "https://psychonautwiki.org/wiki/Visual_processing_deceleration"
+      }
+    ]
   },
   {
     "id": "dissociative_spatial_discontinuity",
     "group": "perceptual",
+    "family": "cognitive",
     "displayName": "Dissociative spatial discontinuity",
     "shortDescription": "Space breaks into slices, panels, loops, or impossible rearrangements.",
-    "longDescription": "Instead of smooth warping, the scene can fracture into repeated segments, rotate like pages, or move as if on mechanical tracks. This effect is especially characteristic of salvia like states.",
-    "typicalIntensityRange": [0.5, 1.0],
-    "primaryScales": ["macro"],
-    "commonSubstances": ["salvia"],
-    "notesOnSimulation": "Use tiling and slicing transforms with hard boundaries, then animate the panels with a single dominant direction. Keep color changes secondary so the effect reads as spatial, not decorative."
+    "simulationHints": [
+      "Use tiling and slicing transforms with hard boundaries",
+      "Animate panels with a single dominant direction and slow drift",
+      "Keep color changes secondary so it reads as spatial, not decorative",
+      "Allow brief resets back to baseline to mimic flickering discontinuity"
+    ],
+    "typicalIntensityRange": { "min": 0.5, "max": 1.0 },
+    "doseResponse": { "curve": "easeIn", "anchor": "heroic" },
+    "sources": [
+      { "label": "PsychonautWiki — Scenery slicing", "url": "https://psychonautwiki.org/wiki/Scenery_slicing" },
+      { "label": "PsychonautWiki — Environmental cubism", "url": "https://psychonautwiki.org/wiki/Environmental_cubism" }
+    ]
   }
 ]
-

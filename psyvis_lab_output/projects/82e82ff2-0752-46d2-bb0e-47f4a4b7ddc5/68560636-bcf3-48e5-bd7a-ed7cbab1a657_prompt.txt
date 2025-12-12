@@ -1,0 +1,52 @@
+Surreal cinematic portrait of a person with long hair in a deep space backdrop, their eye region opened like a soft organic window revealing swirling galaxies. Add strong dose perceptual effects: enhanced color saturation, increased contrast, luminous haloes on stars, crisp micro texture on skin and hair. Apply clear visual drifting and breathing deformation so hair strands and facial edges gently undulate; introduce flowing textures so the galaxy dust appears to stream along hair and skin contours. Embed geometric patterning into materials: spiral and mandala motifs woven into the star fields and galaxy arms, subtle lattice and kaleidoscopic tiling appearing as iridescent overlays that follow surface curvature and perspective, consistent with scene lighting. Include mild morphing so nearby negative space suggests additional mouths or eyes through pareidolia, without fully replacing the scene. Photoreal painterly finish, shallow depth of field, dramatic chiaroscuro lighting, sharp focal point on the central face and galaxy window.
+
+Constraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.
+Constraint: Avoid floating geometry overlays, wireframe nets, and separate decals.
+
+Base scene: A surreal portrait shows a pale person with long hair against a star filled cosmic background. Their eye area appears opened into a window of swirling galaxies, with several disembodied open mouths around the frame.
+
+Critical constraints:
+1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.
+2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.
+3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.
+4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.
+5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.
+6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.
+
+
+Structural guidance:
+- Preserve surface structure and depth relationships (strength: 60%).
+- Maintain depth layering and perspective (weight: 70%).
+- Preserve major edges and compositional lines (weight: 10%).
+- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).
+- Preserve hand structure and finger count. (protection: 60%).
+
+
+Effect Routing:
+- Apply all effects as surface-embedded textures and materials (80% adherence). Do not create floating geometry or overlay planes.
+- Do not modify face regions. Keep facial features, identity, and expression stable. No extra eyes, distorted features, or pattern intrusion on faces.
+- Preserve hand anatomy and finger count. Keep hands structurally intact.
+- Respect major edges and silhouettes. Keep compositional boundaries stable.
+- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.
+- Concentrate effects in the near depth band.
+- Apply global color and perception shifts uniformly across the entire image.
+- Emphasize geometric patterns (fractals, tilings, form constants).
+- Emphasize hallucinatory content (entities, transformations).
+- Emphasize perceptual effects (synesthesia, time perception).
+- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+
+Emphasize these effects:
+1. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.98. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase saturation with gentle hue protection, then add selective vibrance in mid tones. Couple small color pulses to audio or motion for a living feel.
+2. Visual drifting. effectId visual_drifting. group distortions. intensity 0.49. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical flow aligned warping or a material locked UV advection. Increase drift speed and curl noise over time as intensity rises, but preserve temporal coherence.
+3. Flowing textures. effectId flowing_textures. group distortions. intensity 0.49. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Run a low velocity vector field over texture space and advect texture coordinates. Add a small divergence free curl component for an organic flow.
+4. Geometric patterning. effectId geometric_patterning. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate patterns procedurally and lock them to surfaces with tracking. Increase complexity, symmetry, and depth cues as intensity rises.
+5. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use local contrast or unsharp masking with restraint to avoid crunchy artifacts. Modulate contrast more in mid tones than extremes for a natural but heightened look.
+6. Glow and haloes. effectId glow_and_haloes. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use bloom with a soft knee and a wide radius. Add a second subtle edge glow pass that follows high contrast boundaries to suggest an aura.
+7. Texture salience. effectId texture_salience. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro contrast and gently amplify periodic components of textures. Use time coherent noise modulation so the texture feels alive without becoming unstable.
+8. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use feature amplification on texture maps and add a low strength semantic overlay from segmentation or edge maps. Keep it subtle at low intensity so it reads as emergence rather than sticker art.
+
+Output a single image only.

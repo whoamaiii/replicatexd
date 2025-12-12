@@ -1,0 +1,222 @@
+{
+  "substanceId": "custom_mix",
+  "dose": 0.79,
+  "baseSceneDescription": "A close view of many human hands arranged in a tight spiral around a central circular focal point. The skin shows fine wrinkles and pores, with turquoise ornamental markings across the hands, lit with warm amber tones against a darker background.",
+  "geometrySummary": "Strong surface bound sacred geometry emerges as rotating mandala rings and a tunnel like iris at the center, with kaleidoscopic tiling that locks to the spiral arrangement of the hands.",
+  "distortionSummary": "The hands appear to gently breathe and drift, with mild perspective warping that deepens the central vortex and creates subtle motion trails along finger edges.",
+  "hallucinationSummary": "The center suggests a portal like opening into an inner scene, with faint closed eye style pattern memory bleeding into the open eye view rather than full scene replacement.",
+  "effects": [
+    {
+      "effectId": "color_enhancement",
+      "group": "enhancements",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "contrast_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "visual_acuity_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "micro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "texture_salience",
+      "group": "enhancements",
+      "intensity": 0.7,
+      "scales": [
+        "micro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "glow_and_haloes",
+      "group": "enhancements",
+      "intensity": 0.5,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "pattern_recognition_enhancement",
+      "group": "enhancements",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "breathing_surfaces",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "visual_drifting",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "perspective_warp",
+      "group": "distortions",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "symmetrical_texture_repetition",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "tracers_motion_trails",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "afterimage_persistence",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "depth_perception_distortions",
+      "group": "distortions",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "geometric_patterning",
+      "group": "geometry",
+      "intensity": 0.8,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "mandala_forms",
+      "group": "geometry",
+      "intensity": 0.8,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "form_constant_tunnel",
+      "group": "geometry",
+      "intensity": 0.7,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "kaleidoscopic_tiling",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "fractal_recursion",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "three_dimensional_geometry",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "partially_overriding_visual_perception",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "pareidolia",
+      "group": "perceptual",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "depth_and_scale_shift",
+      "group": "perceptual",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "time_slicing",
+      "group": "perceptual",
+      "intensity": 0.3,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "closed_eye_visuals",
+      "group": "hallucinations",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "internal_scene_hallucinations",
+      "group": "hallucinations",
+      "intensity": 0.2,
+      "scales": [
+        "macro"
+      ]
+    }
+  ],
+  "prompts": {
+    "openAIImagePrompt": "Close view of many human hands forming a spiral vortex around a central circular eye like focal point, warm amber lighting, highly detailed skin pores and wrinkles. Intensify psychedelic effects while keeping the same composition: turquoise ornamental ink and subtle filigree geometry embedded in the skin texture, aligned to the curvature of fingers and palms; concentric mandala rings and a tunnel like iris emerging from the center with kaleidoscopic symmetry that follows the spiral perspective. Add gentle breathing deformation of the hands, slight drifting, soft glow haloes on highlights, increased saturation and contrast, crisp micro texture detail, faint motion trails at fingertips, depth deepening into the center, cinematic macro photography, dark teal background, sharp focus with natural depth of field.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+    "shortCinematicDescription": "A spiral of interlaced hands becomes a living mandala, pulsing and drifting as a glowing tunnel opens in the center like an iris into depth."
+  }
+}

@@ -1,4 +1,5 @@
-import type { ImageAnalysisResult } from './analysis'
+import type { ImageAnalysisResult, PsychedelicEffect } from './analysis'
+import type { RouterSettings } from './router'
 
 /**
  * A project groups multiple generations together.
@@ -13,6 +14,8 @@ export type LibraryProject = {
   inputImagePath?: string
   generations: LibraryGeneration[]
   trashedAt?: string
+  // Default router settings for this project
+  defaultRouterSettings?: RouterSettings
 }
 
 /**
@@ -23,13 +26,26 @@ export type LibraryGeneration = {
   createdAt: string
   substanceId: string
   dose: number
+  // Backward-compatible: historically a single model string (now the generation model id).
   model: string
+  analysisModelId?: string
+  analysisModelName?: string
+  generationModelId?: string
+  generationModelName?: string
   imagePath: string
   mimeType: string
   usedPrompt: string
   bundlePath?: string
   originalAnalysis: ImageAnalysisResult
   workingAnalysis: ImageAnalysisResult
+  // Router settings used for this generation
+  routerSettings?: RouterSettings
+  // Effects Studio selection settings used for this generation
+  effectsStudio?: {
+    threshold: number
+    maxEffects: number
+    usedEffects: PsychedelicEffect[]
+  }
 }
 
 /**

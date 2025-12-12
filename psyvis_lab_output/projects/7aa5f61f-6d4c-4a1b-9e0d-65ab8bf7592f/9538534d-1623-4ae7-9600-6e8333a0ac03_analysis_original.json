@@ -1,0 +1,93 @@
+{
+  "substanceId": "custom_mix",
+  "dose": 0.49,
+  "baseSceneDescription": "A car side mirror reflects a winding mountain road with green hills and a partial close up of a woman’s face. The scene is dimly lit with rich colors and textured foliage.",
+  "geometrySummary": "Layered fractal spirals and mandala like tiling embedded across foliage and the reflected background, giving a recursive patterned depth.",
+  "distortionSummary": "The road and terrain subtly warp and drift, with flowing textures and shimmering glow enhancing the curved perspective in the mirror.",
+  "effects": [
+    {
+      "effectId": "color_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6
+    },
+    {
+      "effectId": "contrast_enhancement",
+      "group": "enhancements",
+      "intensity": 0.5
+    },
+    {
+      "effectId": "texture_salience",
+      "group": "enhancements",
+      "intensity": 0.6
+    },
+    {
+      "effectId": "glow_and_haloes",
+      "group": "enhancements",
+      "intensity": 0.5
+    },
+    {
+      "effectId": "visual_drifting",
+      "group": "distortions",
+      "intensity": 0.5
+    },
+    {
+      "effectId": "flowing_textures",
+      "group": "distortions",
+      "intensity": 0.5
+    },
+    {
+      "effectId": "perspective_warp",
+      "group": "distortions",
+      "intensity": 0.4
+    },
+    {
+      "effectId": "environmental_patterning",
+      "group": "distortions",
+      "intensity": 0.6
+    },
+    {
+      "effectId": "color_shifting",
+      "group": "distortions",
+      "intensity": 0.4
+    },
+    {
+      "effectId": "form_constant_spiral",
+      "group": "geometry",
+      "intensity": 0.6
+    },
+    {
+      "effectId": "fractal_recursion",
+      "group": "geometry",
+      "intensity": 0.6
+    },
+    {
+      "effectId": "mandala_forms",
+      "group": "geometry",
+      "intensity": 0.5
+    },
+    {
+      "effectId": "kaleidoscopic_tiling",
+      "group": "geometry",
+      "intensity": 0.4
+    },
+    {
+      "effectId": "partially_overriding_visual_perception",
+      "group": "geometry",
+      "intensity": 0.4
+    },
+    {
+      "effectId": "pareidolia",
+      "group": "perceptual",
+      "intensity": 0.3
+    },
+    {
+      "effectId": "depth_and_scale_shift",
+      "group": "perceptual",
+      "intensity": 0.4
+    }
+  ],
+  "prompts": {
+    "openAIImagePrompt": "A car side mirror reflects a winding mountain road and green hills with a partial close up of a woman’s face, the scene filled with luminous color, flowing textures, and embedded fractal spiral and mandala patterning across foliage and surfaces, glowing points of light and rainbow shimmer aligned to the terrain and mirror perspective, detailed and richly textured, softly lit twilight atmosphere\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+    "shortCinematicDescription": "In a dusky drive, the side mirror reveals a winding road and watchful face, as fractal spirals bloom across hills in shimmering color and gentle drift."
+  }
+}

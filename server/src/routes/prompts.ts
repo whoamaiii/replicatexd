@@ -1,11 +1,18 @@
 import { Router } from 'express'
 import { z } from 'zod'
 import type { PromptBundle } from '../../../shared/types/prompts'
-import { ImageAnalysisResultSchema } from '../services/analysisService'
+import { ImageAnalysisInputSchema } from '../services/analysisService'
 import { buildPromptBundleForAnalysis } from '../services/promptEngine'
 
 const PromptsRequestSchema = z.object({
-  analysis: ImageAnalysisResultSchema,
+  analysis: ImageAnalysisInputSchema,
+  effectsStudioSettings: z
+    .object({
+      threshold: z.number().min(0).max(1),
+      maxEffects: z.number().min(0).max(50),
+    })
+    .optional(),
+  generationModelId: z.string().min(1).optional(),
 })
 
 export const promptsRouter = Router()
@@ -13,7 +20,10 @@ export const promptsRouter = Router()
 promptsRouter.post('/', (req, res) => {
   try {
     const parsed = PromptsRequestSchema.parse(req.body)
-    const prompts: PromptBundle[] = buildPromptBundleForAnalysis(parsed.analysis)
+    const prompts: PromptBundle[] = buildPromptBundleForAnalysis(
+      parsed.analysis,
+      parsed.effectsStudioSettings,
+    )
     res.json({ prompts })
   } catch (err) {
     if (err instanceof z.ZodError) {
@@ -25,5 +35,3 @@ promptsRouter.post('/', (req, res) => {
     res.status(500).json({ message })
   }
 })
-
-

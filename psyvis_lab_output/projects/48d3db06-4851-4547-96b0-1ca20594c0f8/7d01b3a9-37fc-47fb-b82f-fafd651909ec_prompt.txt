@@ -1,0 +1,58 @@
+Close view of many human hands forming a spiral vortex around a central circular eye like focal point, warm amber lighting, highly detailed skin pores and wrinkles. Intensify psychedelic effects while keeping the same composition: turquoise ornamental ink and subtle filigree geometry embedded in the skin texture, aligned to the curvature of fingers and palms; concentric mandala rings and a tunnel like iris emerging from the center with kaleidoscopic symmetry that follows the spiral perspective. Add gentle breathing deformation of the hands, slight drifting, soft glow haloes on highlights, increased saturation and contrast, crisp micro texture detail, faint motion trails at fingertips, depth deepening into the center, cinematic macro photography, dark teal background, sharp focus with natural depth of field.
+
+Constraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.
+Constraint: Avoid floating geometry overlays, wireframe nets, and separate decals.
+
+Base scene: A close view of many human hands arranged in a tight spiral around a central circular focal point. The skin shows fine wrinkles and pores, with turquoise ornamental markings across the hands, lit with warm amber tones against a darker background.
+
+Critical constraints:
+1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.
+2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.
+3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.
+4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.
+5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.
+6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.
+
+
+Structural guidance:
+- Preserve surface structure and depth relationships (strength: 80%).
+- Maintain depth layering and perspective (weight: 70%).
+- Preserve major edges and compositional lines (weight: 75%).
+- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).
+- Preserve hand structure and finger count. (protection: 60%).
+
+
+Effect Routing:
+- Apply all effects as surface-embedded textures and materials (90% adherence). Do not create floating geometry or overlay planes.
+- Preserve facial identity and features. Avoid distorting faces or adding patterns to them.
+- Maintain natural hand structure. Avoid distorting hands or adding extra fingers.
+- Respect major edges and silhouettes. Keep compositional boundaries stable.
+- Apply geometric patterns primarily to mid and far depth layers where surfaces are more stable.
+- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.
+- If adding hallucinatory elements, prefer background and peripheral regions over foreground subjects.
+- Emphasize geometric patterns (fractals, tilings, form constants).
+- Emphasize hallucinatory content (entities, transformations).
+- Emphasize perceptual effects (synesthesia, time perception).
+- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.
+
+Emphasize these effects:
+1. Closed-eye visuals. effectId closed_eye_visuals. group hallucinations. intensity 1.00. If present, keep hallucinated content coherent and integrated with the scene lighting and occlusion. simulation: Render a full-frame generative layer separate from scene surfaces · Use evolving geometry and color fields that grow in complexity · Keep motion smooth and cohesive rather than noisy · Increase saturation and symmetry at high intensity
+2. Fractal recursion. effectId fractal_recursion. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Use iterative feedback and zoom shaders with controlled rotation · Constrain fractal detail to avoid full-frame noise · Cycle colors slowly with a coherent palette · Layer fractals on surfaces rather than as separate objects
+3. Geometric patterning. effectId geometric_patterning. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate procedural tilings and motifs with controllable symmetry · Lock patterns to surface texture flow using depth and segmentation · Modulate symmetry order over time (e.g., 4 → 6 → 8) · Keep patterns embedded in materials, not floating overlays
+4. Internal scene hallucinations. effectId internal_scene_hallucinations. group hallucinations. intensity 1.00. If present, keep hallucinated content coherent and integrated with the scene lighting and occlusion. simulation: Transition from abstract geometry into representational scenes · Maintain motif persistence across changes (scene graph feel) · Use soft morphs and crossfades rather than hard cuts · Keep lighting coherent and emotionally toned
+5. Partially overriding visual perception. effectId partially_overriding_visual_perception. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Increase geometry opacity and brightness in layered passes · Let objects transform into geometry while preserving silhouettes · Use glow and bloom to make geometry feel luminous · Keep some landmarks visible to maintain partial override
+6. 3 dimensional geometry. effectId three_dimensional_geometry. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Project patterns onto surfaces using depth and normal cues · Add parallax and shading to sell 3D structure · Keep geometry surface-embedded and perspective-aligned · Increase symmetry and complexity with intensity
+7. Time slicing. effectId time_slicing. group perceptual. intensity 1.00. Apply as changes in interpretation and coupling, not as random decorations. simulation: Use multi-exposure compositing with gated frame holds · Add slight ghosting between slices instead of hard cuts · Modulate gating irregularly for an unstable temporal feel · Avoid high-frequency strobe that reads as camera flicker
+8. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 1.00. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase mid-frequency feature salience (edges, corners, repeats) · Blend extremely low-strength semantic priors without hard overlays · Bias emergence to peripheral and low-attention regions · Let patterns flicker in and out instead of staying fixed
+9. Symmetrical texture repetition. effectId symmetrical_texture_repetition. group distortions. intensity 1.00. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Mirror textures across multiple axes to create symmetry · Prefer rough detail textures (grass, carpet, bark) as inputs · Increase tessellation density and symmetry order with intensity · Keep detail level consistent when zooming in
+10. Depth and scale shift. effectId depth_and_scale_shift. group perceptual. intensity 1.00. Apply as changes in interpretation and coupling, not as random decorations. simulation: Use depth maps to modulate scale and blur in a time-varying way · Combine subtle focal-length drift with selective object scaling · Preserve occlusion and edges to avoid cutout artifacts · Avoid extreme fisheye unless intensity is high
+11. Depth perception distortions. effectId depth_perception_distortions. group distortions. intensity 1.00. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use depth maps to warp scale and parallax nonlinearly · Swap or compress depth layers via subtle compositing · Add contradictory focus cues (blur vs distance) at higher intensity · Keep occlusion consistent to avoid obvious cutouts
+12. Pareidolia. effectId pareidolia. group perceptual. intensity 1.00. Apply as changes in interpretation and coupling, not as random decorations. simulation: Blend low-confidence face and symbol templates into textures · Bias to peripheral vision and low-detail areas · Let forms flicker in and out rather than staying fixed · Keep it subtle to avoid becoming full external hallucinations
+13. Drifting. effectId visual_drifting. group distortions. intensity 1.00. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical-flow aligned warping for temporal coherence · Add curl-noise displacement that grows with stare-time · Keep motion slow and spatially coherent (no global camera shake) · Optionally ease back to baseline to mimic a 'double-take' reset
+14. Breathing. effectId breathing_surfaces. group distortions. intensity 0.96. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Apply low-frequency displacement locked to surfaces (UV or optical-flow) · Drive expansion and contraction with smooth oscillation (sine or noise) · Keep edges anchored to avoid camera-like wobble · Scale motion with depth so flat planes breathe more than silhouettes
+
+Output a single image only.

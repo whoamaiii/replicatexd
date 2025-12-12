@@ -1,0 +1,254 @@
+{
+  "substanceId": "custom_mix",
+  "dose": 0.79,
+  "baseSceneDescription": "A close view shows many human hands layered and arranged in a circular spiral, creating a tunnel like opening toward the center. The skin is warmly lit with visible pores and wrinkles, and faint teal ornamental markings appear across some hands. At the center there is a circular eye like focal point surrounded by intricate radial detail.",
+  "geometrySummary": "Strong surface bound sacred geometry emerges across the hands, cohering into a spiral tunnel with mandala like rings and kaleidoscopic symmetry toward the center.",
+  "distortionSummary": "The hand spiral subtly breathes and drifts as if the whole structure is slowly rotating, with depth cues stretching toward the central aperture and mild persistence on edges during implied motion.",
+  "hallucinationSummary": "The central eye like focal point can feel symbolically charged and semi autonomous, as if the scene is partially overridden by an archetypal geometric interface without fully replacing the environment.",
+  "effects": [
+    {
+      "effectId": "color_enhancement",
+      "group": "enhancements",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "contrast_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "texture_salience",
+      "group": "enhancements",
+      "intensity": 0.8,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "glow_and_haloes",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "visual_acuity_enhancement",
+      "group": "enhancements",
+      "intensity": 0.5,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "pattern_recognition_enhancement",
+      "group": "enhancements",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "breathing_surfaces",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "visual_drifting",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "flowing_textures",
+      "group": "distortions",
+      "intensity": 0.5,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "depth_perception_distortions",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "field_of_view_stretching",
+      "group": "distortions",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "afterimage_persistence",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "tracers_motion_trails",
+      "group": "distortions",
+      "intensity": 0.3,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "symmetrical_texture_repetition",
+      "group": "distortions",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "environmental_patterning",
+      "group": "distortions",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "geometric_patterning",
+      "group": "geometry",
+      "intensity": 0.8,
+      "scales": [
+        "macro",
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "mandala_forms",
+      "group": "geometry",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "form_constant_spiral",
+      "group": "geometry",
+      "intensity": 0.8,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "form_constant_tunnel",
+      "group": "geometry",
+      "intensity": 0.7,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "kaleidoscopic_tiling",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "fractal_recursion",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "three_dimensional_geometry",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "partially_overriding_visual_perception",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "pareidolia",
+      "group": "perceptual",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "depth_and_scale_shift",
+      "group": "perceptual",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "time_slicing",
+      "group": "perceptual",
+      "intensity": 0.2,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "closed_eye_visuals",
+      "group": "hallucinations",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "entity_encounters",
+      "group": "hallucinations",
+      "intensity": 0.2,
+      "scales": [
+        "macro"
+      ]
+    }
+  ],
+  "prompts": {
+    "openAIImagePrompt": "Close view of many human hands layered in a circular spiral, forming a tunnel like aperture toward the center, warm cinematic lighting, realistic skin pores and wrinkles, shallow depth of field. Subtle teal ornamental ink patterns embedded in the skin texture, aligned to the curvature of fingers and palms and consistent with perspective. Add strong psychedelic geometry as surface bound filigree that coheres into mandala rings and a spiral tunnel illusion toward a central eye like focal point, with gentle glow haloes on highlights, heightened saturation and contrast, slight breathing and drifting of the spiral structure, faint kaleidoscopic symmetry in the repeating hand forms. Keep the scene photoreal and grounded, no floating symbols detached from surfaces, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+    "shortCinematicDescription": "A spiral of interwoven hands becomes a living tunnel, its skin etched with teal geometry that blooms into mandala rings around a watchful central eye."
+  }
+}

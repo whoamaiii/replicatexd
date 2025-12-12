@@ -143,8 +143,13 @@ export function LibraryPanel() {
                     {formatDate(gen.createdAt)}
                   </div>
                   <div className="mt-2 text-xs text-white/40 truncate">
-                    {gen.model}
+                    {gen.generationModelName || gen.generationModelId || gen.model}
                   </div>
+                  {gen.analysisModelName || gen.analysisModelId ? (
+                    <div className="mt-1 text-[10px] text-white/35 truncate">
+                      Analysis: {gen.analysisModelName || gen.analysisModelId}
+                    </div>
+                  ) : null}
                   <div className="mt-3 flex items-center gap-2">
                     <a
                       href={getLibraryFileUrl(selectedProject.projectId, gen.generationId)}

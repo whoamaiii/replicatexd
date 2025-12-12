@@ -7,6 +7,10 @@ const allVisualEffects = visualEffectsData as VisualEffect[]
 
 const effectById = new Map<string, VisualEffect>(allVisualEffects.map((e) => [e.id, e]))
 
+export function getAllVisualEffects() {
+  return allVisualEffects
+}
+
 export function getEffectById(effectId: string) {
   return effectById.get(effectId)
 }
@@ -37,4 +41,3 @@ export function groupByGroup(effects: PsychedelicEffect[]): GroupedEffects {
 
   return grouped
 }
-

@@ -1,0 +1,282 @@
+{
+  "substanceId": "custom_mix",
+  "dose": 0.74,
+  "baseSceneDescription": "A surreal portrait shows a pale person with long hair against a star filled cosmic background. Their eye area appears opened into a window of swirling galaxies, with several disembodied open mouths around the frame.",
+  "geometrySummary": "High salience, surface bound spirals and mandala like symmetries emerge inside the galaxy textures and along hair strands, with occasional lattice and tiling that locks to perspective.",
+  "distortionSummary": "The scene exhibits pronounced drifting and liquid flow, with breathing edges and mild perspective instability that makes faces and hair subtly morph and stretch.",
+  "hallucinationSummary": "Intermittent overlays suggest additional mouths, eyes, or presence like forms in the star field, with brief internal scene flashes rather than full scene replacement.",
+  "effects": [
+    {
+      "effectId": "color_enhancement",
+      "group": "enhancements",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "contrast_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "visual_acuity_enhancement",
+      "group": "enhancements",
+      "intensity": 0.5,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "glow_and_haloes",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "texture_salience",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "pattern_recognition_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "breathing_surfaces",
+      "group": "distortions",
+      "intensity": 0.6,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "visual_drifting",
+      "group": "distortions",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "flowing_textures",
+      "group": "distortions",
+      "intensity": 0.7,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "morphing_objects",
+      "group": "distortions",
+      "intensity": 0.5,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "melting_deformation",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "perspective_warp",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "tracers_motion_trails",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "afterimage_persistence",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "geometric_patterning",
+      "group": "geometry",
+      "intensity": 0.7,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "form_constant_spiral",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "mandala_forms",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "fractal_recursion",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "kaleidoscopic_tiling",
+      "group": "geometry",
+      "intensity": 0.4,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "form_constant_tunnel",
+      "group": "geometry",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "form_constant_lattice",
+      "group": "geometry",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "form_constant_cobweb",
+      "group": "geometry",
+      "intensity": 0.3,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "closed_eye_visuals",
+      "group": "hallucinations",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "internal_scene_hallucinations",
+      "group": "hallucinations",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "external_object_hallucinations",
+      "group": "hallucinations",
+      "intensity": 0.4,
+      "scales": [
+        "meso",
+        "macro"
+      ]
+    },
+    {
+      "effectId": "entity_encounters",
+      "group": "hallucinations",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "scene_replacement",
+      "group": "hallucinations",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "pareidolia",
+      "group": "perceptual",
+      "intensity": 0.6,
+      "scales": [
+        "meso",
+        "macro"
+      ]
+    },
+    {
+      "effectId": "depth_and_scale_shift",
+      "group": "perceptual",
+      "intensity": 0.6,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "dissociative_spatial_discontinuity",
+      "group": "perceptual",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "time_slicing",
+      "group": "perceptual",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "audio_visual_synesthesia",
+      "group": "perceptual",
+      "intensity": 0.2,
+      "scales": [
+        "macro"
+      ]
+    }
+  ],
+  "prompts": {
+    "openAIImagePrompt": "Surreal cinematic portrait of a person with long hair in a deep space backdrop, their eye region opened like a soft organic window revealing swirling galaxies. Add strong dose perceptual effects: enhanced color saturation, increased contrast, luminous haloes on stars, crisp micro texture on skin and hair. Apply clear visual drifting and breathing deformation so hair strands and facial edges gently undulate; introduce flowing textures so the galaxy dust appears to stream along hair and skin contours. Embed geometric patterning into materials: spiral and mandala motifs woven into the star fields and galaxy arms, subtle lattice and kaleidoscopic tiling appearing as iridescent overlays that follow surface curvature and perspective, consistent with scene lighting. Include mild morphing so nearby negative space suggests additional mouths or eyes through pareidolia, without fully replacing the scene. Photoreal painterly finish, shallow depth of field, dramatic chiaroscuro lighting, sharp focal point on the central face and galaxy window.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+    "shortCinematicDescription": "A calm face floats in starlight as the eye space opens into a rotating galaxy, and the surrounding cosmos slowly breathes and drifts into spiral symmetry."
+  }
+}

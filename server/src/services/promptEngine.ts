@@ -2,8 +2,9 @@ import fs from 'node:fs'
 import type { ImageAnalysisResult } from '../../../shared/types/analysis'
 import type { PromptBundle, PromptFlavor } from '../../../shared/types/prompts'
 import type { VisualEffect, VisualEffectGroup } from '../../../shared/types/effects'
+import { selectUsedEffects } from '../../../shared/lib/effectsStudio'
 
-type EffectMeta = Pick<VisualEffect, 'id' | 'group' | 'displayName' | 'shortDescription' | 'notesOnSimulation'>
+type EffectMeta = Pick<VisualEffect, 'id' | 'group' | 'displayName' | 'shortDescription' | 'simulationHints'>
 
 let cachedEffectMetaById: Map<string, EffectMeta> | null = null
 
@@ -111,7 +112,9 @@ function loadEffectMetaById() {
       group: v.group,
       displayName: v.displayName,
       shortDescription: typeof v.shortDescription === 'string' ? v.shortDescription : '',
-      notesOnSimulation: typeof v.notesOnSimulation === 'string' ? v.notesOnSimulation : '',
+      simulationHints: Array.isArray(v.simulationHints)
+        ? v.simulationHints.filter((hint) => typeof hint === 'string')
+        : [],
     })
   }
 
@@ -136,7 +139,7 @@ function buildTopEffectsSummary(
     const meta = metaById.get(e.effectId)
     const name = meta?.displayName ?? e.effectId
     const group = meta?.group ?? e.group
-    return `${intensityWord(e.intensity)} ${name} in ${groupLabel(group)}`
+    return `${intensityWord(e.intensity)} (${clamp01(e.intensity).toFixed(2)}) ${name} in ${groupLabel(group)}`
   })
 
   const compactNames = top.map((e) => metaById.get(e.effectId)?.displayName ?? e.effectId)
@@ -153,7 +156,11 @@ function buildTopEffectsSummary(
   }
 }
 
-function buildPromptText(flavor: PromptFlavor, analysis: ImageAnalysisResult, metaById: Map<string, EffectMeta>) {
+function buildPromptText(
+  flavor: PromptFlavor,
+  analysis: ImageAnalysisResult,
+  metaById: Map<string, EffectMeta>,
+) {
   const band = doseBand(analysis.dose)
   const substance = getSubstanceName(analysis.substanceId)
   const tone = getSubstanceTone(analysis.substanceId, band)
@@ -162,30 +169,34 @@ function buildPromptText(flavor: PromptFlavor, analysis: ImageAnalysisResult, me
   const baseSentence = withoutAsciiHyphen(firstSentence(baseScene))
   const baseShort = trimTrailingPunctuation(withoutAsciiHyphen(firstSentence(baseScene)))
 
-  const topCount = analysis.effects.length >= 5 ? 5 : analysis.effects.length >= 3 ? analysis.effects.length : analysis.effects.length
-  const summary = buildTopEffectsSummary(analysis, metaById, topCount)
+  const summary = buildTopEffectsSummary(analysis, metaById, Math.min(10, analysis.effects.length))
 
   const effectLineText = joinWithAnd(summary.effectLines)
   const effectNamesCsv = summary.compactNames.join(', ')
   const effectGroupsCsv = summary.groupNames.join(', ')
 
   const styleClause = 'cinematic lighting, photoreal detail, coherent texture motion'
+  const hasEffects = summary.top.length > 0
 
   if (flavor === 'openai') {
-    const sentenceTwo = `Apply a ${band} ${substance} psychedelic look with ${effectLineText} and an overall ${tone} feeling; ${styleClause}.`
+    const sentenceTwo = hasEffects
+      ? `Apply a ${band} ${substance} psychedelic look with ${effectLineText} and an overall ${tone} feeling; ${styleClause}.`
+      : `Apply a ${band} ${substance} psychedelic look with an overall ${tone} feeling; ${styleClause}.`
     return `${baseSentence} ${sentenceTwo}`
   }
 
   if (flavor === 'midjourney') {
     const scene = baseShort || trimTrailingPunctuation(baseScene)
-    return `${scene}, ${substance}, ${band}, ${tone}, ${effectNamesCsv}, ${styleClause}`
+    const effects = hasEffects ? `, ${effectNamesCsv}` : ''
+    return `${scene}, ${substance}, ${band}, ${tone}${effects}, ${styleClause}`
   }
 
   if (flavor === 'kling') {
     const scene = baseShort || trimTrailingPunctuation(baseScene)
     const motion = 'seamless loop video, slow orbit camera, subtle push in'
     const loopCue = 'smooth breathing motion, stable composition, loopable'
-    return `${motion}. ${scene}. ${band} ${substance} feel with ${effectNamesCsv}. ${loopCue}. ${styleClause}.`
+    const effectPhrase = hasEffects ? ` with ${effectNamesCsv}` : ''
+    return `${motion}. ${scene}. ${band} ${substance} feel${effectPhrase}. ${loopCue}. ${styleClause}.`
   }
 
   const technicalMotifs: string[] = []
@@ -219,8 +230,9 @@ function buildPromptText(flavor: PromptFlavor, analysis: ImageAnalysisResult, me
   const motifs = joinWithAnd(Array.from(new Set(technicalMotifs)))
   const scene = baseShort || trimTrailingPunctuation(baseScene)
   const method = 'temporally coherent warping, controlled bloom, contrast shaping, symmetry driven geometry'
-  const taxonomyLine = `Primary effect groups: ${effectGroupsCsv}.`
-  return `${scene}. ${taxonomyLine} Emphasize ${effectNamesCsv}. Use ${motifs}. Apply ${method}. Overall mood is ${tone}.`
+  const taxonomyLine = hasEffects ? `Primary effect groups: ${effectGroupsCsv}.` : ''
+  const emphasizeLine = hasEffects ? `Emphasize ${effectNamesCsv}.` : 'Keep effects subtle and coherent.'
+  return `${scene}. ${taxonomyLine} ${emphasizeLine} Use ${motifs}. Apply ${method}. Overall mood is ${tone}.`
 }
 
 function buildBundle(
@@ -242,27 +254,35 @@ function buildBundle(
   }
 }
 
-export function buildPromptBundleForAnalysis(analysis: ImageAnalysisResult): PromptBundle[] {
+export function buildPromptBundleForAnalysis(
+  analysis: ImageAnalysisResult,
+  effectsStudioSettings?: { threshold: number; maxEffects: number },
+): PromptBundle[] {
   const metaById = loadEffectMetaById()
+  const selected = selectUsedEffects({
+    effects: analysis.effects,
+    threshold: effectsStudioSettings ? effectsStudioSettings.threshold : 0,
+    maxEffects: effectsStudioSettings ? effectsStudioSettings.maxEffects : 5,
+  })
 
   const bundles: PromptBundle[] = [
     buildBundle(
       'openai',
-      analysis,
+      { ...analysis, effects: selected },
       metaById,
       'OpenAI',
       'Natural language prompt with clear effect guidance.',
     ),
     buildBundle(
       'midjourney',
-      analysis,
+      { ...analysis, effects: selected },
       metaById,
       'Midjourney',
       'Compact comma based prompt for quick iteration.',
     ),
     buildBundle(
       'kling',
-      analysis,
+      { ...analysis, effects: selected },
       metaById,
       'Kling',
       'Video oriented prompt with simple camera motion and looping cues.',
@@ -270,7 +290,7 @@ export function buildPromptBundleForAnalysis(analysis: ImageAnalysisResult): Pro
     ),
     buildBundle(
       'technical',
-      analysis,
+      { ...analysis, effects: selected },
       metaById,
       'Technical',
       'Explicit taxonomy language and perceptual terminology.',
@@ -280,5 +300,3 @@ export function buildPromptBundleForAnalysis(analysis: ImageAnalysisResult): Pro
 
   return bundles
 }
-
-

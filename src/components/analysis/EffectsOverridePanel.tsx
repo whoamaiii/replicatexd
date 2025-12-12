@@ -152,8 +152,8 @@ export function EffectsOverridePanel(props: Props) {
 
                       {meta?.typicalIntensityRange && (
                         <div className="mt-1 text-[10px] text-white/45">
-                          Typical range: {meta.typicalIntensityRange[0].toFixed(1)} -{' '}
-                          {meta.typicalIntensityRange[1].toFixed(1)}
+                          Typical range: {meta.typicalIntensityRange.min.toFixed(2)} -{' '}
+                          {meta.typicalIntensityRange.max.toFixed(2)}
                         </div>
                       )}
                     </div>

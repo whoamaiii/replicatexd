@@ -10,6 +10,7 @@ import type {
   SaveProjectRequest,
 } from '../../shared/types/library'
 import type { ImageAnalysisResult } from '../../shared/types/analysis'
+import type { RouterSettings } from '../types/router'
 
 type ApiError = {
   message: string
@@ -88,6 +89,11 @@ export type GenerateImageRequest = GenerateRequest & {
   projectId?: string
   originalAnalysis?: ImageAnalysisResult
   saveToLibrary?: boolean
+  // Optional fields for map support (backward compatible)
+  generationMode?: 'prompt_only' | 'base_image_edit'
+  mapSourceHash?: string
+  // Optional router settings for effect placement control
+  routerSettings?: RouterSettings
 }
 
 export function generateImage(request: GenerateImageRequest) {

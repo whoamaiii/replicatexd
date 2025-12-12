@@ -1,0 +1,18 @@
+{
+  "sourceHash": "f351b4d58a70d1c3",
+  "depthEnabled": true,
+  "depthWeight": 0.7,
+  "normalsEnabled": true,
+  "normalsWeight": 0.5,
+  "edgesEnabled": true,
+  "edgesWeight": 0.1,
+  "segmentationEnabled": false,
+  "segmentationWeight": 0.5,
+  "faceProtectionEnabled": true,
+  "faceProtectionStrength": 0.8,
+  "handsProtectionEnabled": true,
+  "handsProtectionStrength": 0.6,
+  "surfaceLockEnabled": true,
+  "surfaceLockStrength": 0.6,
+  "updatedAt": "2025-12-12T17:17:55.639Z"
+}

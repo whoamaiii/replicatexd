@@ -1,0 +1,229 @@
+{
+  "sourceHash": "5bab053e478cfe75",
+  "sourceWidth": 1024,
+  "sourceHeight": 1536,
+  "createdAt": "2025-12-12T15:43:32.919Z",
+  "provider": "nanoBanana",
+  "generationMeta": {
+    "provider": "nanoBanana",
+    "modelId": "google/gemini-3-pro-image-preview",
+    "createdAt": "2025-12-12T15:43:32.919Z",
+    "usage": {
+      "byKind": {
+        "depth": [
+          {
+            "prompt_tokens": 394,
+            "completion_tokens": 1440,
+            "total_tokens": 1834,
+            "cost": 0.139028,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": null,
+              "upstream_inference_prompt_cost": 0.000788,
+              "upstream_inference_completions_cost": 0.13824
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 181,
+              "image_tokens": 1120
+            }
+          }
+        ],
+        "normals": [
+          {
+            "prompt_tokens": 394,
+            "completion_tokens": 1681,
+            "total_tokens": 2075,
+            "cost": 0.14192,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": null,
+              "upstream_inference_prompt_cost": 0.000788,
+              "upstream_inference_completions_cost": 0.141132
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 337,
+              "image_tokens": 1120
+            }
+          }
+        ],
+        "edges": [
+          {
+            "prompt_tokens": 391,
+            "completion_tokens": 1437,
+            "total_tokens": 1828,
+            "cost": 0.138986,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": null,
+              "upstream_inference_prompt_cost": 0.000782,
+              "upstream_inference_completions_cost": 0.138204
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 197,
+              "image_tokens": 1120
+            }
+          },
+          {
+            "prompt_tokens": 391,
+            "completion_tokens": 1464,
+            "total_tokens": 1855,
+            "cost": 0.13931,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": null,
+              "upstream_inference_prompt_cost": 0.000782,
+              "upstream_inference_completions_cost": 0.138528
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 238,
+              "image_tokens": 1120
+            }
+          }
+        ],
+        "faceMask": [
+          {
+            "prompt_tokens": 398,
+            "completion_tokens": 1425,
+            "total_tokens": 1823,
+            "cost": 0.138856,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": null,
+              "upstream_inference_prompt_cost": 0.000796,
+              "upstream_inference_completions_cost": 0.13806
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 175,
+              "image_tokens": 1120
+            }
+          }
+        ],
+        "handsMask": [
+          {
+            "prompt_tokens": 391,
+            "completion_tokens": 1315,
+            "total_tokens": 1706,
+            "cost": 0.137522,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": null,
+              "upstream_inference_prompt_cost": 0.000782,
+              "upstream_inference_completions_cost": 0.13674
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 118,
+              "image_tokens": 1120
+            }
+          }
+        ]
+      }
+    },
+    "cost": 0.835622,
+    "attempts": [
+      {
+        "kind": "depth",
+        "provider": "nanoBanana",
+        "ok": true
+      },
+      {
+        "kind": "normals",
+        "provider": "nanoBanana",
+        "ok": true
+      },
+      {
+        "kind": "edges",
+        "provider": "nanoBanana",
+        "ok": false,
+        "error": "Edges not high-contrast enough (twoToneRatio=0.88)"
+      },
+      {
+        "kind": "edges",
+        "provider": "nanoBanana",
+        "ok": true
+      },
+      {
+        "kind": "faceMask",
+        "provider": "nanoBanana",
+        "ok": true
+      },
+      {
+        "kind": "handsMask",
+        "provider": "nanoBanana",
+        "ok": true
+      }
+    ]
+  },
+  "maps": [
+    {
+      "kind": "depth",
+      "filename": "depth.png",
+      "width": 1024,
+      "height": 1536,
+      "generatedAt": "2025-12-12T15:43:51.106Z",
+      "modelUsed": "google/gemini-3-pro-image-preview"
+    },
+    {
+      "kind": "normals",
+      "filename": "normals.png",
+      "width": 1024,
+      "height": 1536,
+      "generatedAt": "2025-12-12T15:44:15.461Z",
+      "modelUsed": "google/gemini-3-pro-image-preview"
+    },
+    {
+      "kind": "edges",
+      "filename": "edges.png",
+      "width": 1024,
+      "height": 1536,
+      "generatedAt": "2025-12-12T15:45:01.439Z",
+      "modelUsed": "google/gemini-3-pro-image-preview"
+    },
+    {
+      "kind": "faceMask",
+      "filename": "faceMask.png",
+      "width": 1024,
+      "height": 1536,
+      "generatedAt": "2025-12-12T15:45:20.971Z",
+      "modelUsed": "google/gemini-3-pro-image-preview"
+    },
+    {
+      "kind": "handsMask",
+      "filename": "handsMask.png",
+      "width": 1024,
+      "height": 1536,
+      "generatedAt": "2025-12-12T15:45:44.368Z",
+      "modelUsed": "google/gemini-3-pro-image-preview"
+    }
+  ],
+  "inputFilename": "input_original.png"
+}

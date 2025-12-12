@@ -1,0 +1,3811 @@
+[
+  {
+    "projectId": "44b87872-45e5-49ba-9cf2-2c45c185798a",
+    "createdAt": "2025-12-12T13:20:06.678Z",
+    "lastActivityAt": "2025-12-12T13:20:06.699Z",
+    "isSaved": false,
+    "expiresAt": "2025-12-17T13:20:06.699Z",
+    "generations": [
+      {
+        "generationId": "964e14e1-322b-44ef-9647-26964f5653af",
+        "createdAt": "2025-12-12T13:20:06.698Z",
+        "substanceId": "lsd",
+        "dose": 0.45,
+        "model": "black-forest-labs/flux.2-pro",
+        "imagePath": "964e14e1-322b-44ef-9647-26964f5653af.png",
+        "mimeType": "image/png",
+        "usedPrompt": "Close up surreal spiral of many human hands interlocked in a vortex around a central eye like circle, dark background. Apply LSD common dose visuals with sharp neon leaning clarity: increase saturation and contrast, add subtle glowing edges on fingertips, amplify skin pore detail, and overlay intricate turquoise geometric filigree that is embedded in the skin and follows the hand contours and perspective. Add gentle breathing and slow drifting of the spiral, faint motion trails on finger edges, and nested mandala rings and spiral form constants that remain surface bound and lighting consistent. Cinematic macro lighting, crisp focus, high detail, coherent anatomy, no scene replacement.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.\n\nBase scene: A close view shows many human hands arranged in a tight spiral pattern around a central circular eye like shape. The hands are layered and interlocked, with teal ornamental markings across the skin on a dark background. The composition already reads like a mandala or vortex.\nSubstance id: lsd\nDose: 0.45\n\nCritical constraints:\n1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.\n2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.\n3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.\n4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.\n5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.\n6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.\n\n\n\nEffect Routing:\n- Apply all effects as surface-embedded textures and materials (60% adherence). Do not create floating geometry or overlay planes.\n- Emphasize geometric patterns (fractals, tilings, form constants).\n- Emphasize hallucinatory content (entities, transformations).\n\nEmphasize these effects:\n1. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase saturation with gentle hue protection, then add selective vibrance in mid tones. Couple small color pulses to audio or motion for a living feel.\n2. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use local contrast or unsharp masking with restraint to avoid crunchy artifacts. Modulate contrast more in mid tones than extremes for a natural but heightened look.\n3. Texture salience. effectId texture_salience. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro contrast and gently amplify periodic components of textures. Use time coherent noise modulation so the texture feels alive without becoming unstable.\n4. Geometric patterning. effectId geometric_patterning. group geometry. intensity 0.96. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate patterns procedurally and lock them to surfaces with tracking. Increase complexity, symmetry, and depth cues as intensity rises.\n5. Visual acuity enhancement. effectId visual_acuity_enhancement. group enhancements. intensity 0.70. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Add edge aware sharpening and micro contrast, then stabilize over time to avoid shimmer. Pair with mild chroma smoothing to keep the look clean.\n6. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 0.70. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use feature amplification on texture maps and add a low strength semantic overlay from segmentation or edge maps. Keep it subtle at low intensity so it reads as emergence rather than sticker art.\n7. Visual drifting. effectId visual_drifting. group distortions. intensity 0.60. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical flow aligned warping or a material locked UV advection. Increase drift speed and curl noise over time as intensity rises, but preserve temporal coherence.\n8. Mandala forms. effectId mandala_forms. group geometry. intensity 0.80. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate radial symmetry with multiple rings and petal like motifs. Add slow breathing in scale and subtle depth shading to suggest layered structure.\n\nOutput a single image only.",
+        "originalAnalysis": {
+          "substanceId": "lsd",
+          "dose": 0.45,
+          "baseSceneDescription": "A close view shows many human hands arranged in a tight spiral pattern around a central circular eye like shape. The hands are layered and interlocked, with teal ornamental markings across the skin on a dark background. The composition already reads like a mandala or vortex.",
+          "geometrySummary": "Intricate surface bound linework and mandala geometry intensify on the skin, locking to the spiral layout and subtly repeating into nested rings toward the center.",
+          "distortionSummary": "The spiral seems to slowly drift and breathe, with gentle rippling along knuckles and fingers and mild motion persistence around the hand edges.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "micro"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.2,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "micro"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.2,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Close up surreal spiral of many human hands interlocked in a vortex around a central eye like circle, dark background. Apply LSD common dose visuals with sharp neon leaning clarity: increase saturation and contrast, add subtle glowing edges on fingertips, amplify skin pore detail, and overlay intricate turquoise geometric filigree that is embedded in the skin and follows the hand contours and perspective. Add gentle breathing and slow drifting of the spiral, faint motion trails on finger edges, and nested mandala rings and spiral form constants that remain surface bound and lighting consistent. Cinematic macro lighting, crisp focus, high detail, coherent anatomy, no scene replacement.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "Hands spiral inward toward a staring center as neon clarity sharpens every crease, while surface mandalas shimmer and the vortex gently breathes."
+          }
+        },
+        "workingAnalysis": {
+          "substanceId": "lsd",
+          "dose": 0.45,
+          "baseSceneDescription": "A close view shows many human hands arranged in a tight spiral pattern around a central circular eye like shape. The hands are layered and interlocked, with teal ornamental markings across the skin on a dark background. The composition already reads like a mandala or vortex.",
+          "geometrySummary": "Intricate surface bound linework and mandala geometry intensify on the skin, locking to the spiral layout and subtly repeating into nested rings toward the center.",
+          "distortionSummary": "The spiral seems to slowly drift and breathe, with gentle rippling along knuckles and fingers and mild motion persistence around the hand edges.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "micro"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.2,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "micro"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.2,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Close up surreal spiral of many human hands interlocked in a vortex around a central eye like circle, dark background. Apply LSD common dose visuals with sharp neon leaning clarity: increase saturation and contrast, add subtle glowing edges on fingertips, amplify skin pore detail, and overlay intricate turquoise geometric filigree that is embedded in the skin and follows the hand contours and perspective. Add gentle breathing and slow drifting of the spiral, faint motion trails on finger edges, and nested mandala rings and spiral form constants that remain surface bound and lighting consistent. Cinematic macro lighting, crisp focus, high detail, coherent anatomy, no scene replacement.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "Hands spiral inward toward a staring center as neon clarity sharpens every crease, while surface mandalas shimmer and the vortex gently breathes."
+          }
+        },
+        "routerSettings": {
+          "enabled": true,
+          "defaultRegions": [
+            "subject",
+            "background"
+          ],
+          "defaultDepthBands": [
+            "near",
+            "far"
+          ],
+          "protectFace": false,
+          "protectHands": false,
+          "protectEdges": true,
+          "surfaceLockStrength": 0.6,
+          "groupMultipliers": {
+            "enhancements": 1.4,
+            "distortions": 1.2,
+            "geometry": 1.6,
+            "hallucinations": 1.6,
+            "perceptual": 1.4
+          },
+          "rules": []
+        }
+      }
+    ],
+    "inputImagePath": "input.png"
+  },
+  {
+    "projectId": "82e82ff2-0752-46d2-bb0e-47f4a4b7ddc5",
+    "createdAt": "2025-12-12T16:57:34.046Z",
+    "lastActivityAt": "2025-12-12T17:22:18.868Z",
+    "isSaved": true,
+    "expiresAt": null,
+    "generations": [
+      {
+        "generationId": "322e19bf-2bb7-41a8-be91-13c79c21d13e",
+        "createdAt": "2025-12-12T16:57:34.067Z",
+        "substanceId": "custom_mix",
+        "dose": 0.74,
+        "model": "black-forest-labs/flux.2-pro",
+        "imagePath": "322e19bf-2bb7-41a8-be91-13c79c21d13e.png",
+        "mimeType": "image/png",
+        "usedPrompt": "Surreal cinematic portrait in deep space: a person centered in frame with hands gently stretching the skin around the eyes, revealing a luminous spiral galaxy within the face. Surrounding background is a realistic star field with nebulae. Add strong psychedelic enhancements: saturated cosmic blues and warm golds, crisp contrast, soft bloom haloes around bright stars. Apply strong but coherent distortions: subtle breathing of skin and hair, slow drifting of stars, liquid flowing texture currents in hair and shadow gradients. Embed perspective aligned geometric patterning in surfaces: faint mandala symmetry and fractal filigree etched into the galaxy core and subtly embossed into skin highlights, with spiral form constants radiating from the eye galaxy, all obeying lighting direction and facial curvature. Include mild kaleidoscopic repetition at the periphery while keeping the central face readable. High detail, realistic skin pores, cinematic depth of field, atmospheric glow, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.\n\nBase scene: A surreal portrait of a person set against a deep space background filled with stars and galaxies. Hands stretch the skin around the eyes, revealing a bright spiral galaxy where the eyes would be, and several large open mouths appear around the edges.\n\nCritical constraints:\n1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.\n2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.\n3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.\n4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.\n5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.\n6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.\n\n\nStructural guidance:\n- Preserve surface structure and depth relationships (strength: 60%).\n- Maintain depth layering and perspective (weight: 70%).\n- Preserve major edges and compositional lines (weight: 50%).\n- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).\n- Preserve hand structure and finger count. (protection: 60%).\n\n\nEffect Routing:\n- Apply all effects as surface-embedded textures and materials (60% adherence). Do not create floating geometry or overlay planes.\n- Do not modify face regions. Keep facial features, identity, and expression stable. No extra eyes, distorted features, or pattern intrusion on faces.\n- Preserve hand anatomy and finger count. Keep hands structurally intact.\n- Respect major edges and silhouettes. Keep compositional boundaries stable.\n- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.\n- Concentrate effects in the near depth band.\n- Apply global color and perception shifts uniformly across the entire image.\n- Emphasize geometric patterns (fractals, tilings, form constants).\n- Emphasize hallucinatory content (entities, transformations).\n- Emphasize perceptual effects (synesthesia, time perception).\n- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n\nEmphasize these effects:\n1. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.98. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase saturation with gentle hue protection, then add selective vibrance in mid tones. Couple small color pulses to audio or motion for a living feel.\n2. Glow and haloes. effectId glow_and_haloes. group enhancements. intensity 0.98. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use bloom with a soft knee and a wide radius. Add a second subtle edge glow pass that follows high contrast boundaries to suggest an aura.\n3. Visual drifting. effectId visual_drifting. group distortions. intensity 0.49. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical flow aligned warping or a material locked UV advection. Increase drift speed and curl noise over time as intensity rises, but preserve temporal coherence.\n4. Flowing textures. effectId flowing_textures. group distortions. intensity 0.49. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Run a low velocity vector field over texture space and advect texture coordinates. Add a small divergence free curl component for an organic flow.\n5. Geometric patterning. effectId geometric_patterning. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate patterns procedurally and lock them to surfaces with tracking. Increase complexity, symmetry, and depth cues as intensity rises.\n6. Form constant spiral. effectId form_constant_spiral. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Build spiral fields in polar coordinates and modulate thickness with noise. Keep rotation smooth and add nested harmonics for the classic multi spiral look.\n7. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use local contrast or unsharp masking with restraint to avoid crunchy artifacts. Modulate contrast more in mid tones than extremes for a natural but heightened look.\n8. Texture salience. effectId texture_salience. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro contrast and gently amplify periodic components of textures. Use time coherent noise modulation so the texture feels alive without becoming unstable.\n\nOutput a single image only.",
+        "originalAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.74,
+          "baseSceneDescription": "A surreal portrait of a person set against a deep space background filled with stars and galaxies. Hands stretch the skin around the eyes, revealing a bright spiral galaxy where the eyes would be, and several large open mouths appear around the edges.",
+          "geometrySummary": "Strong surface bound spirals and mandala like symmetry emerge from star fields and skin texture, with fractal recursion nested inside galaxy cores and along hair like flows.",
+          "distortionSummary": "The scene feels fluid and unstable, with breathing skin, drifting star fields, and flowing texture currents that bend facial contours and gently warp perspective.",
+          "hallucinationSummary": "Internal cosmic imagery overlays the face and surrounding void, with occasional suggestion of presence or watchers forming in negative space, while the underlying scene remains partially anchored.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "melting_deformation",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "morphing_objects",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "field_of_view_stretching",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_snow",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "form_constant_lattice",
+              "group": "geometry",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_cobweb",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "external_object_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "entity_encounters",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "scene_replacement",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "audio_visual_synesthesia",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "dissociative_spatial_discontinuity",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Surreal cinematic portrait in deep space: a person centered in frame with hands gently stretching the skin around the eyes, revealing a luminous spiral galaxy within the face. Surrounding background is a realistic star field with nebulae. Add strong psychedelic enhancements: saturated cosmic blues and warm golds, crisp contrast, soft bloom haloes around bright stars. Apply strong but coherent distortions: subtle breathing of skin and hair, slow drifting of stars, liquid flowing texture currents in hair and shadow gradients. Embed perspective aligned geometric patterning in surfaces: faint mandala symmetry and fractal filigree etched into the galaxy core and subtly embossed into skin highlights, with spiral form constants radiating from the eye galaxy, all obeying lighting direction and facial curvature. Include mild kaleidoscopic repetition at the periphery while keeping the central face readable. High detail, realistic skin pores, cinematic depth of field, atmospheric glow, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A still face in a silent star field, as the eye region opens into a spinning galaxy and the surrounding space begins to breathe, drift, and assemble into spiral mandala geometry."
+          }
+        },
+        "workingAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.74,
+          "baseSceneDescription": "A surreal portrait of a person set against a deep space background filled with stars and galaxies. Hands stretch the skin around the eyes, revealing a bright spiral galaxy where the eyes would be, and several large open mouths appear around the edges.",
+          "geometrySummary": "Strong surface bound spirals and mandala like symmetry emerge from star fields and skin texture, with fractal recursion nested inside galaxy cores and along hair like flows.",
+          "distortionSummary": "The scene feels fluid and unstable, with breathing skin, drifting star fields, and flowing texture currents that bend facial contours and gently warp perspective.",
+          "hallucinationSummary": "Internal cosmic imagery overlays the face and surrounding void, with occasional suggestion of presence or watchers forming in negative space, while the underlying scene remains partially anchored.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "melting_deformation",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "morphing_objects",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "field_of_view_stretching",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_snow",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "form_constant_lattice",
+              "group": "geometry",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_cobweb",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "external_object_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "entity_encounters",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "scene_replacement",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "audio_visual_synesthesia",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "dissociative_spatial_discontinuity",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Surreal cinematic portrait in deep space: a person centered in frame with hands gently stretching the skin around the eyes, revealing a luminous spiral galaxy within the face. Surrounding background is a realistic star field with nebulae. Add strong psychedelic enhancements: saturated cosmic blues and warm golds, crisp contrast, soft bloom haloes around bright stars. Apply strong but coherent distortions: subtle breathing of skin and hair, slow drifting of stars, liquid flowing texture currents in hair and shadow gradients. Embed perspective aligned geometric patterning in surfaces: faint mandala symmetry and fractal filigree etched into the galaxy core and subtly embossed into skin highlights, with spiral form constants radiating from the eye galaxy, all obeying lighting direction and facial curvature. Include mild kaleidoscopic repetition at the periphery while keeping the central face readable. High detail, realistic skin pores, cinematic depth of field, atmospheric glow, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A still face in a silent star field, as the eye region opens into a spinning galaxy and the surrounding space begins to breathe, drift, and assemble into spiral mandala geometry."
+          }
+        },
+        "routerSettings": {
+          "enabled": true,
+          "defaultRegions": [
+            "subject",
+            "background",
+            "global"
+          ],
+          "defaultDepthBands": [
+            "near"
+          ],
+          "protectFace": true,
+          "protectHands": true,
+          "protectEdges": true,
+          "surfaceLockStrength": 0.6,
+          "groupMultipliers": {
+            "enhancements": 1.4,
+            "distortions": 0.7,
+            "geometry": 1.8,
+            "hallucinations": 1.6,
+            "perceptual": 1.7
+          },
+          "rules": [
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.5,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_drifting",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "texture_salience",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.4,
+              "protectEdges": true
+            },
+            {
+              "effectId": "geometric_patterning",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            }
+          ]
+        }
+      },
+      {
+        "generationId": "68560636-bcf3-48e5-bd7a-ed7cbab1a657",
+        "createdAt": "2025-12-12T17:22:18.867Z",
+        "substanceId": "custom_mix",
+        "dose": 0.74,
+        "model": "black-forest-labs/flux.2-pro",
+        "imagePath": "68560636-bcf3-48e5-bd7a-ed7cbab1a657.png",
+        "mimeType": "image/png",
+        "usedPrompt": "Surreal cinematic portrait of a person with long hair in a deep space backdrop, their eye region opened like a soft organic window revealing swirling galaxies. Add strong dose perceptual effects: enhanced color saturation, increased contrast, luminous haloes on stars, crisp micro texture on skin and hair. Apply clear visual drifting and breathing deformation so hair strands and facial edges gently undulate; introduce flowing textures so the galaxy dust appears to stream along hair and skin contours. Embed geometric patterning into materials: spiral and mandala motifs woven into the star fields and galaxy arms, subtle lattice and kaleidoscopic tiling appearing as iridescent overlays that follow surface curvature and perspective, consistent with scene lighting. Include mild morphing so nearby negative space suggests additional mouths or eyes through pareidolia, without fully replacing the scene. Photoreal painterly finish, shallow depth of field, dramatic chiaroscuro lighting, sharp focal point on the central face and galaxy window.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.\n\nBase scene: A surreal portrait shows a pale person with long hair against a star filled cosmic background. Their eye area appears opened into a window of swirling galaxies, with several disembodied open mouths around the frame.\n\nCritical constraints:\n1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.\n2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.\n3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.\n4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.\n5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.\n6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.\n\n\nStructural guidance:\n- Preserve surface structure and depth relationships (strength: 60%).\n- Maintain depth layering and perspective (weight: 70%).\n- Preserve major edges and compositional lines (weight: 10%).\n- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).\n- Preserve hand structure and finger count. (protection: 60%).\n\n\nEffect Routing:\n- Apply all effects as surface-embedded textures and materials (80% adherence). Do not create floating geometry or overlay planes.\n- Do not modify face regions. Keep facial features, identity, and expression stable. No extra eyes, distorted features, or pattern intrusion on faces.\n- Preserve hand anatomy and finger count. Keep hands structurally intact.\n- Respect major edges and silhouettes. Keep compositional boundaries stable.\n- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.\n- Concentrate effects in the near depth band.\n- Apply global color and perception shifts uniformly across the entire image.\n- Emphasize geometric patterns (fractals, tilings, form constants).\n- Emphasize hallucinatory content (entities, transformations).\n- Emphasize perceptual effects (synesthesia, time perception).\n- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n\nEmphasize these effects:\n1. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.98. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase saturation with gentle hue protection, then add selective vibrance in mid tones. Couple small color pulses to audio or motion for a living feel.\n2. Visual drifting. effectId visual_drifting. group distortions. intensity 0.49. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical flow aligned warping or a material locked UV advection. Increase drift speed and curl noise over time as intensity rises, but preserve temporal coherence.\n3. Flowing textures. effectId flowing_textures. group distortions. intensity 0.49. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Run a low velocity vector field over texture space and advect texture coordinates. Add a small divergence free curl component for an organic flow.\n4. Geometric patterning. effectId geometric_patterning. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate patterns procedurally and lock them to surfaces with tracking. Increase complexity, symmetry, and depth cues as intensity rises.\n5. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use local contrast or unsharp masking with restraint to avoid crunchy artifacts. Modulate contrast more in mid tones than extremes for a natural but heightened look.\n6. Glow and haloes. effectId glow_and_haloes. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use bloom with a soft knee and a wide radius. Add a second subtle edge glow pass that follows high contrast boundaries to suggest an aura.\n7. Texture salience. effectId texture_salience. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro contrast and gently amplify periodic components of textures. Use time coherent noise modulation so the texture feels alive without becoming unstable.\n8. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Use feature amplification on texture maps and add a low strength semantic overlay from segmentation or edge maps. Keep it subtle at low intensity so it reads as emergence rather than sticker art.\n\nOutput a single image only.",
+        "originalAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.74,
+          "baseSceneDescription": "A surreal portrait of a person set against a deep space background filled with stars and galaxies. Hands stretch the skin around the eyes, revealing a bright spiral galaxy where the eyes would be, and several large open mouths appear around the edges.",
+          "geometrySummary": "Strong surface bound spirals and mandala like symmetry emerge from star fields and skin texture, with fractal recursion nested inside galaxy cores and along hair like flows.",
+          "distortionSummary": "The scene feels fluid and unstable, with breathing skin, drifting star fields, and flowing texture currents that bend facial contours and gently warp perspective.",
+          "hallucinationSummary": "Internal cosmic imagery overlays the face and surrounding void, with occasional suggestion of presence or watchers forming in negative space, while the underlying scene remains partially anchored.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "melting_deformation",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "morphing_objects",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "field_of_view_stretching",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_snow",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "form_constant_lattice",
+              "group": "geometry",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_cobweb",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "external_object_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "entity_encounters",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "scene_replacement",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "audio_visual_synesthesia",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "dissociative_spatial_discontinuity",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Surreal cinematic portrait in deep space: a person centered in frame with hands gently stretching the skin around the eyes, revealing a luminous spiral galaxy within the face. Surrounding background is a realistic star field with nebulae. Add strong psychedelic enhancements: saturated cosmic blues and warm golds, crisp contrast, soft bloom haloes around bright stars. Apply strong but coherent distortions: subtle breathing of skin and hair, slow drifting of stars, liquid flowing texture currents in hair and shadow gradients. Embed perspective aligned geometric patterning in surfaces: faint mandala symmetry and fractal filigree etched into the galaxy core and subtly embossed into skin highlights, with spiral form constants radiating from the eye galaxy, all obeying lighting direction and facial curvature. Include mild kaleidoscopic repetition at the periphery while keeping the central face readable. High detail, realistic skin pores, cinematic depth of field, atmospheric glow, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A still face in a silent star field, as the eye region opens into a spinning galaxy and the surrounding space begins to breathe, drift, and assemble into spiral mandala geometry."
+          }
+        },
+        "workingAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.74,
+          "baseSceneDescription": "A surreal portrait shows a pale person with long hair against a star filled cosmic background. Their eye area appears opened into a window of swirling galaxies, with several disembodied open mouths around the frame.",
+          "geometrySummary": "High salience, surface bound spirals and mandala like symmetries emerge inside the galaxy textures and along hair strands, with occasional lattice and tiling that locks to perspective.",
+          "distortionSummary": "The scene exhibits pronounced drifting and liquid flow, with breathing edges and mild perspective instability that makes faces and hair subtly morph and stretch.",
+          "hallucinationSummary": "Intermittent overlays suggest additional mouths, eyes, or presence like forms in the star field, with brief internal scene flashes rather than full scene replacement.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "morphing_objects",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "melting_deformation",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.4,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "form_constant_lattice",
+              "group": "geometry",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_cobweb",
+              "group": "geometry",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "external_object_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.4,
+              "scales": [
+                "meso",
+                "macro"
+              ]
+            },
+            {
+              "effectId": "entity_encounters",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "scene_replacement",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "meso",
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "dissociative_spatial_discontinuity",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "audio_visual_synesthesia",
+              "group": "perceptual",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Surreal cinematic portrait of a person with long hair in a deep space backdrop, their eye region opened like a soft organic window revealing swirling galaxies. Add strong dose perceptual effects: enhanced color saturation, increased contrast, luminous haloes on stars, crisp micro texture on skin and hair. Apply clear visual drifting and breathing deformation so hair strands and facial edges gently undulate; introduce flowing textures so the galaxy dust appears to stream along hair and skin contours. Embed geometric patterning into materials: spiral and mandala motifs woven into the star fields and galaxy arms, subtle lattice and kaleidoscopic tiling appearing as iridescent overlays that follow surface curvature and perspective, consistent with scene lighting. Include mild morphing so nearby negative space suggests additional mouths or eyes through pareidolia, without fully replacing the scene. Photoreal painterly finish, shallow depth of field, dramatic chiaroscuro lighting, sharp focal point on the central face and galaxy window.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A calm face floats in starlight as the eye space opens into a rotating galaxy, and the surrounding cosmos slowly breathes and drifts into spiral symmetry."
+          }
+        },
+        "routerSettings": {
+          "enabled": true,
+          "defaultRegions": [
+            "subject",
+            "background",
+            "global"
+          ],
+          "defaultDepthBands": [
+            "near"
+          ],
+          "protectFace": true,
+          "protectHands": true,
+          "protectEdges": true,
+          "surfaceLockStrength": 0.8,
+          "groupMultipliers": {
+            "enhancements": 1.4,
+            "distortions": 0.7,
+            "geometry": 1.8,
+            "hallucinations": 1.6,
+            "perceptual": 1.7
+          },
+          "rules": [
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.5,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_drifting",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.9,
+              "protectEdges": true
+            },
+            {
+              "effectId": "texture_salience",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.4,
+              "protectEdges": true
+            },
+            {
+              "effectId": "geometric_patterning",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "color_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "flowing_textures",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            }
+          ]
+        }
+      }
+    ],
+    "inputImagePath": "input.png"
+  },
+  {
+    "projectId": "48d3db06-4851-4547-96b0-1ca20594c0f8",
+    "createdAt": "2025-12-12T19:14:24.157Z",
+    "lastActivityAt": "2025-12-12T19:14:24.192Z",
+    "isSaved": true,
+    "expiresAt": null,
+    "generations": [
+      {
+        "generationId": "7d01b3a9-37fc-47fb-b82f-fafd651909ec",
+        "createdAt": "2025-12-12T19:14:24.191Z",
+        "substanceId": "custom_mix",
+        "dose": 0.85,
+        "model": "black-forest-labs/flux.2-pro",
+        "imagePath": "7d01b3a9-37fc-47fb-b82f-fafd651909ec.png",
+        "mimeType": "image/png",
+        "usedPrompt": "Close view of many human hands forming a spiral vortex around a central circular eye like focal point, warm amber lighting, highly detailed skin pores and wrinkles. Intensify psychedelic effects while keeping the same composition: turquoise ornamental ink and subtle filigree geometry embedded in the skin texture, aligned to the curvature of fingers and palms; concentric mandala rings and a tunnel like iris emerging from the center with kaleidoscopic symmetry that follows the spiral perspective. Add gentle breathing deformation of the hands, slight drifting, soft glow haloes on highlights, increased saturation and contrast, crisp micro texture detail, faint motion trails at fingertips, depth deepening into the center, cinematic macro photography, dark teal background, sharp focus with natural depth of field.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.\n\nBase scene: A close view of many human hands arranged in a tight spiral around a central circular focal point. The skin shows fine wrinkles and pores, with turquoise ornamental markings across the hands, lit with warm amber tones against a darker background.\n\nCritical constraints:\n1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.\n2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.\n3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.\n4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.\n5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.\n6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.\n\n\nStructural guidance:\n- Preserve surface structure and depth relationships (strength: 80%).\n- Maintain depth layering and perspective (weight: 70%).\n- Preserve major edges and compositional lines (weight: 75%).\n- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).\n- Preserve hand structure and finger count. (protection: 60%).\n\n\nEffect Routing:\n- Apply all effects as surface-embedded textures and materials (90% adherence). Do not create floating geometry or overlay planes.\n- Preserve facial identity and features. Avoid distorting faces or adding patterns to them.\n- Maintain natural hand structure. Avoid distorting hands or adding extra fingers.\n- Respect major edges and silhouettes. Keep compositional boundaries stable.\n- Apply geometric patterns primarily to mid and far depth layers where surfaces are more stable.\n- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.\n- If adding hallucinatory elements, prefer background and peripheral regions over foreground subjects.\n- Emphasize geometric patterns (fractals, tilings, form constants).\n- Emphasize hallucinatory content (entities, transformations).\n- Emphasize perceptual effects (synesthesia, time perception).\n- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n\nEmphasize these effects:\n1. Closed-eye visuals. effectId closed_eye_visuals. group hallucinations. intensity 1.00. If present, keep hallucinated content coherent and integrated with the scene lighting and occlusion. simulation: Render a full-frame generative layer separate from scene surfaces · Use evolving geometry and color fields that grow in complexity · Keep motion smooth and cohesive rather than noisy · Increase saturation and symmetry at high intensity\n2. Fractal recursion. effectId fractal_recursion. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Use iterative feedback and zoom shaders with controlled rotation · Constrain fractal detail to avoid full-frame noise · Cycle colors slowly with a coherent palette · Layer fractals on surfaces rather than as separate objects\n3. Geometric patterning. effectId geometric_patterning. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate procedural tilings and motifs with controllable symmetry · Lock patterns to surface texture flow using depth and segmentation · Modulate symmetry order over time (e.g., 4 → 6 → 8) · Keep patterns embedded in materials, not floating overlays\n4. Internal scene hallucinations. effectId internal_scene_hallucinations. group hallucinations. intensity 1.00. If present, keep hallucinated content coherent and integrated with the scene lighting and occlusion. simulation: Transition from abstract geometry into representational scenes · Maintain motif persistence across changes (scene graph feel) · Use soft morphs and crossfades rather than hard cuts · Keep lighting coherent and emotionally toned\n5. Partially overriding visual perception. effectId partially_overriding_visual_perception. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Increase geometry opacity and brightness in layered passes · Let objects transform into geometry while preserving silhouettes · Use glow and bloom to make geometry feel luminous · Keep some landmarks visible to maintain partial override\n6. 3 dimensional geometry. effectId three_dimensional_geometry. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Project patterns onto surfaces using depth and normal cues · Add parallax and shading to sell 3D structure · Keep geometry surface-embedded and perspective-aligned · Increase symmetry and complexity with intensity\n7. Time slicing. effectId time_slicing. group perceptual. intensity 1.00. Apply as changes in interpretation and coupling, not as random decorations. simulation: Use multi-exposure compositing with gated frame holds · Add slight ghosting between slices instead of hard cuts · Modulate gating irregularly for an unstable temporal feel · Avoid high-frequency strobe that reads as camera flicker\n8. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 1.00. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase mid-frequency feature salience (edges, corners, repeats) · Blend extremely low-strength semantic priors without hard overlays · Bias emergence to peripheral and low-attention regions · Let patterns flicker in and out instead of staying fixed\n9. Symmetrical texture repetition. effectId symmetrical_texture_repetition. group distortions. intensity 1.00. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Mirror textures across multiple axes to create symmetry · Prefer rough detail textures (grass, carpet, bark) as inputs · Increase tessellation density and symmetry order with intensity · Keep detail level consistent when zooming in\n10. Depth and scale shift. effectId depth_and_scale_shift. group perceptual. intensity 1.00. Apply as changes in interpretation and coupling, not as random decorations. simulation: Use depth maps to modulate scale and blur in a time-varying way · Combine subtle focal-length drift with selective object scaling · Preserve occlusion and edges to avoid cutout artifacts · Avoid extreme fisheye unless intensity is high\n11. Depth perception distortions. effectId depth_perception_distortions. group distortions. intensity 1.00. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use depth maps to warp scale and parallax nonlinearly · Swap or compress depth layers via subtle compositing · Add contradictory focus cues (blur vs distance) at higher intensity · Keep occlusion consistent to avoid obvious cutouts\n12. Pareidolia. effectId pareidolia. group perceptual. intensity 1.00. Apply as changes in interpretation and coupling, not as random decorations. simulation: Blend low-confidence face and symbol templates into textures · Bias to peripheral vision and low-detail areas · Let forms flicker in and out rather than staying fixed · Keep it subtle to avoid becoming full external hallucinations\n13. Drifting. effectId visual_drifting. group distortions. intensity 1.00. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical-flow aligned warping for temporal coherence · Add curl-noise displacement that grows with stare-time · Keep motion slow and spatially coherent (no global camera shake) · Optionally ease back to baseline to mimic a 'double-take' reset\n14. Breathing. effectId breathing_surfaces. group distortions. intensity 0.96. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Apply low-frequency displacement locked to surfaces (UV or optical-flow) · Drive expansion and contraction with smooth oscillation (sine or noise) · Keep edges anchored to avoid camera-like wobble · Scale motion with depth so flat planes breathe more than silhouettes\n\nOutput a single image only.",
+        "originalAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.79,
+          "baseSceneDescription": "A close view of many human hands arranged in a tight spiral around a central circular focal point. The skin shows fine wrinkles and pores, with turquoise ornamental markings across the hands, lit with warm amber tones against a darker background.",
+          "geometrySummary": "Strong surface bound sacred geometry emerges as rotating mandala rings and a tunnel like iris at the center, with kaleidoscopic tiling that locks to the spiral arrangement of the hands.",
+          "distortionSummary": "The hands appear to gently breathe and drift, with mild perspective warping that deepens the central vortex and creates subtle motion trails along finger edges.",
+          "hallucinationSummary": "The center suggests a portal like opening into an inner scene, with faint closed eye style pattern memory bleeding into the open eye view rather than full scene replacement.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "symmetrical_texture_repetition",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_perception_distortions",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "three_dimensional_geometry",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Close view of many human hands forming a spiral vortex around a central circular eye like focal point, warm amber lighting, highly detailed skin pores and wrinkles. Intensify psychedelic effects while keeping the same composition: turquoise ornamental ink and subtle filigree geometry embedded in the skin texture, aligned to the curvature of fingers and palms; concentric mandala rings and a tunnel like iris emerging from the center with kaleidoscopic symmetry that follows the spiral perspective. Add gentle breathing deformation of the hands, slight drifting, soft glow haloes on highlights, increased saturation and contrast, crisp micro texture detail, faint motion trails at fingertips, depth deepening into the center, cinematic macro photography, dark teal background, sharp focus with natural depth of field.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A spiral of interlaced hands becomes a living mandala, pulsing and drifting as a glowing tunnel opens in the center like an iris into depth."
+          }
+        },
+        "workingAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.85,
+          "baseSceneDescription": "A close view of many human hands arranged in a tight spiral around a central circular focal point. The skin shows fine wrinkles and pores, with turquoise ornamental markings across the hands, lit with warm amber tones against a darker background.",
+          "geometrySummary": "Strong surface bound sacred geometry emerges as rotating mandala rings and a tunnel like iris at the center, with kaleidoscopic tiling that locks to the spiral arrangement of the hands.",
+          "distortionSummary": "The hands appear to gently breathe and drift, with mild perspective warping that deepens the central vortex and creates subtle motion trails along finger edges.",
+          "hallucinationSummary": "The center suggests a portal like opening into an inner scene, with faint closed eye style pattern memory bleeding into the open eye view rather than full scene replacement.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.8,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.8,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.9,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.8,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.8,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "symmetrical_texture_repetition",
+              "group": "distortions",
+              "intensity": 0.9,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.8,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_perception_distortions",
+              "group": "distortions",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.08,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.28,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.28,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "three_dimensional_geometry",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.9000000000000001,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometry_8a_semantic_concept_network",
+              "group": "geometry",
+              "intensity": 0.8
+            },
+            {
+              "effectId": "brightness_alteration",
+              "group": "distortions",
+              "intensity": 0.15
+            },
+            {
+              "effectId": "color_shifting",
+              "group": "distortions",
+              "intensity": 0.15
+            },
+            {
+              "effectId": "environmental_patterning",
+              "group": "distortions",
+              "intensity": 0.2
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.3
+            },
+            {
+              "effectId": "morphing_objects",
+              "group": "distortions",
+              "intensity": 0.2
+            },
+            {
+              "effectId": "recursion",
+              "group": "distortions",
+              "intensity": 0.2
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Close view of many human hands forming a spiral vortex around a central circular eye like focal point, warm amber lighting, highly detailed skin pores and wrinkles. Intensify psychedelic effects while keeping the same composition: turquoise ornamental ink and subtle filigree geometry embedded in the skin texture, aligned to the curvature of fingers and palms; concentric mandala rings and a tunnel like iris emerging from the center with kaleidoscopic symmetry that follows the spiral perspective. Add gentle breathing deformation of the hands, slight drifting, soft glow haloes on highlights, increased saturation and contrast, crisp micro texture detail, faint motion trails at fingertips, depth deepening into the center, cinematic macro photography, dark teal background, sharp focus with natural depth of field.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A spiral of interlaced hands becomes a living mandala, pulsing and drifting as a glowing tunnel opens in the center like an iris into depth."
+          }
+        },
+        "routerSettings": {
+          "enabled": true,
+          "defaultRegions": [
+            "subject",
+            "background",
+            "global"
+          ],
+          "defaultDepthBands": [
+            "near",
+            "mid",
+            "far"
+          ],
+          "protectFace": true,
+          "protectHands": true,
+          "protectEdges": true,
+          "surfaceLockStrength": 0.9,
+          "groupMultipliers": {
+            "enhancements": 1.4,
+            "distortions": 1.2,
+            "geometry": 1.8,
+            "hallucinations": 1.6,
+            "perceptual": 1.7
+          },
+          "rules": [
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.5,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_drifting",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.9,
+              "protectEdges": true
+            },
+            {
+              "effectId": "texture_salience",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.4,
+              "protectEdges": true
+            },
+            {
+              "effectId": "geometric_patterning",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "color_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "flowing_textures",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            }
+          ]
+        },
+        "effectsStudio": {
+          "threshold": 0.34,
+          "maxEffects": 14,
+          "usedEffects": [
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "three_dimensional_geometry",
+              "group": "geometry",
+              "intensity": 1,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.9000000000000001,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.9,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "symmetrical_texture_repetition",
+              "group": "distortions",
+              "intensity": 0.9,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_perception_distortions",
+              "group": "distortions",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.8999999999999999,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.8,
+              "scales": [
+                "meso"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "inputImagePath": "input.png"
+  },
+  {
+    "projectId": "d237e0a6-42f2-4cd4-a573-4e6cb21b7ff4",
+    "createdAt": "2025-12-12T19:15:35.101Z",
+    "lastActivityAt": "2025-12-12T19:15:35.138Z",
+    "isSaved": false,
+    "expiresAt": "2025-12-17T19:15:35.138Z",
+    "generations": [
+      {
+        "generationId": "ef254c42-2f93-4fa8-9a87-8d27d0dcec38",
+        "createdAt": "2025-12-12T19:15:35.137Z",
+        "substanceId": "custom_mix",
+        "dose": 0.79,
+        "model": "black-forest-labs/flux.2-pro",
+        "imagePath": "ef254c42-2f93-4fa8-9a87-8d27d0dcec38.png",
+        "mimeType": "image/png",
+        "usedPrompt": "Close view of many human hands layered in a circular spiral, forming a tunnel like aperture toward the center, warm cinematic lighting, realistic skin pores and wrinkles, shallow depth of field. Subtle teal ornamental ink patterns embedded in the skin texture, aligned to the curvature of fingers and palms and consistent with perspective. Add strong psychedelic geometry as surface bound filigree that coheres into mandala rings and a spiral tunnel illusion toward a central eye like focal point, with gentle glow haloes on highlights, heightened saturation and contrast, slight breathing and drifting of the spiral structure, faint kaleidoscopic symmetry in the repeating hand forms. Keep the scene photoreal and grounded, no floating symbols detached from surfaces, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.\n\nBase scene: A close view shows many human hands layered and arranged in a circular spiral, creating a tunnel like opening toward the center. The skin is warmly lit with visible pores and wrinkles, and faint teal ornamental markings appear across some hands. At the center there is a circular eye like focal point surrounded by intricate radial detail.\n\nCritical constraints:\n1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.\n2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.\n3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.\n4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.\n5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.\n6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.\n\n\nStructural guidance:\n- Preserve surface structure and depth relationships (strength: 80%).\n- Maintain depth layering and perspective (weight: 70%).\n- Preserve major edges and compositional lines (weight: 75%).\n- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).\n- Preserve hand structure and finger count. (protection: 60%).\n\n\nEffect Routing:\n- Apply all effects as surface-embedded textures and materials (90% adherence). Do not create floating geometry or overlay planes.\n- Preserve facial identity and features. Avoid distorting faces or adding patterns to them.\n- Maintain natural hand structure. Avoid distorting hands or adding extra fingers.\n- Respect major edges and silhouettes. Keep compositional boundaries stable.\n- Apply geometric patterns primarily to mid and far depth layers where surfaces are more stable.\n- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.\n- Emphasize geometric patterns (fractals, tilings, form constants).\n- Emphasize hallucinatory content (entities, transformations).\n- Emphasize perceptual effects (synesthesia, time perception).\n- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n\nEmphasize these effects:\n1. Form constant: spiral. effectId form_constant_spiral. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate spiral fields in polar coordinates · Layer multiple harmonic spirals with different radii · Animate rotation smoothly with subtle phase drift · Add glow and depth cues for a 3D feel\n2. Geometric patterning. effectId geometric_patterning. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate procedural tilings and motifs with controllable symmetry · Lock patterns to surface texture flow using depth and segmentation · Modulate symmetry order over time (e.g., 4 → 6 → 8) · Keep patterns embedded in materials, not floating overlays\n3. Texture salience. effectId texture_salience. group enhancements. intensity 1.00. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro-contrast in textured regions · Enhance repeating detail with subtle frequency amplification · Keep motion coherent so textures feel alive, not noisy · Avoid crunchy HDR artifacts and edge ringing\n4. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.98. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost saturation and vibrance with hue protection · Increase local contrast in midtones without crushing blacks · Add subtle bloom on bright, colorful highlights · Optionally add slow chroma pulses for a living feel\n5. Environmental patterning. effectId environmental_patterning. group distortions. intensity 0.84. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Apply symmetry transforms to repeating textures (mirror or kaleidoscope) · Seed patterns from existing texture features (edges and repeats) · Increase complexity with intensity: lattices, fractals, and form constants · Keep patterning surface-embedded and perspective-aligned\n6. Form constant: tunnel. effectId form_constant_tunnel. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Use log-polar mapping to create stable tunnel geometry · Animate slow zoom and rotation in layered passes · Add depth shading and vignetting to sell immersion · Keep motifs surface-embedded when eyes-open geometry is desired\n7. Mandala forms. effectId mandala_forms. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate radial symmetry with rings and petal-like motifs · Add layered depth shading and subtle breathing scale changes · Use fine ornamentation without harsh edges · Keep the center stable to avoid nausea\n8. Pattern recognition enhancement. effectId pattern_recognition_enhancement. group enhancements. intensity 0.98. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase mid-frequency feature salience (edges, corners, repeats) · Blend extremely low-strength semantic priors without hard overlays · Bias emergence to peripheral and low-attention regions · Let patterns flicker in and out instead of staying fixed\n9. Symmetrical texture repetition. effectId symmetrical_texture_repetition. group distortions. intensity 0.84. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Mirror textures across multiple axes to create symmetry · Prefer rough detail textures (grass, carpet, bark) as inputs · Increase tessellation density and symmetry order with intensity · Keep detail level consistent when zooming in\n10. Breathing. effectId breathing_surfaces. group distortions. intensity 0.72. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Apply low-frequency displacement locked to surfaces (UV or optical-flow) · Drive expansion and contraction with smooth oscillation (sine or noise) · Keep edges anchored to avoid camera-like wobble · Scale motion with depth so flat planes breathe more than silhouettes\n11. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase local contrast (clarity) more than global contrast · Use edge-aware sharpening to avoid halos and ringing · Stabilize micro-contrast over time to prevent shimmer · Protect smooth gradients (skin, skies) from banding\n12. Depth perception distortions. effectId depth_perception_distortions. group distortions. intensity 0.72. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use depth maps to warp scale and parallax nonlinearly · Swap or compress depth layers via subtle compositing · Add contradictory focus cues (blur vs distance) at higher intensity · Keep occlusion consistent to avoid obvious cutouts\n13. Fractal recursion. effectId fractal_recursion. group geometry. intensity 1.00. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Use iterative feedback and zoom shaders with controlled rotation · Constrain fractal detail to avoid full-frame noise · Cycle colors slowly with a coherent palette · Layer fractals on surfaces rather than as separate objects\n14. Glow and haloes. effectId glow_and_haloes. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Add bloom with a soft knee and wide radius · Use luminance-based glow rather than uniform blur · Let glow pick up local light color for plausibility · Avoid thick edge halos that read as posterization\n\nOutput a single image only.",
+        "originalAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.79,
+          "baseSceneDescription": "A close view of many human hands arranged in a tight spiral around a central circular focal point. The skin shows fine wrinkles and pores, with turquoise ornamental markings across the hands, lit with warm amber tones against a darker background.",
+          "geometrySummary": "Strong surface bound sacred geometry emerges as rotating mandala rings and a tunnel like iris at the center, with kaleidoscopic tiling that locks to the spiral arrangement of the hands.",
+          "distortionSummary": "The hands appear to gently breathe and drift, with mild perspective warping that deepens the central vortex and creates subtle motion trails along finger edges.",
+          "hallucinationSummary": "The center suggests a portal like opening into an inner scene, with faint closed eye style pattern memory bleeding into the open eye view rather than full scene replacement.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "micro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "symmetrical_texture_repetition",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_perception_distortions",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "three_dimensional_geometry",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "internal_scene_hallucinations",
+              "group": "hallucinations",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Close view of many human hands forming a spiral vortex around a central circular eye like focal point, warm amber lighting, highly detailed skin pores and wrinkles. Intensify psychedelic effects while keeping the same composition: turquoise ornamental ink and subtle filigree geometry embedded in the skin texture, aligned to the curvature of fingers and palms; concentric mandala rings and a tunnel like iris emerging from the center with kaleidoscopic symmetry that follows the spiral perspective. Add gentle breathing deformation of the hands, slight drifting, soft glow haloes on highlights, increased saturation and contrast, crisp micro texture detail, faint motion trails at fingertips, depth deepening into the center, cinematic macro photography, dark teal background, sharp focus with natural depth of field.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A spiral of interlaced hands becomes a living mandala, pulsing and drifting as a glowing tunnel opens in the center like an iris into depth."
+          }
+        },
+        "workingAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.79,
+          "baseSceneDescription": "A close view shows many human hands layered and arranged in a circular spiral, creating a tunnel like opening toward the center. The skin is warmly lit with visible pores and wrinkles, and faint teal ornamental markings appear across some hands. At the center there is a circular eye like focal point surrounded by intricate radial detail.",
+          "geometrySummary": "Strong surface bound sacred geometry emerges across the hands, cohering into a spiral tunnel with mandala like rings and kaleidoscopic symmetry toward the center.",
+          "distortionSummary": "The hand spiral subtly breathes and drifts as if the whole structure is slowly rotating, with depth cues stretching toward the central aperture and mild persistence on edges during implied motion.",
+          "hallucinationSummary": "The central eye like focal point can feel symbolically charged and semi autonomous, as if the scene is partially overridden by an archetypal geometric interface without fully replacing the environment.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.8,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "depth_perception_distortions",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "field_of_view_stretching",
+              "group": "distortions",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "afterimage_persistence",
+              "group": "distortions",
+              "intensity": 0.4,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "tracers_motion_trails",
+              "group": "distortions",
+              "intensity": 0.3,
+              "scales": [
+                "meso"
+              ]
+            },
+            {
+              "effectId": "symmetrical_texture_repetition",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "environmental_patterning",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "macro",
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "three_dimensional_geometry",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.4,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.5,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "time_slicing",
+              "group": "perceptual",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "closed_eye_visuals",
+              "group": "hallucinations",
+              "intensity": 0.3,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "entity_encounters",
+              "group": "hallucinations",
+              "intensity": 0.2,
+              "scales": [
+                "macro"
+              ]
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "Close view of many human hands layered in a circular spiral, forming a tunnel like aperture toward the center, warm cinematic lighting, realistic skin pores and wrinkles, shallow depth of field. Subtle teal ornamental ink patterns embedded in the skin texture, aligned to the curvature of fingers and palms and consistent with perspective. Add strong psychedelic geometry as surface bound filigree that coheres into mandala rings and a spiral tunnel illusion toward a central eye like focal point, with gentle glow haloes on highlights, heightened saturation and contrast, slight breathing and drifting of the spiral structure, faint kaleidoscopic symmetry in the repeating hand forms. Keep the scene photoreal and grounded, no floating symbols detached from surfaces, no text.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "A spiral of interwoven hands becomes a living tunnel, its skin etched with teal geometry that blooms into mandala rings around a watchful central eye."
+          }
+        },
+        "routerSettings": {
+          "enabled": true,
+          "defaultRegions": [
+            "subject",
+            "background",
+            "global"
+          ],
+          "defaultDepthBands": [
+            "near",
+            "mid",
+            "far"
+          ],
+          "protectFace": true,
+          "protectHands": true,
+          "protectEdges": true,
+          "surfaceLockStrength": 0.9,
+          "groupMultipliers": {
+            "enhancements": 1.4,
+            "distortions": 1.2,
+            "geometry": 1.8,
+            "hallucinations": 1.6,
+            "perceptual": 1.7
+          },
+          "rules": [
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.5,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_drifting",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.9,
+              "protectEdges": true
+            },
+            {
+              "effectId": "texture_salience",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.4,
+              "protectEdges": true
+            },
+            {
+              "effectId": "geometric_patterning",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "color_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "flowing_textures",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            }
+          ]
+        },
+        "effectsStudio": {
+          "threshold": 0.34,
+          "maxEffects": 14,
+          "usedEffects": [
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "geometric_patterning",
+              "group": "geometry",
+              "intensity": 0.8,
+              "scales": [
+                "macro",
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.8,
+              "scales": [
+                "meso",
+                "micro"
+              ]
+            },
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "environmental_patterning",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "form_constant_tunnel",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "group": "enhancements",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "symmetrical_texture_repetition",
+              "group": "distortions",
+              "intensity": 0.7,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "depth_perception_distortions",
+              "group": "distortions",
+              "intensity": 0.6,
+              "scales": [
+                "macro"
+              ]
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.6,
+              "scales": [
+                "macro",
+                "meso"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "inputImagePath": "input.png"
+  },
+  {
+    "projectId": "7aa5f61f-6d4c-4a1b-9e0d-65ab8bf7592f",
+    "createdAt": "2025-12-12T20:58:59.977Z",
+    "lastActivityAt": "2025-12-12T20:58:59.997Z",
+    "isSaved": false,
+    "expiresAt": "2025-12-17T20:58:59.997Z",
+    "generations": [
+      {
+        "generationId": "9538534d-1623-4ae7-9600-6e8333a0ac03",
+        "createdAt": "2025-12-12T20:58:59.996Z",
+        "substanceId": "custom_mix",
+        "dose": 0.49,
+        "model": "openai/gpt-5-image",
+        "analysisModelId": "openai/gpt-5.1-codex-max",
+        "analysisModelName": "OpenAI: GPT-5.1-Codex-Max",
+        "generationModelId": "openai/gpt-5-image",
+        "generationModelName": "OpenAI: GPT-5 Image",
+        "imagePath": "9538534d-1623-4ae7-9600-6e8333a0ac03.png",
+        "mimeType": "image/png",
+        "usedPrompt": "A car side mirror reflects a winding mountain road and green hills with a partial close up of a woman’s face, the scene filled with luminous color, flowing textures, and embedded fractal spiral and mandala patterning across foliage and surfaces, glowing points of light and rainbow shimmer aligned to the terrain and mirror perspective, detailed and richly textured, softly lit twilight atmosphere\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.\n\nBase scene: A car side mirror reflects a winding mountain road with green hills and a partial close up of a woman’s face. The scene is dimly lit with rich colors and textured foliage.\n\nCritical constraints:\n1. Geometric patterns and repeating structure must be embedded in surfaces and materials, not floating in space.\n2. Keep geometry texture bound: follow surface perspective, texture flow, and occlusion, and respect lighting.\n3. Do not add separate geometric objects, decals, or overlay planes that are not attached to scene surfaces.\n4. Do not replace the scene. Keep the original environment recognizable and preserve the camera framing.\n5. Avoid wireframe nets, floating lattice cages, and transparent geometry overlays that sit in front of the scene.\n6. Avoid portals, void backgrounds, and cosmic space transitions unless explicitly required by scene replacement.\n\n\nStructural guidance:\n- Preserve surface structure and depth relationships (strength: 60%).\n- Maintain depth layering and perspective (weight: 70%).\n- Preserve major edges and compositional lines (weight: 50%).\n- Keep faces recognizable and undistorted. No extra eyes on faces. (protection: 80%).\n- Preserve hand structure and finger count. (protection: 60%).\n\n\nEffect Routing:\n- Apply all effects as surface-embedded textures and materials (90% adherence). Do not create floating geometry or overlay planes.\n- Do not modify face regions. Keep facial features, identity, and expression stable. No extra eyes, distorted features, or pattern intrusion on faces.\n- Preserve hand anatomy and finger count. Keep hands structurally intact.\n- Apply geometric patterns primarily to mid and far depth layers where surfaces are more stable.\n- Apply distortions with depth-coherent warping. Near objects should distort more subtly than background.\n- Apply global color and perception shifts uniformly across the entire image.\n- Apply pattern_recognition_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply breathing_surfaces strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_acuity_enhancement strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply visual_drifting strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n- Apply texture_salience strongly, in subject and background and global regions, at near/mid depth, respecting edges.\n\nEmphasize these effects:\n1. Color enhancement. effectId color_enhancement. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost saturation and vibrance with hue protection · Increase local contrast in midtones without crushing blacks · Add subtle bloom on bright, colorful highlights · Optionally add slow chroma pulses for a living feel\n2. Environmental patterning. effectId environmental_patterning. group distortions. intensity 0.72. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Apply symmetry transforms to repeating textures (mirror or kaleidoscope) · Seed patterns from existing texture features (edges and repeats) · Increase complexity with intensity: lattices, fractals, and form constants · Keep patterning surface-embedded and perspective-aligned\n3. Form constant: spiral. effectId form_constant_spiral. group geometry. intensity 0.90. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate spiral fields in polar coordinates · Layer multiple harmonic spirals with different radii · Animate rotation smoothly with subtle phase drift · Add glow and depth cues for a 3D feel\n4. Fractal recursion. effectId fractal_recursion. group geometry. intensity 0.90. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Use iterative feedback and zoom shaders with controlled rotation · Constrain fractal detail to avoid full-frame noise · Cycle colors slowly with a coherent palette · Layer fractals on surfaces rather than as separate objects\n5. Texture salience. effectId texture_salience. group enhancements. intensity 0.84. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Boost micro-contrast in textured regions · Enhance repeating detail with subtle frequency amplification · Keep motion coherent so textures feel alive, not noisy · Avoid crunchy HDR artifacts and edge ringing\n6. Contrast enhancement. effectId contrast_enhancement. group enhancements. intensity 0.70. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Increase local contrast (clarity) more than global contrast · Use edge-aware sharpening to avoid halos and ringing · Stabilize micro-contrast over time to prevent shimmer · Protect smooth gradients (skin, skies) from banding\n7. Flowing. effectId flowing_textures. group distortions. intensity 0.60. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Advect texture coordinates along a low-velocity vector field · Add divergence-free curl for organic flow · Confine flow to high-detail surfaces (foliage, fur, grain) · Keep motion loopable and temporally stable\n8. Glow and haloes. effectId glow_and_haloes. group enhancements. intensity 0.70. Apply as plausible changes to color, contrast, glow, and texture salience. simulation: Add bloom with a soft knee and wide radius · Use luminance-based glow rather than uniform blur · Let glow pick up local light color for plausibility · Avoid thick edge halos that read as posterization\n9. Mandala forms. effectId mandala_forms. group geometry. intensity 0.75. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Generate radial symmetry with rings and petal-like motifs · Add layered depth shading and subtle breathing scale changes · Use fine ornamentation without harsh edges · Keep the center stable to avoid nausea\n10. Drifting. effectId visual_drifting. group distortions. intensity 0.60. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Use optical-flow aligned warping for temporal coherence · Add curl-noise displacement that grows with stare-time · Keep motion slow and spatially coherent (no global camera shake) · Optionally ease back to baseline to mimic a 'double-take' reset\n11. Color shifting. effectId color_shifting. group distortions. intensity 0.48. Apply as a coherent deformation of existing surfaces and edges. Keep the camera stable. simulation: Animate hue rotation with low-frequency spatial phase · Bias cycling to colorful and high-salience regions · Keep motion smooth and loopable; avoid strobing · Preserve shading by applying shifts in HSV/HSL space\n12. Depth and scale shift. effectId depth_and_scale_shift. group perceptual. intensity 0.44. Apply as changes in interpretation and coupling, not as random decorations. simulation: Use depth maps to modulate scale and blur in a time-varying way · Combine subtle focal-length drift with selective object scaling · Preserve occlusion and edges to avoid cutout artifacts · Avoid extreme fisheye unless intensity is high\n13. Kaleidoscopic tiling. effectId kaleidoscopic_tiling. group geometry. intensity 0.60. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Apply mirror symmetry transforms around a chosen center · Blend between different symmetry orders over time · Keep tiling texture-bound and perspective-aware · Feather seams to avoid obvious copy-paste edges\n14. Partially overriding visual perception. effectId partially_overriding_visual_perception. group geometry. intensity 0.60. Apply as texture and material patterning on existing surfaces. Do not create floating structures. simulation: Increase geometry opacity and brightness in layered passes · Let objects transform into geometry while preserving silhouettes · Use glow and bloom to make geometry feel luminous · Keep some landmarks visible to maintain partial override\n\nOutput a single image only.",
+        "originalAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.49,
+          "baseSceneDescription": "A car side mirror reflects a winding mountain road with green hills and a partial close up of a woman’s face. The scene is dimly lit with rich colors and textured foliage.",
+          "geometrySummary": "Layered fractal spirals and mandala like tiling embedded across foliage and the reflected background, giving a recursive patterned depth.",
+          "distortionSummary": "The road and terrain subtly warp and drift, with flowing textures and shimmering glow enhancing the curved perspective in the mirror.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "environmental_patterning",
+              "group": "distortions",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "color_shifting",
+              "group": "distortions",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.3
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.4
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "A car side mirror reflects a winding mountain road and green hills with a partial close up of a woman’s face, the scene filled with luminous color, flowing textures, and embedded fractal spiral and mandala patterning across foliage and surfaces, glowing points of light and rainbow shimmer aligned to the terrain and mirror perspective, detailed and richly textured, softly lit twilight atmosphere\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "In a dusky drive, the side mirror reveals a winding road and watchful face, as fractal spirals bloom across hills in shimmering color and gentle drift."
+          }
+        },
+        "workingAnalysis": {
+          "substanceId": "custom_mix",
+          "dose": 0.49,
+          "baseSceneDescription": "A car side mirror reflects a winding mountain road with green hills and a partial close up of a woman’s face. The scene is dimly lit with rich colors and textured foliage.",
+          "geometrySummary": "Layered fractal spirals and mandala like tiling embedded across foliage and the reflected background, giving a recursive patterned depth.",
+          "distortionSummary": "The road and terrain subtly warp and drift, with flowing textures and shimmering glow enhancing the curved perspective in the mirror.",
+          "effects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "perspective_warp",
+              "group": "distortions",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "environmental_patterning",
+              "group": "distortions",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "color_shifting",
+              "group": "distortions",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "pareidolia",
+              "group": "perceptual",
+              "intensity": 0.3
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.4
+            }
+          ],
+          "prompts": {
+            "openAIImagePrompt": "A car side mirror reflects a winding mountain road and green hills with a partial close up of a woman’s face, the scene filled with luminous color, flowing textures, and embedded fractal spiral and mandala patterning across foliage and surfaces, glowing points of light and rainbow shimmer aligned to the terrain and mirror perspective, detailed and richly textured, softly lit twilight atmosphere\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+            "shortCinematicDescription": "In a dusky drive, the side mirror reveals a winding road and watchful face, as fractal spirals bloom across hills in shimmering color and gentle drift."
+          }
+        },
+        "routerSettings": {
+          "enabled": true,
+          "defaultRegions": [
+            "subject",
+            "background",
+            "global"
+          ],
+          "defaultDepthBands": [
+            "near",
+            "mid",
+            "far"
+          ],
+          "protectFace": true,
+          "protectHands": true,
+          "protectEdges": false,
+          "surfaceLockStrength": 0.9,
+          "groupMultipliers": {
+            "enhancements": 1.4,
+            "distortions": 1.2,
+            "geometry": 1.5,
+            "hallucinations": 1.1,
+            "perceptual": 1.1
+          },
+          "rules": [
+            {
+              "effectId": "pattern_recognition_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "breathing_surfaces",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.5,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_acuity_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "visual_drifting",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.9,
+              "protectEdges": true
+            },
+            {
+              "effectId": "texture_salience",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.4,
+              "protectEdges": true
+            },
+            {
+              "effectId": "geometric_patterning",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near",
+                "mid"
+              ],
+              "strength": 1.7,
+              "protectEdges": true
+            },
+            {
+              "effectId": "color_enhancement",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            },
+            {
+              "effectId": "flowing_textures",
+              "regions": [
+                "subject",
+                "background",
+                "global"
+              ],
+              "depthBands": [
+                "near"
+              ],
+              "strength": 1.6,
+              "protectEdges": true
+            }
+          ]
+        },
+        "effectsStudio": {
+          "threshold": 0.34,
+          "maxEffects": 14,
+          "usedEffects": [
+            {
+              "effectId": "color_enhancement",
+              "group": "enhancements",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "environmental_patterning",
+              "group": "distortions",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "form_constant_spiral",
+              "group": "geometry",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "fractal_recursion",
+              "group": "geometry",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "texture_salience",
+              "group": "enhancements",
+              "intensity": 0.6
+            },
+            {
+              "effectId": "contrast_enhancement",
+              "group": "enhancements",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "flowing_textures",
+              "group": "distortions",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "glow_and_haloes",
+              "group": "enhancements",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "mandala_forms",
+              "group": "geometry",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "visual_drifting",
+              "group": "distortions",
+              "intensity": 0.5
+            },
+            {
+              "effectId": "color_shifting",
+              "group": "distortions",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "depth_and_scale_shift",
+              "group": "perceptual",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "kaleidoscopic_tiling",
+              "group": "geometry",
+              "intensity": 0.4
+            },
+            {
+              "effectId": "partially_overriding_visual_perception",
+              "group": "geometry",
+              "intensity": 0.4
+            }
+          ]
+        }
+      }
+    ],
+    "inputImagePath": "input.png"
+  }
+]

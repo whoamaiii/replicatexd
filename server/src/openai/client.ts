@@ -1,7 +1,20 @@
 import { getEnv } from '../config/env'
+import { Buffer } from 'node:buffer'
 
 function normalizeBaseUrl(input: string) {
   return input.replace(/\/+$/g, '')
+}
+
+export class HttpError extends Error {
+  status: number
+  details?: string
+
+  constructor(status: number, message: string, details?: string) {
+    super(message)
+    this.name = 'HttpError'
+    this.status = status
+    this.details = details
+  }
 }
 
 const ANALYSIS_TIMEOUT_MS = 120_000
@@ -39,6 +52,46 @@ function redactDataUrls(input: string) {
   )
 }
 
+function tryParseOpenRouterError(raw: string) {
+  try {
+    const parsed = JSON.parse(raw) as unknown
+    const errorObj = (parsed as { error?: unknown } | null)?.error
+    const message = (errorObj as { message?: unknown } | null)?.message
+    const metadata = (errorObj as { metadata?: unknown } | null)?.metadata
+    const metadataRaw = (metadata as { raw?: unknown } | null)?.raw
+
+    return {
+      message: typeof message === 'string' ? message : null,
+      metadataRaw: typeof metadataRaw === 'string' ? metadataRaw : null,
+    }
+  } catch {
+    return null
+  }
+}
+
+function buildOpenRouterPublicErrorMessage(status: number, rawBody: string) {
+  const parsed = tryParseOpenRouterError(rawBody)
+  const metadataRaw = parsed?.metadataRaw ?? ''
+  const isModerated =
+    rawBody.includes('Request Moderated') ||
+    metadataRaw.includes('Request Moderated') ||
+    rawBody.toLowerCase().includes('moderated') ||
+    metadataRaw.toLowerCase().includes('moderated')
+
+  if (isModerated) {
+    return 'Image generation was blocked by the provider moderation filter. Try simplifying the prompt, removing drug/sex/violence references, or switching to a different model/provider.'
+  }
+
+  const providerMessage = parsed?.message
+  if (status === 401 || status === 403) {
+    return 'OpenRouter authentication failed. Check `OPENROUTER_API_KEY` and try again.'
+  }
+  if (typeof providerMessage === 'string' && providerMessage.trim().length > 0) {
+    return `OpenRouter rejected the request (${status}). ${providerMessage}`
+  }
+  return `OpenRouter rejected the request (${status}).`
+}
+
 async function postJson(
   url: string,
   body: unknown,
@@ -60,7 +113,8 @@ async function postJson(
     if (!res.ok) {
       const raw = await res.text().catch(() => '')
       const safe = summarizeText(redactDataUrls(raw), 700)
-      throw new Error(`OpenRouter request failed with status ${res.status}. ${safe}`)
+      const publicMessage = buildOpenRouterPublicErrorMessage(res.status, raw)
+      throw new HttpError(res.status, publicMessage, safe)
     }
 
     const text = await res.text()
@@ -80,70 +134,106 @@ async function postJson(
   }
 }
 
-function extractFirstOutputTextFromResponsesResponse(payload: unknown) {
+function extractTextFromChatCompletions(payload: unknown) {
   const asObj = payload as Record<string, unknown> | null
   if (!asObj || typeof asObj !== 'object') return null
 
-  const direct = asObj.output_text
-  if (typeof direct === 'string' && direct.trim().length > 0) return direct
+  const choices = asObj.choices
+  if (!Array.isArray(choices) || !choices[0] || typeof choices[0] !== 'object') return null
+  const message = (choices[0] as { message?: unknown }).message
+  if (!message || typeof message !== 'object') return null
 
-  const output = asObj.output
-  if (!Array.isArray(output)) return null
+  const content = (message as { content?: unknown }).content
+  if (typeof content === 'string' && content.trim().length > 0) return content
 
-  for (const item of output) {
-    if (!item || typeof item !== 'object') continue
-    const content = (item as { content?: unknown }).content
-    if (!Array.isArray(content)) continue
-
+  if (Array.isArray(content)) {
+    const parts: string[] = []
     for (const part of content) {
       if (!part || typeof part !== 'object') continue
       const type = (part as { type?: unknown }).type
       const text = (part as { text?: unknown }).text
-      if (type === 'output_text' && typeof text === 'string' && text.trim().length > 0) {
-        return text
+      if ((type === 'text' || type === 'output_text') && typeof text === 'string' && text.trim().length > 0) {
+        parts.push(text)
       }
     }
+    const joined = parts.join('\n').trim()
+    return joined.length > 0 ? joined : null
   }
 
   return null
+}
+
+export async function callTextCompletion(input: {
+  systemPrompt: string
+  userPrompt: string
+  modelId: string
+  temperature?: number
+  maxTokens?: number
+}) {
+  const env = getEnv()
+  const baseUrl = normalizeBaseUrl(env.openrouterBaseUrl)
+  const url = `${baseUrl}/chat/completions`
+
+  const body: Record<string, unknown> = {
+    model: input.modelId,
+    messages: [
+      { role: 'system', content: input.systemPrompt },
+      { role: 'user', content: input.userPrompt },
+    ],
+    stream: false,
+  }
+
+  if (typeof input.temperature === 'number' && Number.isFinite(input.temperature)) {
+    body.temperature = input.temperature
+  }
+  if (typeof input.maxTokens === 'number' && Number.isFinite(input.maxTokens)) {
+    body.max_tokens = input.maxTokens
+  }
+
+  const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey), {
+    timeoutMs: ANALYSIS_TIMEOUT_MS,
+  })
+  const outputText = extractTextFromChatCompletions(json)
+  if (!outputText) {
+    throw new Error('OpenRouter did not return text content')
+  }
+  return outputText
 }
 
 export async function callVisionAnalysis(input: {
   systemPrompt: string
   userPrompt: string
   imageDataUrl: string
+  modelId: string
 }) {
   const env = getEnv()
   const baseUrl = normalizeBaseUrl(env.openrouterBaseUrl)
-  const url = `${baseUrl}/responses`
+  const url = `${baseUrl}/chat/completions`
 
   const body = {
-    model: env.visionModel,
-    input: [
+    model: input.modelId,
+    messages: [
       {
-        type: 'message',
         role: 'system',
-        content: [{ type: 'input_text', text: input.systemPrompt }],
+        content: input.systemPrompt,
       },
       {
-        type: 'message',
         role: 'user',
         content: [
-          { type: 'input_text', text: input.userPrompt },
-          { type: 'input_image', image_url: input.imageDataUrl, detail: 'high' },
+          { type: 'text', text: input.userPrompt },
+          { type: 'image_url', image_url: { url: input.imageDataUrl } },
         ],
       },
     ],
-    text: { format: { type: 'text' } },
     stream: false,
   }
 
   const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey), {
     timeoutMs: ANALYSIS_TIMEOUT_MS,
   })
-  const outputText = extractFirstOutputTextFromResponsesResponse(json)
+  const outputText = extractTextFromChatCompletions(json)
   if (!outputText) {
-    throw new Error('OpenRouter did not return output_text content for analysis')
+    throw new Error('OpenRouter did not return text content for analysis')
   }
   return outputText
 }
@@ -155,6 +245,29 @@ function parseDataUrl(dataUrl: string) {
   const imageBase64 = match[2]!.trim()
   if (!imageBase64) return null
   return { mimeType, imageBase64 }
+}
+
+function isHttpUrl(input: string) {
+  return input.startsWith('http://') || input.startsWith('https://')
+}
+
+async function fetchImageUrlAsBase64(url: string, options: { timeoutMs: number }) {
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), options.timeoutMs)
+
+  try {
+    const res = await fetch(url, { method: 'GET', signal: controller.signal })
+    if (!res.ok) {
+      throw new Error(`Image download failed (${res.status})`)
+    }
+
+    const contentType = res.headers.get('content-type') || 'application/octet-stream'
+    const buf = Buffer.from(await res.arrayBuffer())
+    const imageBase64 = buf.toString('base64')
+    return { mimeType: contentType, imageBase64 }
+  } finally {
+    clearTimeout(timeoutId)
+  }
 }
 
 function extractImageDataUrlFromChatCompletions(payload: unknown) {
@@ -173,7 +286,10 @@ function extractImageDataUrlFromChatCompletions(payload: unknown) {
   return typeof url === 'string' && url.trim().length > 0 ? url : null
 }
 
-export async function callImageGeneration(input: { prompt: string; imageDataUrl?: string }) {
+export async function callImageGeneration(input: { prompt: string; imageDataUrl?: string; modelId: string }) {
+  if (!input.modelId || input.modelId.trim().length === 0) {
+    throw new Error('Missing generation model id')
+  }
   const env = getEnv()
   const baseUrl = normalizeBaseUrl(env.openrouterBaseUrl)
   const url = `${baseUrl}/chat/completions`
@@ -191,7 +307,7 @@ export async function callImageGeneration(input: { prompt: string; imageDataUrl?
     : [{ role: 'user', content: input.prompt }]
 
   const body = {
-    model: env.imageModel,
+    model: input.modelId,
     messages,
     modalities: ['image', 'text'],
     image_config: {
@@ -203,19 +319,25 @@ export async function callImageGeneration(input: { prompt: string; imageDataUrl?
   const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey), {
     timeoutMs: GENERATION_TIMEOUT_MS,
   })
-  const dataUrl = extractImageDataUrlFromChatCompletions(json)
-  if (!dataUrl) {
+  const imageUrlOrDataUrl = extractImageDataUrlFromChatCompletions(json)
+  if (!imageUrlOrDataUrl) {
     throw new Error('OpenRouter did not return an image for generation')
   }
 
-  const parsed = parseDataUrl(dataUrl)
-  if (!parsed) {
-    throw new Error('OpenRouter returned an unsupported image url format')
+  const parsed = parseDataUrl(imageUrlOrDataUrl)
+  if (parsed) {
+    return {
+      imageBase64: parsed.imageBase64,
+      mimeType: parsed.mimeType,
+    }
   }
 
-  return {
-    imageBase64: parsed.imageBase64,
-    mimeType: parsed.mimeType,
+  if (isHttpUrl(imageUrlOrDataUrl)) {
+    const downloaded = await fetchImageUrlAsBase64(imageUrlOrDataUrl, {
+      timeoutMs: GENERATION_TIMEOUT_MS,
+    })
+    return downloaded
   }
+
+  throw new Error('OpenRouter returned an unsupported image url format')
 }
-

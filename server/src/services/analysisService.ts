@@ -3,19 +3,54 @@ import { z } from 'zod'
 import type { AnalyzeRequest } from '../../../shared/types/api'
 import type { ImageAnalysisResult } from '../../../shared/types/analysis'
 import type { VisualEffect } from '../../../shared/types/effects'
-import { VisualEffectGroups, VisualEffectScales } from '../../../shared/types/effects'
+import {
+  DoseResponseAnchors,
+  DoseResponseCurves,
+  EffectFamilies,
+  VisualEffectGroups,
+  VisualEffectScales,
+} from '../../../shared/types/effects'
 import { callVisionAnalysis } from '../openai/client'
+import { getEnv } from '../config/env'
+import { getModelMenuResponse, listAnalysisCandidates, pickFirstModelIdByName } from './modelCatalogService'
+import { runRagPipeline } from './rag/ragPipeline'
 
 const VisualEffectSchema = z.object({
   id: z.string().min(1),
   group: z.enum(VisualEffectGroups),
+  family: z.enum(EffectFamilies),
   displayName: z.string().min(1),
   shortDescription: z.string().min(1),
-  longDescription: z.string().min(1),
-  typicalIntensityRange: z.tuple([z.number().min(0).max(1), z.number().min(0).max(1)]),
-  primaryScales: z.array(z.enum(VisualEffectScales)).min(1),
-  commonSubstances: z.array(z.string().min(1)).optional(),
-  notesOnSimulation: z.string().min(1),
+  simulationHints: z.array(z.string().min(1)).min(3).max(6),
+  typicalIntensityRange: z
+    .object({
+      min: z.number().min(0).max(1),
+      max: z.number().min(0).max(1),
+    })
+    .superRefine((val, ctx) => {
+      if (val.min > val.max) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'min must be <= max',
+          path: ['min'],
+        })
+      }
+    }),
+  doseResponse: z
+    .object({
+      curve: z.enum(DoseResponseCurves),
+      anchor: z.enum(DoseResponseAnchors),
+    })
+    .optional(),
+  sources: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        url: z.string().min(1),
+      }),
+    )
+    .optional()
+    .default([]),
 })
 
 const VisualEffectsFileSchema = z.array(VisualEffectSchema).min(1)
@@ -56,6 +91,13 @@ function isAnalysisDebugEnabled() {
   return normalized === 'true' || normalized === '1' || normalized === 'yes' || normalized === 'on'
 }
 
+function redactDataUrlForLogs(dataUrl: string) {
+  const comma = dataUrl.indexOf(',')
+  if (comma === -1) return '<redacted>'
+  // Keep the MIME/header portion only (never log base64 bytes).
+  return `${dataUrl.slice(0, comma + 1)}<redacted>`
+}
+
 function formatZodError(error: z.ZodError) {
   const issues = error.issues.slice(0, 12).map((i) => {
     const path = i.path.length ? i.path.join('.') : '(root)'
@@ -78,11 +120,14 @@ function getSubstanceSignature(substanceId: string) {
   return map[substanceId] ?? 'Substance specific signature is unknown.'
 }
 
-function buildSystemPrompt(effectCatalogText: string) {
+function buildSystemPrompt(effectCatalogText: string, ragContext?: string) {
   return [
     'You are Psychedelic Visual Replicasion Lab.',
     'You are a psychedelic visual phenomenology specialist.',
     'Your job is to analyze an input photo and map plausible psychedelic visuals onto a fixed effect taxonomy.',
+    ragContext && ragContext.trim().length > 0
+      ? ['','RAG context (use this to bias effect selection and prompt writing):', ragContext.trim()].join('\n')
+      : '',
     '',
     'Fixed taxonomy (non negotiable):',
     'The effect taxonomy is defined in data/visual_effects.json. It is a CLOSED set.',
@@ -211,40 +256,152 @@ const PsychedelicEffectSchema = z
     }
   })
 
-export const ImageAnalysisResultSchema = z
-  .object({
-    substanceId: z.string().min(1),
-    dose: z.number().min(0).max(1),
-    baseSceneDescription: z.string().min(1),
-    geometrySummary: z.string().min(1).optional(),
-    distortionSummary: z.string().min(1).optional(),
-    hallucinationSummary: z.string().min(1).optional(),
-    effects: z.array(PsychedelicEffectSchema).min(1),
-    prompts: z.object({
-      openAIImagePrompt: z.string().min(1),
-      shortCinematicDescription: z.string().min(1),
-    }),
-  })
-  .superRefine((val, ctx) => {
-    const seen = new Set<string>()
-    for (const effect of val.effects) {
-      if (seen.has(effect.effectId)) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'effects must not contain duplicate effectId values',
-          path: ['effects'],
+const ImageAnalysisBaseSchema = z.object({
+  substanceId: z.string().min(1),
+  dose: z.number().min(0).max(1),
+  baseSceneDescription: z.string().min(1),
+  geometrySummary: z.string().min(1).optional(),
+  distortionSummary: z.string().min(1).optional(),
+  hallucinationSummary: z.string().min(1).optional(),
+  effects: z.array(PsychedelicEffectSchema),
+  prompts: z.object({
+    openAIImagePrompt: z.string().min(1),
+    shortCinematicDescription: z.string().min(1),
+    ragAddendum: z.string().min(1).optional(),
+  }),
+  rag: z
+    .object({
+      enabled: z.boolean(),
+      query: z.string().min(1),
+      models: z
+        .object({
+          draftModelId: z.string().min(1),
+          finalModelId: z.string().min(1),
         })
-        break
-      }
-      seen.add(effect.effectId)
+        .optional(),
+      retrieved: z
+        .array(
+          z.object({
+            id: z.string().min(1),
+            title: z.string().min(1),
+            score: z.number(),
+            source: z.object({
+              type: z.enum(['visual_effect', 'doc_md', 'custom']),
+              path: z.string().optional(),
+              effectId: z.string().optional(),
+            }),
+          }),
+        )
+        .optional(),
+      finalText: z.string().min(1).optional(),
+    })
+    .optional(),
+})
+
+function refineNoDuplicateEffects(
+  val: z.infer<typeof ImageAnalysisBaseSchema>,
+  ctx: z.RefinementCtx,
+) {
+  const seen = new Set<string>()
+  for (const effect of val.effects) {
+    if (seen.has(effect.effectId)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'effects must not contain duplicate effectId values',
+        path: ['effects'],
+      })
+      break
     }
-  })
+    seen.add(effect.effectId)
+  }
+}
+
+/**
+ * Schema for model output validation (LLM must produce at least one effect).
+ */
+export const ImageAnalysisResultSchema = ImageAnalysisBaseSchema.extend({
+  effects: ImageAnalysisBaseSchema.shape.effects.min(1),
+}).superRefine(refineNoDuplicateEffects)
+
+/**
+ * Schema for user-edited analysis in requests (Effects Studio may clear the mix).
+ */
+export const ImageAnalysisInputSchema = ImageAnalysisBaseSchema.extend({
+  effects: ImageAnalysisBaseSchema.shape.effects.min(0),
+}).superRefine(refineNoDuplicateEffects)
+
+async function resolveAnalysisModelId(request: AnalyzeRequest): Promise<string> {
+  const env = getEnv()
+
+  if (typeof request.analysisModelId === 'string' && request.analysisModelId.trim().length > 0) {
+    return request.analysisModelId.trim()
+  }
+
+  if (typeof env.legacyAnalysisModelId === 'string' && env.legacyAnalysisModelId.trim().length > 0) {
+    return env.legacyAnalysisModelId.trim()
+  }
+
+  const menu = await getModelMenuResponse()
+  const candidates = listAnalysisCandidates(menu.all)
+  const picked = pickFirstModelIdByName(candidates, env.defaultAnalysisModelName)
+  if (picked) return picked
+
+  throw new Error(
+    `Could not resolve a default analysis model. Set DEFAULT_ANALYSIS_MODEL_NAME (current: ${JSON.stringify(env.defaultAnalysisModelName)}), or choose a model in the Models view.`,
+  )
+}
 
 export async function analyzeImage(request: AnalyzeRequest): Promise<ImageAnalysisResult> {
   const { effects } = loadVisualEffects()
 
-  const systemPrompt = buildSystemPrompt(buildEffectCatalogText(effects))
+  const ragSettings = request.rag
+  const ragEnabled = ragSettings?.enabled === true
+
+  let ragResult: Awaited<ReturnType<typeof runRagPipeline>> | null = null
+  if (ragEnabled) {
+    const defaultQuery = [
+      `Bias analysis toward effects relevant to: ${request.substanceId} at dose ${Math.round(request.dose * 100) / 100}.`,
+      getSubstanceSignature(request.substanceId),
+      'Focus on plausible, camera-consistent surface-embedded effects (no floating overlays).',
+    ].join(' ')
+    const query =
+      typeof ragSettings?.query === 'string' && ragSettings.query.trim().length > 0
+        ? ragSettings.query.trim()
+        : defaultQuery
+
+    try {
+      ragResult = await runRagPipeline({
+        enabled: true,
+        query,
+        topK: ragSettings?.topK,
+        draftModelId: ragSettings?.draftModelId,
+        finalModelId: ragSettings?.finalModelId,
+        mode: ragSettings?.mode ?? 'draft_and_refine',
+      })
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'RAG pipeline failed'
+      console.warn('[analysis rag] failed, continuing without augmentation:', message)
+      ragResult = null
+    }
+  }
+
+  const ragContext =
+    ragResult && ragResult.finalText.trim().length > 0
+      ? [
+          ragResult.contextText.trim().slice(0, 2500),
+          '',
+          'RAG Addendum (apply as guidance, not as new taxonomy):',
+          ragResult.finalText.trim(),
+        ]
+          .filter((s) => s.trim().length > 0)
+          .join('\n')
+      : ragResult && ragResult.contextText.trim().length > 0
+        ? ragResult.contextText.trim().slice(0, 3000)
+        : undefined
+
+  const systemPrompt = buildSystemPrompt(buildEffectCatalogText(effects), ragContext)
   const userPrompt = buildUserPrompt(request)
+  const modelId = await resolveAnalysisModelId(request)
 
   const debug = isAnalysisDebugEnabled()
   if (debug) {
@@ -256,7 +413,7 @@ export async function analyzeImage(request: AnalyzeRequest): Promise<ImageAnalys
         {
           type: 'input_image',
           image_url: '<omitted>',
-          image_url_prefix: request.imageDataUrl.slice(0, 32),
+          image_url_prefix: redactDataUrlForLogs(request.imageDataUrl),
           image_url_length: request.imageDataUrl.length,
           detail: 'high',
         },
@@ -268,6 +425,7 @@ export async function analyzeImage(request: AnalyzeRequest): Promise<ImageAnalys
     systemPrompt,
     userPrompt,
     imageDataUrl: request.imageDataUrl,
+    modelId,
   })
 
   if (debug) {
@@ -298,8 +456,11 @@ export async function analyzeImage(request: AnalyzeRequest): Promise<ImageAnalys
   }
   const validated = validatedResult.data
 
+  const ragAddendum = ragResult?.finalText?.trim().length ? ragResult.finalText.trim() : undefined
+
   const openAIImagePrompt = [
     validated.prompts.openAIImagePrompt,
+    ragAddendum ? '\n---\nRAG Augmentation:\n' + ragAddendum : '',
     '',
     'Constraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.',
     'Constraint: Avoid floating geometry overlays, wireframe nets, and separate decals.',
@@ -312,8 +473,16 @@ export async function analyzeImage(request: AnalyzeRequest): Promise<ImageAnalys
     prompts: {
       ...validated.prompts,
       openAIImagePrompt,
+      ragAddendum,
     },
+    rag: ragResult
+      ? {
+          enabled: ragResult.enabled,
+          query: ragResult.query,
+          models: ragResult.models,
+          retrieved: ragResult.retrieved,
+          finalText: ragResult.finalText,
+        }
+      : undefined,
   }
 }
-
-

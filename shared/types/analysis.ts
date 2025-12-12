@@ -12,6 +12,8 @@ export type PsychedelicEffect = {
 export type AnalysisPrompts = {
   openAIImagePrompt: string
   shortCinematicDescription: string
+  // Optional: RAG-generated prompt addendum (human readable, for reuse in generation).
+  ragAddendum?: string
 }
 
 export type ImageAnalysisResult = {
@@ -23,6 +25,7 @@ export type ImageAnalysisResult = {
   hallucinationSummary?: string
   effects: PsychedelicEffect[]
   prompts: AnalysisPrompts
+  // Optional: RAG metadata / output when analysis-stage augmentation is enabled.
+  rag?: import('./api').RagResult
 }
-
 

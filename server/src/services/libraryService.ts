@@ -12,6 +12,7 @@ import {
 } from './libraryIndex'
 import type { ImageAnalysisResult } from '../../../shared/types/analysis'
 import type { LibraryGeneration, LibraryProject } from '../../../shared/types/library'
+import type { RouterSettings } from '../../../shared/types/router'
 
 function parseDataUrl(dataUrl: string): { mimeType: string; base64: string } | null {
   const match = dataUrl.match(/^data:([^;]+);base64,(.+)$/)
@@ -45,10 +46,20 @@ export type SaveGeneratedAssetParams = {
   mimeType: string
   usedPrompt: string
   model: string
+  analysisModelId?: string
+  analysisModelName?: string
+  generationModelId?: string
+  generationModelName?: string
   projectId?: string
   originalAnalysis: ImageAnalysisResult
   workingAnalysis: ImageAnalysisResult
   inputImageDataUrl?: string
+  routerSettings?: RouterSettings
+  effectsStudio?: {
+    threshold: number
+    maxEffects: number
+    usedEffects: ImageAnalysisResult['effects']
+  }
 }
 
 export type SaveGeneratedAssetResult = {
@@ -59,17 +70,23 @@ export type SaveGeneratedAssetResult = {
 }
 
 export async function saveGeneratedAsset(
-  params: SaveGeneratedAssetParams
+  params: SaveGeneratedAssetParams,
 ): Promise<SaveGeneratedAssetResult> {
   const {
     imageDataUrl,
     mimeType,
     usedPrompt,
     model,
+    analysisModelId,
+    analysisModelName,
+    generationModelId,
+    generationModelName,
     projectId,
     originalAnalysis,
     workingAnalysis,
     inputImageDataUrl,
+    routerSettings,
+    effectsStudio,
   } = params
 
   const project = createOrLoadProject(projectId)
@@ -119,11 +136,17 @@ export async function saveGeneratedAsset(
     substanceId: workingAnalysis.substanceId,
     dose: workingAnalysis.dose,
     model,
+    analysisModelId,
+    analysisModelName,
+    generationModelId,
+    generationModelName,
     imagePath: imageFilename,
     mimeType,
     usedPrompt,
     originalAnalysis,
     workingAnalysis,
+    routerSettings,
+    effectsStudio,
   }
 
   project.generations.push(generation)
@@ -239,6 +262,12 @@ export async function createGenerationBundle(
       substanceId: generation.substanceId,
       dose: generation.dose,
       model: generation.model,
+      analysisModelId: generation.analysisModelId,
+      analysisModelName: generation.analysisModelName,
+      generationModelId: generation.generationModelId,
+      generationModelName: generation.generationModelName,
+      routerSettings: generation.routerSettings,
+      effectsStudio: generation.effectsStudio,
     }
     archive.append(JSON.stringify(metadata, null, 2), { name: 'metadata.json' })
 

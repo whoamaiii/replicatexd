@@ -1,0 +1,186 @@
+{
+  "substanceId": "lsd",
+  "dose": 0.45,
+  "baseSceneDescription": "A close view shows many human hands arranged in a tight spiral pattern around a central circular eye like shape. The hands are layered and interlocked, with teal ornamental markings across the skin on a dark background. The composition already reads like a mandala or vortex.",
+  "geometrySummary": "Intricate surface bound linework and mandala geometry intensify on the skin, locking to the spiral layout and subtly repeating into nested rings toward the center.",
+  "distortionSummary": "The spiral seems to slowly drift and breathe, with gentle rippling along knuckles and fingers and mild motion persistence around the hand edges.",
+  "effects": [
+    {
+      "effectId": "color_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "contrast_enhancement",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "visual_acuity_enhancement",
+      "group": "enhancements",
+      "intensity": 0.5,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "texture_salience",
+      "group": "enhancements",
+      "intensity": 0.6,
+      "scales": [
+        "micro"
+      ]
+    },
+    {
+      "effectId": "glow_and_haloes",
+      "group": "enhancements",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "pattern_recognition_enhancement",
+      "group": "enhancements",
+      "intensity": 0.5,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "visual_drifting",
+      "group": "distortions",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "breathing_surfaces",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "flowing_textures",
+      "group": "distortions",
+      "intensity": 0.4,
+      "scales": [
+        "micro"
+      ]
+    },
+    {
+      "effectId": "perspective_warp",
+      "group": "distortions",
+      "intensity": 0.3,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "tracers_motion_trails",
+      "group": "distortions",
+      "intensity": 0.3,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "afterimage_persistence",
+      "group": "distortions",
+      "intensity": 0.2,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "geometric_patterning",
+      "group": "geometry",
+      "intensity": 0.6,
+      "scales": [
+        "meso",
+        "micro"
+      ]
+    },
+    {
+      "effectId": "mandala_forms",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "macro",
+        "meso"
+      ]
+    },
+    {
+      "effectId": "form_constant_spiral",
+      "group": "geometry",
+      "intensity": 0.5,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "kaleidoscopic_tiling",
+      "group": "geometry",
+      "intensity": 0.3,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "fractal_recursion",
+      "group": "geometry",
+      "intensity": 0.3,
+      "scales": [
+        "micro"
+      ]
+    },
+    {
+      "effectId": "form_constant_tunnel",
+      "group": "geometry",
+      "intensity": 0.2,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "depth_and_scale_shift",
+      "group": "perceptual",
+      "intensity": 0.4,
+      "scales": [
+        "macro"
+      ]
+    },
+    {
+      "effectId": "time_slicing",
+      "group": "perceptual",
+      "intensity": 0.2,
+      "scales": [
+        "meso"
+      ]
+    },
+    {
+      "effectId": "pareidolia",
+      "group": "perceptual",
+      "intensity": 0.2,
+      "scales": [
+        "macro"
+      ]
+    }
+  ],
+  "prompts": {
+    "openAIImagePrompt": "Close up surreal spiral of many human hands interlocked in a vortex around a central eye like circle, dark background. Apply LSD common dose visuals with sharp neon leaning clarity: increase saturation and contrast, add subtle glowing edges on fingertips, amplify skin pore detail, and overlay intricate turquoise geometric filigree that is embedded in the skin and follows the hand contours and perspective. Add gentle breathing and slow drifting of the spiral, faint motion trails on finger edges, and nested mandala rings and spiral form constants that remain surface bound and lighting consistent. Cinematic macro lighting, crisp focus, high detail, coherent anatomy, no scene replacement.\n\nConstraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.\nConstraint: Avoid floating geometry overlays, wireframe nets, and separate decals.",
+    "shortCinematicDescription": "Hands spiral inward toward a staring center as neon clarity sharpens every crease, while surface mandalas shimmer and the vortex gently breathes."
+  }
+}

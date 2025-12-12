@@ -14,7 +14,11 @@ type ApiError = {
   message: string
 }
 
-export function PromptLabPanel(props: { analysis: ImageAnalysisResult | null }) {
+export function PromptLabPanel(props: {
+  analysis: ImageAnalysisResult | null
+  effectsStudioSettings?: { threshold: number; maxEffects: number }
+  generationModelId?: string
+}) {
   const [bundles, setBundles] = useState<PromptBundle[]>([])
   const [selectedId, setSelectedId] = useState<string>('')
   const [isLoading, setIsLoading] = useState(false)
@@ -46,7 +50,11 @@ export function PromptLabPanel(props: { analysis: ImageAnalysisResult | null }) 
         const res = await fetch('/api/prompts', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ analysis: props.analysis }),
+          body: JSON.stringify({
+            analysis: props.analysis,
+            effectsStudioSettings: props.effectsStudioSettings,
+            generationModelId: props.generationModelId,
+          }),
           signal: controller.signal,
         })
 
@@ -79,7 +87,7 @@ export function PromptLabPanel(props: { analysis: ImageAnalysisResult | null }) 
     })()
 
     return () => controller.abort()
-  }, [props.analysis])
+  }, [props.analysis, props.effectsStudioSettings, props.generationModelId])
 
   async function copyPrompt(text: string) {
     try {
@@ -172,5 +180,3 @@ export function PromptLabPanel(props: { analysis: ImageAnalysisResult | null }) 
     </Card>
   )
 }
-
-
