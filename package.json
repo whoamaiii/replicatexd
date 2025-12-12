@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:server\" \"npm run dev:web\"",
     "dev:web": "vite",
     "dev:server": "tsx watch server/src/index.ts",
     "build": "npm run build:web && npm run build:server",
@@ -47,4 +47,6 @@
     "vite": "^7.2.4"
   }
 }
+
+
 

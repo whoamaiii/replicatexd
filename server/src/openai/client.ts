@@ -4,6 +4,9 @@ function normalizeBaseUrl(input: string) {
   return input.replace(/\/+$/g, '')
 }
 
+const ANALYSIS_TIMEOUT_MS = 120_000
+const GENERATION_TIMEOUT_MS = 180_000
+
 function buildCommonHeaders(apiKey: string) {
   return {
     Authorization: `Bearer ${apiKey}`,
@@ -11,6 +14,16 @@ function buildCommonHeaders(apiKey: string) {
     'HTTP-Referer': 'http://localhost:5173',
     'X-Title': 'Psychedelic Visual Replicasion Lab',
   }
+}
+
+function isAbortError(err: unknown) {
+  return (
+    !!err &&
+    typeof err === 'object' &&
+    'name' in err &&
+    typeof (err as { name?: unknown }).name === 'string' &&
+    (err as { name: string }).name === 'AbortError'
+  )
 }
 
 function summarizeText(input: string, limit: number) {
@@ -26,25 +39,44 @@ function redactDataUrls(input: string) {
   )
 }
 
-async function postJson(url: string, body: unknown, headers: Record<string, string>) {
-  const res = await fetch(url, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify(body),
-  })
+async function postJson(
+  url: string,
+  body: unknown,
+  headers: Record<string, string>,
+  options?: { timeoutMs?: number },
+) {
+  const controller = new AbortController()
+  const timeoutMs = options?.timeoutMs ?? ANALYSIS_TIMEOUT_MS
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs)
 
-  if (!res.ok) {
-    const raw = await res.text().catch(() => '')
-    const safe = summarizeText(redactDataUrls(raw), 700)
-    throw new Error(`OpenRouter request failed with status ${res.status}. ${safe}`)
-  }
-
-  const text = await res.text()
   try {
-    return JSON.parse(text) as unknown
-  } catch {
-    const safe = summarizeText(redactDataUrls(text), 700)
-    throw new Error(`OpenRouter returned invalid JSON. ${safe}`)
+    const res = await fetch(url, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    })
+
+    if (!res.ok) {
+      const raw = await res.text().catch(() => '')
+      const safe = summarizeText(redactDataUrls(raw), 700)
+      throw new Error(`OpenRouter request failed with status ${res.status}. ${safe}`)
+    }
+
+    const text = await res.text()
+    try {
+      return JSON.parse(text) as unknown
+    } catch {
+      const safe = summarizeText(redactDataUrls(text), 700)
+      throw new Error(`OpenRouter returned invalid JSON. ${safe}`)
+    }
+  } catch (err) {
+    if (isAbortError(err)) {
+      throw new Error(`OpenRouter request timed out after ${Math.round(timeoutMs / 1000)}s.`)
+    }
+    throw err
+  } finally {
+    clearTimeout(timeoutId)
   }
 }
 
@@ -103,9 +135,12 @@ export async function callVisionAnalysis(input: {
       },
     ],
     text: { format: { type: 'text' } },
+    stream: false,
   }
 
-  const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey))
+  const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey), {
+    timeoutMs: ANALYSIS_TIMEOUT_MS,
+  })
   const outputText = extractFirstOutputTextFromResponsesResponse(json)
   if (!outputText) {
     throw new Error('OpenRouter did not return output_text content for analysis')
@@ -165,7 +200,9 @@ export async function callImageGeneration(input: { prompt: string; imageDataUrl?
     stream: false,
   }
 
-  const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey))
+  const json = await postJson(url, body, buildCommonHeaders(env.openrouterApiKey), {
+    timeoutMs: GENERATION_TIMEOUT_MS,
+  })
   const dataUrl = extractImageDataUrlFromChatCompletions(json)
   if (!dataUrl) {
     throw new Error('OpenRouter did not return an image for generation')

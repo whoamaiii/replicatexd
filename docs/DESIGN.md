@@ -46,3 +46,4 @@ The core analysis object is `ImageAnalysisResult`.
 3. Add effect library curation and versioned schemas
 4. Add model routing and prompt presets per substance
 
+

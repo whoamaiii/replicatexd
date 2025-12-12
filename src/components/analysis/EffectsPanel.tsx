@@ -127,3 +127,4 @@ export function EffectsPanel(props: { analysis: ImageAnalysisResult }) {
     </Card>
   )
 }
+

@@ -37,3 +37,4 @@ export function groupByGroup(effects: PsychedelicEffect[]): GroupedEffects {
 
   return grouped
 }
+

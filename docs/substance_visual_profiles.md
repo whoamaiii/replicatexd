@@ -353,3 +353,4 @@ Anticholinergic deliriants are included here only as a contrast class. Their hal
 ### Sources
 * Diphenhydramine intoxication with vivid insect hallucinations case report. PMID 3338401
 * Datura stramonium delirium with visual hallucinations case report. PMID 25341608
+

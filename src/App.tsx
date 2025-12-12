@@ -109,6 +109,7 @@ export default function App() {
         await runGeneration(result)
       }
     } catch (err) {
+      console.error('[analyze]', err)
       const message = err instanceof Error ? err.message : 'Unexpected error'
       setErrorMessage(message)
     } finally {
@@ -127,6 +128,7 @@ export default function App() {
       setGeneratedImageDataUrl(result.imageDataUrl)
       setUsedPrompt(result.usedPrompt)
     } catch (err) {
+      console.error('[generate]', err)
       const message = err instanceof Error ? err.message : 'Unexpected error'
       setErrorMessage(message)
     } finally {
@@ -428,4 +430,6 @@ export default function App() {
     />
   )
 }
+
+
 

@@ -23,3 +23,4 @@ export type VisualEffect = {
   commonSubstances?: string[]
   notesOnSimulation: string
 }
+

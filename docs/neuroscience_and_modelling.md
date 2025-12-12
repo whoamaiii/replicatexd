@@ -94,3 +94,4 @@ The key implementation detail is time coherence: psychedelic visuals are usually
 * Varley et al. 2020. Serotonergic psychedelics LSD and psilocybin increase fractal dimension of cortical brain activity. NeuroImage. PMID 32619708
 * Suzuki et al. 2017. The Hallucination Machine: a deep dream virtual reality platform for studying altered perceptual phenomenology. Scientific Reports. PMID 29167538
 * de Araujo et al. 2012. Seeing with the eyes shut: neural basis of enhanced imagery following Ayahuasca ingestion. Human Brain Mapping. PMID 21922603
+
