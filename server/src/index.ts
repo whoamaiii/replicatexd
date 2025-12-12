@@ -5,6 +5,8 @@ import { getEnv } from './config/env'
 import { analyzeRouter } from './routes/analyze'
 import { generateRouter } from './routes/generate'
 import { promptsRouter } from './routes/prompts'
+import { libraryRouter } from './routes/library'
+import { startCleanupScheduler } from './services/libraryCleanup'
 
 const app = express()
 
@@ -18,10 +20,12 @@ app.get('/api/health', (_req, res) => {
 app.use('/api/analyze', analyzeRouter)
 app.use('/api/generate', generateRouter)
 app.use('/api/prompts', promptsRouter)
+app.use('/api/library', libraryRouter)
 
 const env = getEnv()
 app.listen(env.port, () => {
   console.log(`Server listening on ${env.port}`)
+  startCleanupScheduler()
 })
 
 

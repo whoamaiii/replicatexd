@@ -1,9 +1,12 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Check, Copy } from 'lucide-react'
 import type { ImageAnalysisResult } from '../shared/types/analysis'
 import type { SubstanceId } from '../shared/types/substances'
 import { SubstanceOptions } from '../shared/types/substances'
+import type { OutputSettings } from './types/settings'
 import { analyzeImage, generateImage } from './lib/apiClient'
+import { loadOutputSettings, saveOutputSettings } from './lib/settings'
+import { downloadDataUrl, downloadFromUrl, buildFilename } from './lib/download'
 import { AppShell } from './components/layout/AppShell'
 import { Card } from './components/ui/Card'
 import { Panel } from './components/ui/Panel'
@@ -15,7 +18,12 @@ import { CodeBlock } from './components/ui/CodeBlock'
 import { Chip } from './components/ui/Chip'
 import { ImageDropzone } from './components/upload/ImageDropzone'
 import { EffectsPanel } from './components/analysis/EffectsPanel'
+import { EffectsOverridePanel } from './components/analysis/EffectsOverridePanel'
 import { PromptLabPanel } from './components/prompts/PromptLabPanel'
+import { ImagePreviewCard } from './components/upload/ImagePreviewCard'
+import { OutputSettingsPanel } from './components/settings/OutputSettingsPanel'
+import { ProjectStatusPanel } from './components/project/ProjectStatusPanel'
+import { LibraryPanel } from './components/history/LibraryPanel'
 
 function clamp01(value: number) {
   if (Number.isNaN(value)) return 0
@@ -34,12 +42,24 @@ function getDoseLabel(value: number) {
   return 'strong'
 }
 
+function deepCopyAnalysis(analysis: ImageAnalysisResult): ImageAnalysisResult {
+  return {
+    ...analysis,
+    effects: analysis.effects.map((effect) => ({
+      ...effect,
+      scales: effect.scales ? [...effect.scales] : undefined,
+    })),
+    prompts: { ...analysis.prompts },
+  }
+}
+
 export default function App() {
   const [imageDataUrl, setImageDataUrl] = useState<string>('')
   const [imageName, setImageName] = useState<string>('')
   const [substanceId, setSubstanceId] = useState<SubstanceId>('lsd')
   const [dose, setDose] = useState<number>(0.45)
-  const [analysis, setAnalysis] = useState<ImageAnalysisResult | null>(null)
+  const [originalAnalysis, setOriginalAnalysis] = useState<ImageAnalysisResult | null>(null)
+  const [workingAnalysis, setWorkingAnalysis] = useState<ImageAnalysisResult | null>(null)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string>('')
@@ -48,11 +68,21 @@ export default function App() {
   const [copiedKey, setCopiedKey] = useState<string>('')
   const copyTimeoutRef = useRef<ReturnType<typeof window.setTimeout> | null>(null)
 
+  const [activeView, setActiveView] = useState<'lab' | 'library'>('lab')
+  const [outputSettings, setOutputSettings] = useState<OutputSettings>(() => loadOutputSettings())
+  const [projectId, setProjectId] = useState<string | null>(null)
+  const [projectIsSaved, setProjectIsSaved] = useState(false)
+  const [projectExpiresAt, setProjectExpiresAt] = useState<string | null>(null)
+
+  useEffect(() => {
+    saveOutputSettings(outputSettings)
+  }, [outputSettings])
+
   const canAnalyze = imageDataUrl.trim().length > 0 && !isAnalyzing
   const canReset =
     !isAnalyzing &&
     !isGenerating &&
-    (imageDataUrl.trim().length > 0 || analysis !== null || generatedImageDataUrl.trim().length > 0)
+    (imageDataUrl.trim().length > 0 || workingAnalysis !== null || generatedImageDataUrl.trim().length > 0)
 
   const substanceMeta = useMemo(
     () => SubstanceOptions.find((s) => s.id === substanceId),
@@ -64,15 +94,20 @@ export default function App() {
     setErrorMessage('')
     setImageDataUrl('')
     setImageName('')
-    setAnalysis(null)
+    setOriginalAnalysis(null)
+    setWorkingAnalysis(null)
     setGeneratedImageDataUrl('')
     setUsedPrompt('')
     setCopiedKey('')
+    setProjectId(null)
+    setProjectIsSaved(false)
+    setProjectExpiresAt(null)
   }
 
   async function onPickFile(file: File) {
     setErrorMessage('')
-    setAnalysis(null)
+    setOriginalAnalysis(null)
+    setWorkingAnalysis(null)
     setGeneratedImageDataUrl('')
     setUsedPrompt('')
     setImageName(file.name)
@@ -103,7 +138,8 @@ export default function App() {
         dose: clamp01(dose),
       })
 
-      setAnalysis(result)
+      setOriginalAnalysis(result)
+      setWorkingAnalysis(deepCopyAnalysis(result))
 
       if (alsoGenerate) {
         await runGeneration(result)
@@ -123,10 +159,28 @@ export default function App() {
       const result = await generateImage({
         imageDataUrl,
         analysis: analysisResult,
+        projectId: projectId || undefined,
+        originalAnalysis: originalAnalysis || undefined,
+        saveToLibrary: outputSettings.autoSaveToLibrary,
       })
 
       setGeneratedImageDataUrl(result.imageDataUrl)
       setUsedPrompt(result.usedPrompt)
+
+      if (result.projectId) {
+        setProjectId(result.projectId)
+        setProjectIsSaved(result.isSaved ?? false)
+        setProjectExpiresAt(result.expiresAt ?? null)
+      }
+
+      if (outputSettings.autoDownloadMode === 'image') {
+        const ext = result.mimeType.split('/')[1] || 'png'
+        const filename = buildFilename(analysisResult.substanceId, analysisResult.dose, ext)
+        downloadDataUrl(result.imageDataUrl, filename)
+      } else if (outputSettings.autoDownloadMode === 'bundle' && result.bundleUrl) {
+        const filename = buildFilename(analysisResult.substanceId, analysisResult.dose, 'zip')
+        await downloadFromUrl(result.bundleUrl, filename)
+      }
     } catch (err) {
       console.error('[generate]', err)
       const message = err instanceof Error ? err.message : 'Unexpected error'
@@ -163,6 +217,23 @@ export default function App() {
     }
   }
 
+  function handleEffectIntensityChange(effectId: string, newIntensity: number) {
+    if (!workingAnalysis) return
+    setWorkingAnalysis({
+      ...workingAnalysis,
+      effects: workingAnalysis.effects.map((effect) =>
+        effect.effectId === effectId
+          ? { ...effect, intensity: clamp01(newIntensity) }
+          : effect
+      ),
+    })
+  }
+
+  function handleResetEffects() {
+    if (!originalAnalysis) return
+    setWorkingAnalysis(deepCopyAnalysis(originalAnalysis))
+  }
+
   return (
     <AppShell
       left={
@@ -177,7 +248,22 @@ export default function App() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Badge>Lab</Badge>
+              <Button
+                type="button"
+                variant={activeView === 'lab' ? 'primary' : 'ghost'}
+                className="h-8 px-3 py-1 text-xs"
+                onClick={() => setActiveView('lab')}
+              >
+                Lab
+              </Button>
+              <Button
+                type="button"
+                variant={activeView === 'library' ? 'primary' : 'ghost'}
+                className="h-8 px-3 py-1 text-xs"
+                onClick={() => setActiveView('library')}
+              >
+                Library
+              </Button>
               <Button
                 type="button"
                 variant="ghost"
@@ -185,7 +271,7 @@ export default function App() {
                 onClick={resetSession}
                 disabled={!canReset}
               >
-                Reset session
+                Reset
               </Button>
             </div>
           </div>
@@ -244,26 +330,53 @@ export default function App() {
                 </div>
               ) : null}
             </div>
+
+            {projectId && (
+              <ProjectStatusPanel
+                projectId={projectId}
+                isSaved={projectIsSaved}
+                expiresAt={projectExpiresAt}
+                onSaveChange={(isSaved, expiresAt) => {
+                  setProjectIsSaved(isSaved)
+                  setProjectExpiresAt(expiresAt)
+                }}
+              />
+            )}
+
+            <OutputSettingsPanel
+              settings={outputSettings}
+              onChange={setOutputSettings}
+            />
           </div>
         </Panel>
       }
       right={
+        activeView === 'library' ? (
+          <LibraryPanel />
+        ) : (
         <div className="grid gap-6">
-          {!analysis ? (
+          {imageDataUrl ? (
+            <ImagePreviewCard
+              originalImageDataUrl={imageDataUrl}
+              generatedImageDataUrl={generatedImageDataUrl || undefined}
+            />
+          ) : null}
+
+          {!workingAnalysis ? (
             <>
               <Panel className="p-6">
                 <div className="text-sm text-white/70">
                   Run an analysis to see structured findings, effect mapping, and ready prompts.
                 </div>
               </Panel>
-              <PromptLabPanel analysis={analysis} />
+              <PromptLabPanel analysis={workingAnalysis} />
             </>
           ) : (
             <div className="grid gap-6">
               <div className="flex flex-wrap items-center gap-2">
-                <Badge>{analysis.substanceId}</Badge>
-                <Chip className="text-white/85">{getDoseLabel(analysis.dose)} dose</Chip>
-                <Chip className="text-white/70">{format01(analysis.dose)}</Chip>
+                <Badge>{workingAnalysis.substanceId}</Badge>
+                <Chip className="text-white/85">{getDoseLabel(workingAnalysis.dose)} dose</Chip>
+                <Chip className="text-white/70">{format01(workingAnalysis.dose)}</Chip>
               </div>
 
               <Card className="p-5">
@@ -277,19 +390,26 @@ export default function App() {
                   <Badge>Analysis</Badge>
                 </div>
 
-                <div className="mt-3 text-sm text-white/85">{analysis.baseSceneDescription}</div>
+                <div className="mt-3 text-sm text-white/85">{workingAnalysis.baseSceneDescription}</div>
                 <div className="mt-3 rounded-xl2 border border-glass-border bg-white/5 p-3 text-sm text-white/80">
-                  {analysis.prompts.shortCinematicDescription}
+                  {workingAnalysis.prompts.shortCinematicDescription}
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {analysis.geometrySummary ? <Chip>{analysis.geometrySummary}</Chip> : null}
-                  {analysis.distortionSummary ? <Chip>{analysis.distortionSummary}</Chip> : null}
-                  {analysis.hallucinationSummary ? <Chip>{analysis.hallucinationSummary}</Chip> : null}
+                  {workingAnalysis.geometrySummary ? <Chip>{workingAnalysis.geometrySummary}</Chip> : null}
+                  {workingAnalysis.distortionSummary ? <Chip>{workingAnalysis.distortionSummary}</Chip> : null}
+                  {workingAnalysis.hallucinationSummary ? <Chip>{workingAnalysis.hallucinationSummary}</Chip> : null}
                 </div>
               </Card>
 
-              <EffectsPanel analysis={analysis} />
+              <EffectsPanel analysis={workingAnalysis} />
+
+              <EffectsOverridePanel
+                analysis={workingAnalysis}
+                originalAnalysis={originalAnalysis ?? undefined}
+                onEffectChange={handleEffectIntensityChange}
+                onReset={handleResetEffects}
+              />
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="grid gap-6">
@@ -304,7 +424,7 @@ export default function App() {
                             variant="ghost"
                             className="h-8 px-2 py-1 text-xs"
                             onClick={() =>
-                              void copyText('openai', analysis.prompts.openAIImagePrompt)
+                              void copyText('openai', workingAnalysis.prompts.openAIImagePrompt)
                             }
                           >
                             {copiedKey === 'openai' ? (
@@ -317,7 +437,7 @@ export default function App() {
                         </div>
                         <textarea
                           className="mt-1 min-h-[120px] w-full resize-y rounded-xl2 border border-glass-border bg-black/20 px-3 py-2 text-xs text-white/90 outline-none focus:ring-2 focus:ring-accent-teal/40"
-                          value={analysis.prompts.openAIImagePrompt}
+                          value={workingAnalysis.prompts.openAIImagePrompt}
                           readOnly
                         />
                       </div>
@@ -331,7 +451,7 @@ export default function App() {
                             onClick={() =>
                               void copyText(
                                 'cinematic',
-                                analysis.prompts.shortCinematicDescription,
+                                workingAnalysis.prompts.shortCinematicDescription,
                               )
                             }
                           >
@@ -345,7 +465,7 @@ export default function App() {
                         </div>
                         <textarea
                           className="mt-1 min-h-[140px] w-full resize-y rounded-xl2 border border-glass-border bg-black/20 px-3 py-2 text-xs text-white/90 outline-none focus:ring-2 focus:ring-accent-teal/40"
-                          value={analysis.prompts.shortCinematicDescription}
+                          value={workingAnalysis.prompts.shortCinematicDescription}
                           readOnly
                         />
                       </div>
@@ -376,7 +496,7 @@ export default function App() {
                     </div>
                   </Card>
 
-                  <PromptLabPanel analysis={analysis} />
+                  <PromptLabPanel analysis={workingAnalysis} />
                 </div>
 
                 <Card className="p-5">
@@ -385,47 +505,15 @@ export default function App() {
                       Debug view
                     </summary>
                     <div className="mt-3">
-                      <CodeBlock>{JSON.stringify(analysis, null, 2)}</CodeBlock>
+                      <CodeBlock>{JSON.stringify(workingAnalysis, null, 2)}</CodeBlock>
                     </div>
                   </details>
                 </Card>
               </div>
-
-              {generatedImageDataUrl ? (
-                <Card className="p-5">
-                  <div className="text-sm font-semibold">Generated output</div>
-                  <div className="mt-4 grid grid-cols-2 gap-6">
-                    <div>
-                      <div className="text-xs text-white/70">Original</div>
-                      <img
-                        src={imageDataUrl}
-                        alt="Original"
-                        className="mt-2 w-full rounded-xl2 border border-glass-border object-cover"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center justify-between">
-                        <div className="text-xs text-white/70">Generated</div>
-                        <a
-                          className="text-xs text-accent-teal hover:underline"
-                          href={generatedImageDataUrl}
-                          download="psychedelic_output.png"
-                        >
-                          Download
-                        </a>
-                      </div>
-                      <img
-                        src={generatedImageDataUrl}
-                        alt="Generated"
-                        className="mt-2 w-full rounded-xl2 border border-glass-border object-cover shadow-glowMagenta"
-                      />
-                    </div>
-                  </div>
-                </Card>
-              ) : null}
             </div>
           )}
         </div>
+        )
       }
     />
   )

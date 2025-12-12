@@ -10,6 +10,9 @@ const GenerateRequestSchema = z.object({
     .min(1)
     .refine((v) => v.startsWith('data:image/'), 'imageDataUrl must be a data url'),
   analysis: ImageAnalysisResultSchema,
+  projectId: z.string().optional(),
+  originalAnalysis: ImageAnalysisResultSchema.optional(),
+  saveToLibrary: z.boolean().optional(),
 })
 
 export const generateRouter = Router()

@@ -6,6 +6,10 @@ const EnvSchema = z.object({
   OPENAI_API_KEY: z.string().optional(),
   OPENAI_MODEL: z.string().optional(),
   PORT: z.string().optional(),
+  LIBRARY_OUTPUT_DIR: z.string().optional(),
+  LIBRARY_RETENTION_DAYS: z.string().optional(),
+  LIBRARY_TRASH_ENABLED: z.string().optional(),
+  LIBRARY_TRASH_GRACE_HOURS: z.string().optional(),
 })
 
 type Env = {
@@ -13,6 +17,10 @@ type Env = {
   openrouterBaseUrl: string
   openaiModel: string
   port: number
+  libraryOutputDir: string
+  libraryRetentionDays: number
+  libraryTrashEnabled: boolean
+  libraryTrashGraceHours: number
 }
 
 let cachedEnv: Env | null = null
@@ -55,11 +63,24 @@ export function getEnv(): Env {
     throw new Error('PORT must be a number')
   }
 
+  const libraryOutputDir = parsed.data.LIBRARY_OUTPUT_DIR?.trim() || 'psyvis_lab_output'
+  const libraryRetentionDays = parsed.data.LIBRARY_RETENTION_DAYS
+    ? Number(parsed.data.LIBRARY_RETENTION_DAYS)
+    : 5
+  const libraryTrashEnabled = parsed.data.LIBRARY_TRASH_ENABLED?.toLowerCase() !== 'false'
+  const libraryTrashGraceHours = parsed.data.LIBRARY_TRASH_GRACE_HOURS
+    ? Number(parsed.data.LIBRARY_TRASH_GRACE_HOURS)
+    : 24
+
   cachedEnv = {
     openrouterApiKey,
     openrouterBaseUrl,
     openaiModel: normalizeModelId(parsed.data.OPENAI_MODEL),
     port,
+    libraryOutputDir,
+    libraryRetentionDays,
+    libraryTrashEnabled,
+    libraryTrashGraceHours,
   }
 
   return cachedEnv

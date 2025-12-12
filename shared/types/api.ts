@@ -17,6 +17,12 @@ export type GenerateResponse = {
   imageDataUrl: string
   mimeType: string
   usedPrompt: string
+  projectId?: string
+  generationId?: string
+  downloadUrl?: string
+  bundleUrl?: string
+  isSaved?: boolean
+  expiresAt?: string | null
 }
 
 

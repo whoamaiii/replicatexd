@@ -127,6 +127,7 @@ function buildSystemPrompt(effectCatalogText: string) {
     '4. effects[].group MUST match the group shown in the allowed list for that effectId.',
     '5. effects[].intensity MUST be a number from 0 to 1.',
     '6. effects[] must not contain duplicate effectId values.',
+    '7. In openAIImagePrompt, keep geometric patterns embedded in scene surfaces and materials, aligned to perspective and lighting.',
     '',
     'Allowed effects (id | group | displayName):',
     effectCatalogText,
@@ -296,10 +297,22 @@ export async function analyzeImage(request: AnalyzeRequest): Promise<ImageAnalys
     throw new Error(`Model output failed ImageAnalysisResult validation. ${formatZodError(validatedResult.error)}`)
   }
   const validated = validatedResult.data
+
+  const openAIImagePrompt = [
+    validated.prompts.openAIImagePrompt,
+    '',
+    'Constraint: Keep geometric patterns embedded in surfaces and materials, aligned to perspective and lighting.',
+    'Constraint: Avoid floating geometry overlays, wireframe nets, and separate decals.',
+  ].join('\n')
+
   return {
     ...(validated as ImageAnalysisResult),
     substanceId: request.substanceId,
     dose: request.dose,
+    prompts: {
+      ...validated.prompts,
+      openAIImagePrompt,
+    },
   }
 }
 
